@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        .pos {
+            width: 200px;
+            height: 200px;
+        }
+
+        .pos1 {
+            position: relative;
+            background: red;
+            left: 100px;
+            top: 100px;
+        }
+
+        .pos2 {
+            background: blue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        .float > li {
+            float: left;
+            width: 50px;
+            list-style: none;
+        }
+
+        .clear:after {
+            clear: both;
+            display: block;
+            content: ' ';
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="pos pos1">-->
+        <!--<div class="pos pos2"></div>-->
+    <!--</div>-->
+    <ul class="float clear">
+        <li>100</li>
+        <li>200</li>
+        <li>300</li>
+        <li>400</li>
+    </ul>
+</body>
+</html>
