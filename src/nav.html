@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天猫简单导航</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        .nav {
+            line-height: 30px;
+        }
+
+
+
+        .nav li {
+            float: left;
+            border-left: 1px solid #e4e4e4;
+            line-height: 14px;
+        }
+
+        .nav li:first-child {
+            border-left: 0px solid #e4e4e4;
+        }
+
+        .nav li a {
+            font-size: 14px;
+            padding: 0px 12px;
+            color: #e4e4e4;
+        }
+
+        .nav li.hot a {
+            color: #e49a98
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+            <li class="hot"><a href="#">t恤男</a></li>
+            <li><a href="#">女包</a></li>
+            <li class="hot"><a href="#">连衣裙</a></li>
+            <li><a href="#">智能手机</a></li>
+            <li><a href="#">运动鞋</a></li>
+            <li class="hot"><a href="#">妈妈装</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

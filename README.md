@@ -3,7 +3,7 @@
 
 1. 如何使用 webstorm ( 强调快捷键 )
 2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式.
-3. 使用Chrome dev tools 调试 CSS
+3. 使用Chrome dev tools 调试 CSS, HTML
 4. 使用 JSBin 写自己的 demo 页面
 5. reset.css 例如 normalize.css
 6. CSS Layout 一些知识 http://zh.learnlayout.com/
@@ -14,4 +14,9 @@
     - box-sizing
     - 垂直居中 [传送门](http://mossad.iteye.com/blog/2153675)
 7. CSS 样式优先级 和 CSS 选择器 (这个 w3cschool 上有, 取决于新人自学程度)
-
+8. 一些常见的组件的写法, 例如导航栏, 登录页面, 菜单, 商品展示等, 可以参考京东或天猫首页, 重点在于HTML结构
+9. 工作流(从原型到html页面)
+    - 拿到设计稿, 分析结构
+    - 先写出HTML结构
+    - 在添加上CSS样式
+    - 最终效果与设计稿一致
