@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <title>jd book desc</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .jd-book {
+            width: 850px;
+            padding: 10px;
+        }
+
+        .clear:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+
+        .book {
+            float: left;
+            width: 610px;
+        }
+
+        .book-title {
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        .book-subtitle {
+            font-size: 14px;
+            line-height: 26px;
+            color: #eb5f60;
+        }
+
+        .book-subtitle > a {
+            color: #2772b1;
+        }
+
+        .book-author {
+            font-size: 12px;
+            line-height: 32px;
+        }
+
+        .book-author > a{
+            color: #2772b1;
+        }
+
+        .price {
+            height: 110px;
+            margin: 10px 0;
+            background: #f7f7f7;
+            padding: 5px 0px;
+        }
+
+        .price > dl {
+
+        }
+
+        .price > dl > dt {
+            float: left;
+            width: 54px;
+            font-size: 12px;
+            line-height: 36px;
+        }
+
+        .jd-price {
+            color: #ca111a;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .jd-dis {
+            font-size: 12px;
+            color: #ca111a;
+        }
+
+        .price > dl > dd {
+            float: left;
+            line-height: 36px;
+            font-size: 14px;
+        }
+
+        .dis-ticket {
+            background: #ca111a;
+            color: #fff;
+            margin: 0px 5px;
+            padding: 2px;
+        }
+
+        .others {
+            float: right;
+            width: 225px;
+        }
+
+        .service {
+            padding: 5px 0;
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        .service > dl > dt {
+            float: left;
+            width: 54px;
+            font-size: 12px;
+            line-height: 32px;
+        }
+
+        .service > dl > dd {
+            float: left;
+            line-height: 32px;
+            font-size: 12px;
+        }
+
+        .hasGoods {
+            font-size: 14px;
+        }
+
+        .bai {
+            height: 24px;
+            padding: 18px 0;
+        }
+
+        .bai > dt {
+            float: left;
+            width: 54px;
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .bai > dd {
+            float: left;
+            font-size: 12px;
+        }
+
+        .fenqi {
+
+        }
+
+        .fenqi > li {
+            float: left;
+            padding: 5px;
+            margin: 0px 5px;
+            border: 1px solid #e4e4e4;
+        }
+
+        .fenqi > li >a{
+            font-size: 12px;
+            text-decoration: none;
+            color: #0c020b;
+        }
+
+        .green {
+            line-height: 36px;
+            font-size: 18px;
+            background: #82c45a;
+            font-weight: bold;
+            color: #ffffff;
+            border-width: 0px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .red {
+            line-height: 36px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background: #e64242;
+            border-width: 0px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .publish {
+            padding: 16px 10px;
+         }
+        .publish span:first-child{
+            float: left;
+            font-size: 10px;
+            line-height: 20px;
+
+        }
+
+        .publish span:last-child{
+            float: right;
+            background: #ca111a;
+            color: #e4e4e4;
+            font-size: 10px;
+            border-radius: 3px;
+            line-height: 14px;
+        }
+
+        .shop {
+            padding: 16px 10px;
+        }
+        .shop span:first-child{
+            border: 1px solid #000;
+            font-size: 10px;
+            line-height: 20px;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+
+        .shop span:first-child::before {
+            content: "img ";
+        }
+
+        .shop span:last-child{
+            border: 1px solid #000;
+            color: #000;
+            font-size: 10px;
+            line-height: 20px;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .shop span:last-child::before {
+            content: "img ";
+        }
+
+        .shopList > ul{
+            padding: 10px 0;
+        }
+
+        .shopList > ul > li > span:first-child{
+            float: left;
+            line-height: 24px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .shopList > ul > li > span:last-child{
+            float: right;
+            line-height: 24px;
+            font-size: 12px;
+            color: #ca111a;
+        }
+
+        .selfs {
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .item {
+            font-size: 12px;
+        }
+
+        .mark {
+            float: left;
+            width: 100px;
+            line-height: 24px;
+            color: #2772b1;
+        }
+
+        .mark::before {
+            content: "icon ";
+        }
+
+    </style>
+</head>
+<body>
+    <div class="jd-book clear">
+        <div class="book">
+            <div>
+                <h2 class="book-title">精通CSS：高级Web标准解决方案（第2版） [Css Mastery Advanced Web Standards Solutions Second Edition]</h2>
+                <h3 class="book-subtitle"> 计算机新书抢先读<a href="#">点击购买!</a></h3>
+                <h3 class="book-author">[英] <a href="#">巴德</a>，[英]  <a href="#">科利森</a>，[英]  <a href="#">莫尔</a> 著； <a href="#">陈剑瓯</a> 译</h3>
+            </div>
+            <div class="price">
+                <dl class="clear">
+                    <dt>&nbsp;&nbsp;京 东 价:</dt>
+                    <dd>
+                        <strong class="jd-price">￥37.90</strong> [7.8折] [定价：<del>￥49.00</del>] (降价通知)
+                    </dd>
+                </dl>
+                <dl class="clear">
+                    <dt>促销信息:</dt>
+                    <dd class="jd-dis"><span class="dis-ticket">加价购</span> 满89.00元另加10.00元即可在购物车换购热销商品 <a href="#">详情&gt;&gt;</a></dd>
+                </dl>
+                <dl class="clear">
+                    <dt>领　　券:</dt>
+                    <dd><span class="dis-ticket">105-6</span><span class="dis-ticket">200-16</span></dd>
+                </dl>
+            </div>
+
+            <div class="service">
+                <dl class="clear">
+                    <dt>排　　名:</dt><dd>自营 计算机与互联网销量榜 第 <font style="color:red;">267</font> 位</dd>
+                </dl>
+                <dl class="clear">
+                    <dt>&nbsp;&nbsp;配 送 至:</dt><dd>陕西西安市雁塔区<strong class="hasGoods">有货</strong>，支持 99元免运费  |  货到付款</dd>
+                </dl>
+                <dl class="clear">
+                    <dt>服　　务:</dt><dd>由 京东 发货并提供售后服务。23:00前完成下单,预计<strong>明天(04月29日)送达</strong></dd>
+                 </dl>
+            </div>
+            <dl class="bai clear">
+                <dt>白条分期:</dt>
+                <dd>
+                    <ul class="fenqi clear">
+                        <li><a href="#">30天免息</a></li>
+                        <li><a href="#">¥12.82X3期</a></li>
+                        <li><a href="#">¥12.82X3期</a></li>
+                        <li><a href="#">¥12.82X3期</a></li>
+                        <li><a href="#">¥12.82X3期</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <div>
+                <button class="green">加入购物车</button>
+                <button class="red">一键购</button>
+            </div>
+        </div>
+        <div class="others">
+            <img src="" height="80px" width="210px"/>
+            <div>
+                <ul>
+                    <li class="publish clear">
+                        <span><a href="#" style="text-decoration: none; color: #2772b1;">人民邮电出版社</a></span>
+                        <span style="margin-right: 10px;padding: 3px;">京东自营</span>
+                    </li>
+                    <li class="shop clear">
+                        <span>进店逛逛</span>
+                        <span>关注店铺</span>
+                    </li>
+                </ul>
+                <dl style="padding: 20px 0px 20px 10px;border-bottom: 1px solid #e4e4e4">
+                    <dt class="selfs">服务支持:</dt>
+                    <dd class="item clear"><span class="mark">自提</span> <span class="mark">西北特惠</span> <span class="mark">211限时达</span></dd>
+                </dl>
+            </div>
+            <div class="shopList">
+                <ul>
+                    <li class="clear"><span>黑猫队长图书专营店</span><span>¥29.00</span></li>
+                    <li class="clear"><span>黑猫队长图书专营店</span><span>¥29.00</span></li>
+                    <li class="clear"><span>黑猫队长图书专营店</span><span>¥29.00</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
