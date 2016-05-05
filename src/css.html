@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 优先级</title>
+    <style>
+       /* A B C D
+        如果是行内样式 a = 1
+        b = ID选择器的数量
+        c = 类，伪类和属性选择器的数量
+        d = 标签选择器和伪元素选择器
+        */
+
+       /*0 0 1 1*/
+        div.class1 {
+            width: 100px;
+            height: 100px;
+            background: yellowgreen !important;
+        }
+       /* 0 1 1 0*/
+        #div.class2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        body {
+            font-size: larger;
+            font-family: "Apple Symbols";
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div" class="class2 class1"></div>
+    <p>样式继承的例子</p>
+</body>
+</html>
