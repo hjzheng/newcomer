@@ -1,7 +1,9 @@
 # newcomer
 新人培训 (零基础培训)
 
-#### CSS基础
+说明 关于可选或选读, 导师可以根据新人能力, 推荐阅读,
+
+#### CSS基础 (适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面)
 
 1. 如何使用 webstorm ( 强调快捷键使用 )
 2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式, [html规范](https://gist.github.com/hjzheng/e3a1fadb3ef7df69ecef)
@@ -26,12 +28,26 @@
 11. CSS3 和 HTML5 (可选)
 12. CSS框架 bootstrap (可选)
 
-#### JS基础 (ES5)
+#### JS基础 (ES5) 以自学为主, 有问题问导师, 独自完成练习
 
 1. 语法: 标识符, 数字, 字符串, 语句, 表达式, 字面量, 函数
-2. 对象, 函数, 继承, 数组, 正则, 闭包, 立即自执行函数 [codecademy.com Javascript 练习](https://www.codecademy.com/learn/javascript) [NodeSchool JS教程](https://github.com/sethvincent/javascripting)
-3. 函数的四种调用模式 (重点介绍) 前3点都可以参考 JavaScript语言精髓
-4. [JavaScript模式](http://item.jd.com/11044070.html) (可选)
-5. DOM和BOM [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html)
+2. 对象, 函数, 继承, 数组, 正则, 闭包, 立即自执行函数
+    - [codecademy.com Javascript 练习](https://www.codecademy.com/learn/javascript) (可选)
+    - [NodeSchool JS教程](https://github.com/sethvincent/javascripting) (可选)
+3. 函数的四种调用模式 (重点介绍) 前3点都可以参考 [JavaScript语言精髓](http://item.jd.com/11090963.html) (选读)
+4. DOM, BOM 和 Ajax请求
+5. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
+6. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
+7. 练习
+    - Tab http://www.angularjs.cn/
+    - Todo List AngularJS官网的Todo List, 用原生JS写 https://angularjs.org/
+    - login http://www.angularjs.cn/login
 
 #### AngularJS
+1. AngularJS官方指南 https://docs.angularjs.org/guide
+2. PhoneCat https://docs.angularjs.org/tutorial
+3. [精通AngularJS](http://www.duokan.com/book/90947) (选读)
+4. 练习
+   - Todo list
+   - 写一个指令 Tabs
+   - 饿了吗页面
