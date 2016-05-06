@@ -1,9 +1,11 @@
 # newcomer
 新人培训 (零基础培训)
 
-说明 关于可选或选读, 导师可以根据新人能力, 推荐阅读,
+**说明 关于可选或选读, 导师可以根据新人能力, 推荐阅读**
 
-#### CSS基础 (适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面)
+#### CSS基础
+
+**适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面转换**
 
 1. 如何使用 webstorm ( 强调快捷键使用 )
 2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式, [html规范](https://gist.github.com/hjzheng/e3a1fadb3ef7df69ecef)
@@ -28,7 +30,9 @@
 11. CSS3 和 HTML5 (可选)
 12. CSS框架 bootstrap (可选)
 
-#### JS基础 (ES5) 以自学为主, 有问题问导师, 独自完成练习
+#### JS基础 (ES5)
+
+**以自学为主, 有问题问导师, 独自完成练习, 导师可以带着做一个简单的练习**
 
 1. 语法: 标识符, 数字, 字符串, 语句, 表达式, 字面量, 函数
 2. 对象, 函数, 继承, 数组, 正则, 闭包, 立即自执行函数
@@ -44,6 +48,9 @@
     - login http://www.angularjs.cn/login
 
 #### AngularJS
+
+**以自学为主, 有问题问导师, 独自完成练习**
+
 1. AngularJS官方指南 https://docs.angularjs.org/guide
 2. PhoneCat https://docs.angularjs.org/tutorial
 3. [精通AngularJS](http://www.duokan.com/book/90947) (选读)
