@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS login</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: #e3e3e3;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .title {
+            font-size: 20px;
+            line-height: 60px;
+            border-bottom: 1px solid #fff;
+        }
+
+        .login > dl {
+            margin: 16px 0;
+        }
+
+        .login > dl > dt {
+            float: left;
+            width: 160px;
+        }
+
+        .login > dl > dt > label {
+            float: right;
+            line-height: 36px;
+            font-size: 18px;
+        }
+
+        .login > dl > dd {
+            margin-left: 160px;
+        }
+
+        .login > dl > dd > input {
+            width: 186px;
+            border-radius: 3px;
+            margin-left: 32px;
+            border: 1px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            font-size: 16px;
+            padding: 0 15px;
+            line-height: 36px;
+            background: #3e8acc;
+            color: #fff;
+            border: 1px solid #3e8acc;
+            border-radius: 3px;
+        }
+
+        .error {
+            display: none;
+            margin-left: -9px;
+        }
+
+        .error-arrow {
+            width: 0px;
+            height: 0px;
+            border: 5px solid;
+            border-color:#e3e3e3 #ff3300 #e3e3e3 #e3e3e3;
+            display: inline-block;
+            position: relative;
+            left: 5px;
+        }
+
+        .error-content {
+            display: inline-block;
+            background: #ff3300;
+            font-size: 12px;
+            color: #fff;
+            line-height: 22px;
+            padding: 0 8px;
+            border-radius: 3px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2 class="title">用户登录</h2>
+    <from class="login">
+        <dl>
+            <dt><label for="username">登录名:</label></dt>
+            <dd><input type="text" name="username" id="username" placeholder="name or Email or Uid" required/>
+                <div class="error">
+                    <div class="error-arrow"></div>
+                    <div class="error-content">登录名必填</div>
+                </div>
+            </dd>
+        </dl>
+        <dl>
+            <dt><label for="password">密码:</label></dt>
+            <dd><input type="text" name="password" id="password" placeholder="password" required/>
+                <div class="error">
+                    <div class="error-arrow"></div>
+                    <div class="error-content">密码必填</div>
+                </div>
+            </dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd><label for="autologin"><input type="checkbox" id="autologin">3天内自动登录</label></dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd><button class="login-btn">登录</button></dd>
+        </dl>
+    </from>
+    <script>
+        window.onload = function() {
+
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var button = document.querySelector(".login-btn");
+            var errors =  document.querySelectorAll(".error");
+
+            button.onclick = function() {
+                if (username.value === '') {
+                    errors[0].style.display = "inline-block";
+                } else {
+                    errors[0].style.display = "none";
+                }
+                if (password.value === '') {
+                    errors[1].style.display = "inline-block";
+                } else {
+                    errors[1].style.display = "none";
+                }
+
+                if (username.value !== '' && password.value !== '') {
+                    //call Ajax 校验
+                    alert("call Ajax request");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

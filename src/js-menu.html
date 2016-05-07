@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>jd left menu</title>
+    <title>修改京东的left menu, 改成点击显示</title>
     <style>
         * {
             margin: 0px;
@@ -33,6 +33,7 @@
 
         .menu > ul {
             background: #ca111a;
+            display: none;
         }
 
         .menu > ul > li {
@@ -65,23 +66,45 @@
 </head>
 <body>
     <div class="menu">
-        <h2>全部商品分类</h2>
-        <ul>
-            <li><a href="#">家用电器</a></li>
-            <li><a href="#">手机,数码,京东通信</a></li>
-            <li><a href="#">电脑,办公</a></li>
-            <li><a href="#">家具,家电,家装,厨具</a></li>
-            <li><a href="#">男装,女装,童装,内衣</a></li>
-            <li><a href="#">个人化妆,清洁用品,宠物</a></li>
-            <li><a href="#">鞋靴,箱包,珠宝,奢侈品</a></li>
-            <li><a href="#">运动户外,钟表</a></li>
-            <li><a href="#">汽车,汽车用品</a></li>
-            <li><a href="#">母婴,玩具乐器</a></li>
-            <li><a href="#">营养保健</a></li>
-            <li><a href="#">图书、音像、电子书</a></li>
-            <li><a href="#">彩票、旅行、充值、票务</a></li>
-            <li><a href="#">理财、众筹、白条、保险</a></li>
+        <h2 id="menu">全部商品分类</h2>
+        <ul id="content">
         </ul>
     </div>
+   <script>
+
+       var data = [
+           {href: "#", label: "家用电器"},
+           {href: "#", label: "手机, 数码"},
+           {href: "#", label: "家用电器"},
+           {href: "#", label: "家用电器"},
+           {href: "#", label: "家用电器"},
+           {href: "#", label: "家用电器"},
+           {href: "#", label: "家用电器"}
+       ];
+
+
+       data.push({href:'#', label: "书籍"});
+       data.unshift({href: "#", label: "电影票"});
+
+       window.onload = function(){
+
+            var menu = document.getElementById("menu");
+            var content = document.getElementById("content");
+
+            for(var i=0; i<data.length; i++) {
+                var li  = document.createElement("li")
+                var a = document.createElement("a");
+                a.href = data[i].href;
+                a.innerHTML = data[i].label;
+                li.appendChild(a);
+                content.appendChild(li);
+            }
+
+            menu.onclick = function() {
+                content.style.display = content.style.display == 'none' ? 'block' : 'none';
+            }
+       }
+       
+   </script>
 </body>
 </html>
