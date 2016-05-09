@@ -22,11 +22,15 @@
             text-decoration: none;
         }
 
+        .clear:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
 
         .nav {
             line-height: 30px;
         }
-
 
 
         .nav li {
@@ -53,7 +57,7 @@
 </head>
 <body>
     <nav>
-        <ul class="nav">
+        <ul class="nav clear">
             <li class="hot"><a href="#">t恤男</a></li>
             <li><a href="#">女包</a></li>
             <li class="hot"><a href="#">连衣裙</a></li>

@@ -5,7 +5,7 @@
 
 #### CSS基础
 
-**适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面转换**
+**适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面转换(PSD2HTML)**
 
 1. 如何使用 webstorm ( 强调快捷键使用 )
 2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式, [html规范](https://gist.github.com/hjzheng/e3a1fadb3ef7df69ecef)
@@ -65,8 +65,14 @@
 - [babelify + browserify + gulp](https://github.com/hjzheng/es6-practice)
 - [babel + webpack](https://github.com/hjzheng/es6-practice-webpack)
 
-1.[阮一峰的 ES6入门](http://es6.ruanyifeng.com/)
-2.关于 ES6 与 AngularJS 1.x 如何结合使用
+1. [阮一峰的 ES6入门](http://es6.ruanyifeng.com/)
+2. 关于 ES6 与 AngularJS 1.x 如何结合使用
+
+
+#### 补充资料
+[PSD2HTML - Day 1](http://designmodo.com/create-website-day-1/)
+[PSD2HTML - Day 2](http://designmodo.com/create-website-day-2/)
+[PSD2HTML - Day 3](http://designmodo.com/create-website-day-3/)
 
 
 
