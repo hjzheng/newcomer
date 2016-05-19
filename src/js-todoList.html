@@ -29,7 +29,7 @@
     <div class="wrapper">
         <h2>Todo</h2>
         <div>
-            <span id="result"></span>
+            <span id="result"></span> remaining [<a id="archive" href="#">archive</a>]
         </div>
         <ul id="list">
         </ul>
@@ -52,9 +52,10 @@
             var input = document.getElementById('input');
             var btn = document.getElementById('btn');
             var result = document.getElementById('result');
-
+            var archive = document.getElementById('archive');
 
             function init(){
+                list.innerHTML = "";
                 result.innerHTML = remaining() + " of " + data.length;
                 data.forEach(function(todo){
                     appendTodo(todo);
@@ -105,9 +106,18 @@
             init();
 
             btn.onclick = function(){
-                data.push({text: input.value, done: false});
-                appendTodo(data[data.length-1]);
-                result.innerHTML = remaining() + " of " + data.length;
+                if(input.value) {
+                    data.push({text: input.value, done: false});
+                    appendTodo(data[data.length - 1]);
+                    result.innerHTML = remaining() + " of " + data.length;
+                }
+            };
+
+            archive.onclick = function () {
+                data = data.filter(function(d){
+                    return d.done === false;
+                });
+                init();
             };
         };
     </script>
