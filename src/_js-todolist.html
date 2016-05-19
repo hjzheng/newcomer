@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+
+        .all {
+            width:300px;
+            border:1px solid #eaeaea;
+            padding-top:55px;
+            padding-left:20px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size:18px;
+            font-family: Verdana;
+            padding-bottom:25px;
+        }
+
+        .action {
+            font-size: 12px;
+            font-family: Verdana;
+        }
+
+        a:link, a:visited {
+            color:#6bc5ee;
+            text-decoration:none ;
+        }
+
+        a:hover, a:active {
+            color:#0066FF;
+            text-decoration: underline;
+        }
+
+        li {
+            list-style: none;
+            padding-top:7px;
+        }
+
+        form {
+            padding:10px 0;
+        }
+
+        form input:nth-child(2) {
+            background-color: #0066FF;
+            color:white;
+        }
+
+        .done-true {
+            text-decoration: line-through;
+            color:grey;
+        }
+
+        .done-false {
+            text-decoration: none;
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+    <div class="all" >
+        <h2>Todo</h2>
+        <div class="action">
+            <span id="remain"></span> remaining [<a id="archive" href="#">archive</a>]
+            <ul id="ul">
+            </ul>
+            <form>
+                <input id="in" type="text" placeholder="add new todo here" size="30">
+                <input id="btn" value="add" type="button">
+            </form>
+        </div>
+    </div>
+<script>
+
+    var todoList = [
+        {text: "learn angular", done: true},
+        {text: "build an angular app", done: false}
+    ];
+
+
+    window.onload = function () {
+        var input = document.getElementById('in');
+        var liList = document.getElementById('ul')
+        var archive = document.getElementById('archive');
+        var btn = document.getElementById('btn');
+        var remainEl = document.getElementById('remain');
+
+        init();
+
+        btn.onclick = function () {
+            if(input.value){
+                var todo = {text: input.value, done: false};
+                todoList.push(todo)
+                appendTodo(todo);
+                updateSummary();
+            }
+        };
+
+        archive.onclick = function () {
+            todoList = todoList.filter(function(todo){
+                return todo.done === false;
+            });
+            init();
+        }
+
+        function init() {
+
+            liList.innerHTML = '';
+
+            todoList.forEach(function (todo) {
+                appendTodo(todo);
+            });
+            updateSummary();
+        }
+
+        function appendTodo(todo) {
+            var li = document.createElement('li');
+            var input = document.createElement('input');
+            input.type = "checkbox";
+            input.checked = todo.done;
+
+            input.onclick = function() {
+                this.checked = this.checked ? true : false;
+                todo.done = this.checked;
+                this.nextElementSibling.className = todo.done ? 'done-true' : '';
+                updateSummary();
+            };
+
+            var label = document.createElement('label');
+
+            if(todo.done) {
+                label.className = 'done-true';
+            }
+            var text = document.createTextNode(todo.text);
+
+            label.appendChild(text);
+            li.appendChild(input);
+            li.appendChild(label);
+            liList.appendChild(li);
+        }
+    
+        function updateSummary() {
+            remainEl.innerHTML = (remaining() + ' of ' + todoList.length);
+        }
+        
+        function remaining() {
+            var r = todoList.filter(function(todo){
+                return todo.done === false;
+            });
+            return r.length;
+        }
+
+    };
+
+
+</script>
+</body>
+</html>
