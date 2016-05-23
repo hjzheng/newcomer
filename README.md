@@ -29,6 +29,7 @@
     - 最终效果与设计稿一致
 11. CSS3 和 HTML5 (可选)
 12. CSS框架 bootstrap (可选)
+13. [精通CSS 高级Web标准解决方案](https://book.douban.com/subject/4736167/) (可选)
 
 #### JS基础 (ES5)
 
@@ -68,6 +69,7 @@
 
 1. [阮一峰的 ES6入门](http://es6.ruanyifeng.com/)
 2. 关于 ES6 与 AngularJS 1.x 如何结合使用
+3. [ESLint规范](https://github.com/Jocs/ESLint_docs)
 
 
 #### 补充资料
