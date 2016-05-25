@@ -55,7 +55,8 @@
 1. AngularJS官方指南 https://docs.angularjs.org/guide
 2. PhoneCat https://docs.angularjs.org/tutorial
 3. [精通AngularJS](http://www.duokan.com/book/90947) (选读)
-4. 练习
+4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) (可以作为AngularJS知识的考察点)
+5. 练习
    - Todo list
    - 写一个指令 Tabs
    - 饿了吗页面
