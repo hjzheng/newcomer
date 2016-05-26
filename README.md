@@ -30,23 +30,26 @@
 11. CSS3 和 HTML5 (可选)
 12. CSS框架 bootstrap (可选)
 13. [精通CSS 高级Web标准解决方案](https://book.douban.com/subject/4736167/) (可选)
+14. CSS规范 http://codeguide.bootcss.com/
 
 #### JS基础 (ES5)
 
 **以自学为主, 有问题问导师, 独自完成练习, 导师可以带着做一个简单的练习**
 
 1. 语法: 标识符, 数字, 字符串, 语句, 表达式, 字面量, 函数
-2. 对象, 函数, 继承, 数组, 正则, 闭包, 立即自执行函数
+2. 对象, 函数, 继承, 数组, 正则, 闭包, 原型继承, 立即自执行函数
     - [codecademy.com Javascript 练习](https://www.codecademy.com/learn/javascript) (可选)
     - [NodeSchool JS教程](https://github.com/sethvincent/javascripting) (可选)
 3. 函数的四种调用模式 (重点介绍) 前3点都可以参考 [JavaScript语言精髓](http://item.jd.com/11090963.html) (选读)
 4. DOM, BOM 和 Ajax请求
 5. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
 6. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
-7. 练习
+7. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
+8. 练习
     - Tab http://www.angularjs.cn/
     - Todo List AngularJS官网的Todo List, 用原生JS写 https://angularjs.org/
     - login http://www.angularjs.cn/login
+
 
 #### AngularJS
 
@@ -56,7 +59,8 @@
 2. PhoneCat https://docs.angularjs.org/tutorial
 3. [精通AngularJS](http://www.duokan.com/book/90947) (选读)
 4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) (可以作为AngularJS知识的考察点)
-5. 练习
+5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
+6. 练习
    - Todo list
    - 写一个指令 Tabs
    - 饿了吗页面
@@ -70,6 +74,8 @@
 
 1. [阮一峰的 ES6入门](http://es6.ruanyifeng.com/)
 2. 关于 ES6 与 AngularJS 1.x 如何结合使用
+   - 参考[ccms-components](https://github.com/ShuyunFF2E/ccms-components)
+   - [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 3. [ESLint规范](https://github.com/Jocs/ESLint_docs)
 
 
