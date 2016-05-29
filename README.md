@@ -58,7 +58,7 @@
 1. AngularJS官方指南 https://docs.angularjs.org/guide
 2. PhoneCat https://docs.angularjs.org/tutorial
 3. [精通AngularJS](http://www.duokan.com/book/90947) (选读)
-4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) (可以作为AngularJS知识的考察点)[https://github.com/hjzheng/newcomer/blob/master/src/xmind/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png]
+4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为(AngularJS1.x知识的考察点)[https://github.com/hjzheng/newcomer/blob/master/src/xmind/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png]
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
 6. 练习
    - Todo list
