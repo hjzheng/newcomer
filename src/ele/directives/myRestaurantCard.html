@@ -1,0 +1,17 @@
+<ul class="restaurant clearfix">
+    <li><img src="{{restaurant.img}}" width="62px" height="62px"></li>
+    <li>
+        <dl>
+            <dt class="name">
+                {{restaurant.name}}
+                <span class="onlinePay" ng-if="restaurant.supportOnlinePay" title="支持在线支付">付</span>
+                <span class="iceTea" ng-if="restaurant.supportIceTea" title="冰红茶特惠套餐">茶</span>
+            </dt>
+            <dt class="star-points">
+                <my-rank rank="{{restaurant.rank}}"></my-rank>
+            </dt>
+            <dt class="desc">{{restaurant.startPrice}} 元起送 {{restaurant.deliverTime}} 分钟送达</dt>
+            <dt class="desc">{{restaurant.info}}</dt>
+        </dl>
+    </li>
+</ul>
