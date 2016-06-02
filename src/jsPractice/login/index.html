@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 class="title">用户登录</h2>
+    <from class="login">
+        <dl>
+            <dt><label for="username">登录名:</label></dt>
+            <dd><input type="text" name="username" id="username" placeholder="name or Email or Uid" required/>
+                <div class="error">
+                    <div class="error-arrow"></div>
+                    <div class="error-content">登录名必填</div>
+                </div>
+            </dd>
+        </dl>
+        <dl>
+            <dt><label for="password">密码:</label></dt>
+            <dd><input type="text" name="password" id="password" placeholder="password" required/>
+                <div class="error">
+                    <div class="error-arrow"></div>
+                    <div class="error-content">密码必填</div>
+                </div>
+            </dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd><label for="autologin"><input type="checkbox" id="autologin">3天内自动登录</label></dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd><button class="login-btn">登录</button></dd>
+        </dl>
+    </from>
+<script src="index.js"></script>
+</body>
+</html>

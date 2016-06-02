@@ -1,0 +1,143 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    margin: 0 auto;
+    width: 1122px;
+}
+
+.clear:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+.header {
+    border-bottom: 1px solid #eeeeee;
+    margin: 0 20px;
+}
+
+.header > h2 {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 44px;
+    float: left;
+}
+
+.header > h2 > span {
+    margin: 0 20px;
+    color: #cecece;
+}
+
+.header > h2 > img {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin: 0 15px 0 5px;
+}
+
+.header > ul {
+    float: left;
+    padding-top: 6px;
+}
+
+.header > ul > li {
+    float: left;
+    font-size: 14px;
+    line-height: 38px;
+    margin-left: 20px;
+    margin-top: -1px;
+}
+
+.header > ul > li:hover {
+    border-bottom: 1px solid #95d8ff;
+}
+
+.header > ul > li:hover a {
+    color: #95d8ff;
+}
+
+.active {
+    border-bottom: 1px solid #95d8ff;
+}
+
+.active > a {
+    color: #95d8ff;
+}
+
+.main {
+    padding: 20px;
+}
+
+.main > div {
+    float: left;
+    position: relative;
+}
+
+.main > div > img {
+    width: 420px;
+    height: 280px;
+}
+
+
+.main > div > dl > dt {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.main > div > dl > dd {
+    font-size: 10px;
+}
+
+.main > ul > li {
+    float: left;
+    padding-bottom: 16px;
+    padding-left: 20px;
+}
+
+.main > ul > li > img {
+    width: 200px;
+    height: 110px;
+}
+
+.main > ul > li > dl > dt {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.main > ul > li > dl > dd {
+    font-size: 10px;
+}
+
+.clean {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 3px 5px;
+    border-radius: 1px;
+}
+
+.status {
+    position: absolute;
+    right: 5px;
+    bottom: 60px;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 3px 5px;
+    border-radius: 1px;
+}

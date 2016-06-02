@@ -1,0 +1,57 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.all {
+    width:300px;
+    border:1px solid #eaeaea;
+    padding-top:55px;
+    padding-left:20px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size:18px;
+    font-family: Verdana;
+    padding-bottom:25px;
+}
+
+.action {
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+a:link, a:visited {
+    color:#6bc5ee;
+    text-decoration:none ;
+}
+
+a:hover, a:active {
+    color:#0066FF;
+    text-decoration: underline;
+}
+
+li {
+    list-style: none;
+    padding-top:7px;
+}
+
+form {
+    padding:10px 0;
+}
+
+form input:nth-child(2) {
+    background-color: #0066FF;
+    color:white;
+}
+
+.done-true {
+    text-decoration: line-through;
+    color:grey;
+}
+
+.done-false {
+    text-decoration: none;
+    color:#000;
+}
