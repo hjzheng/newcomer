@@ -14,7 +14,50 @@
 			.state('myOrder', {
 				url: '/myOrder',
 				templateUrl: './partials/myOrder.html',
-				controller: 'myOrderCtrl'
+				controller: 'MyOrderCtrl'
+			})
+			.state('myOrderList', {
+				url: '/myOrderList/:phoneNumber',
+				templateUrl: './partials/myOrderList.html',
+				controller: 'MyOrderListCtrl',
+				resolve: {
+					order: function($http, $stateParams, $filter) {
+						return $http.get('data/order.json').then(function(response){
+							return $filter('filter')(response.data, {'phoneNumber': $stateParams.phoneNumber});
+						}, function () {
+							return '出错了';
+						});
+					}
+				}
+			})
+			.state('restaurants', {
+				url: '/restaurants/:id',
+				templateUrl: './partials/myRestaurant.html',
+				controller: 'MyRestaurantCtrl',
+				resolve: {
+					restaurant: function($http, $stateParams) {
+						return $http.get('data/restaurant.json').then(function(response){
+							return _.find(response.data, {'id': new Number($stateParams.id)});
+						}, function () {
+							return '出错了';
+						});
+					}
+				}
+			})
+			.state('restaurants.menu', {
+				url: '/menu',
+				templateUrl: './partials/myMenu.html',
+				controller: 'MyMenuCtrl'
+			})
+			.state('restaurants.evaluate', {
+				url: '/evaluate',
+				templateUrl: './partials/myEvaluate.html',
+				controller: 'MyEvaluateCtrl'
+			})
+			.state('restaurants.comment', {
+				url: '/comment',
+				templateUrl: './partials/myComments.html',
+				controller: 'MyCommentCtrl'
 			});
 
 		$urlRouterProvider.otherwise('/home');
@@ -48,14 +91,32 @@
 
 	});
 
-	angular.module('app').controller('myOrderCtrl', function ($scope, $http) {
-
+	angular.module('app').controller('MyOrderCtrl', function($scope, $state) {
+		$scope.query = function(){
+			$state.go('myOrderList', {phoneNumber: $scope.phoneNumber});
+		}
 	});
 
-	// angular.module('app').filter('search', function() {
-	// 	return function(array, params) {
-	//
-	// 	};
-	// });
+	angular.module('app').controller('MyRestaurantCtrl', function($scope, $state, restaurant){
+		$scope.restaurant = restaurant;
+		$state.go('restaurants.menu');
+	});
+
+	angular.module('app').controller('MyMenuCtrl', function($scope, $stateParams){
+		//嵌套视图, 默认继承传递的参数
+		console.log($stateParams.id);
+	});
+
+	angular.module('app').controller('MyEvaluateCtrl', function($scope, $stateParams){
+		console.log($stateParams.id);
+	});
+
+	angular.module('app').controller('MyCommentCtrl', function($scope, $stateParams){
+		console.log($stateParams.id);
+	});
+
+	angular.module('app').controller('MyOrderListCtrl', function($scope, order){
+		$scope.orders = order;
+	});
 
 })();
