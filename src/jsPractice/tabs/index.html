@@ -1,111 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS tabs</title>
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        body {
-            margin: 10px auto;
-            width: 800px;
-        }
-
-        .tabs {
-
-        }
-
-        .tabs > ul {
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tabs > ul > li {
-            display: inline-block;
-            height: 36px;
-            padding: 0px 18px;
-        }
-
-        .tabs > ul > li.selected {
-            border: 1px solid #ddd;
-            border-bottom: 1px solid #fff;
-            margin-bottom: -1px;
-        }
-
-
-        .tabs > ul > li > a {
-            line-height: 36px;
-            font-size: 18px;
-            color: #5196df;
-        }
-
-        .tabs > ul > li.selected > a{
-            color: #bfbfbf;
-        }
-
-        .tags > ul {
-            padding: 5px 10px;
-        }
-
-        .tags > ul > li {
-            display: inline-block;
-            padding: 0 10px;
-            margin: 0px 5px 5px 0px;
-            background: #56c0e0;
-            border-radius: 3px;
-        }
-
-        .tags > ul > li > a {
-            font-size: 12px;
-            line-height: 22px;
-            color: #fff;
-        }
-
-        .contents > ul {
-            padding: 0px 10px;
-        }
-
-
-        .contents > ul > li {
-            padding-top: 6px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .articleHeader {
-            font-size: 16px;
-            line-height: 28px;
-            color: #5196df;
-        }
-
-        .articleHeader > .fa-star-o {
-            float: right;
-        }
-
-        .articleHeader > span {
-            padding-left: 16px;
-        }
-
-        .articleFooter {
-            font-size: 12px;
-            line-height: 24px;
-        }
-
-        .articleFooter > i{
-            padding-right: 10px;
-        }
-
-    </style>
+    <title>JS tabs</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="tabs">
@@ -168,31 +67,6 @@
             </li>
         </ul>
     </div>
-    <script>
-        window.onload = function () {
-            var lis =  document.querySelectorAll(".tabs > ul > li");
-            for(var i=0; i<lis.length; i++){
-                lis[i].onclick = (function(li){
-                   return function(){
-                       clearSelected(lis);
-
-                       if(!(li.classList.contains('selected'))){
-                           li.classList.add('selected');
-                       }
-                       //call Ajax to get JSON for data, update contents area
-                       //use innerHTML
-                       //TODO
-                   }
-                })(lis[i]);
-            }
-        }
-
-        function clearSelected(lis) {
-            for(var i=0; i<lis.length; i++){
-                lis[i].classList.remove('selected');
-            }
-        }
-
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
