@@ -1,0 +1,66 @@
+body{ font-size:12px;}
+.main {
+    width: 400px;
+    margin: 20px auto;
+}
+.main .msg-content {
+    width: 400px;
+    height: 20px;
+    line-height: 18px;
+}
+.main p{
+    float: right;
+    margin: 0;
+}
+
+.main .send {
+    background: #fff;
+    position: relative;
+    border: 1px solid #ccc;
+    height: 68px;
+    margin: 4px 0 0;
+    padding: 5px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15) inset;
+}
+.main .send.clicked {
+    border-color: #fa7d3c;
+    box-shadow: none;
+}
+.main textarea{
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+    border-width: 0px;
+    font-size: 14px;
+    word-wrap: break-word;
+    line-height: 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    outline: none;
+    width: 390px;
+    height: 58px;
+    resize: none;
+}
+
+.main a{
+    float: right;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+    line-height: 29px;
+    text-align: center;
+    font-size: 14px;
+    background: #ff8140;
+    border: 1px solid #f77c3d;
+    color: #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.25);
+    text-decoration: none;
+    margin-top: 5px;
+}
+.main a.disable {
+    background: #ffc09f;
+    color: #fff;
+    border: 1px solid #fbbd9e;
+    box-shadow: none;
+    cursor: default;
+}
