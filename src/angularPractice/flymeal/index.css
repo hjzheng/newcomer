@@ -1,3 +1,7 @@
+/*
+* CSS写的比较烂, 有时间再重构吧
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -340,6 +344,7 @@ a {
 .restaurant-details-nav > li > a {
     border-radius: 3px;
     padding: 5px 10px;
+    color: #000;
 }
 
 .restaurant-details-nav > li:hover > a {
@@ -375,11 +380,14 @@ a {
 
 .back-button {
     position: absolute;
-    width: 50px;
+    width: 70px;
     height: 50px;
-    left: -50px;
+    left: -90px;
     top: 0;
+    line-height: 50px;
     padding: 0 10px;
+    font-size: 24px;
+    color: orange;
 }
 
 .restaurant-details-body {
@@ -399,3 +407,43 @@ a {
     width: 100%;
 }
 
+.table > thead > tr > td {
+    padding: 5px 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.table > tbody > tr > td {
+    padding: 5px 6px;
+    font-size: 14px;
+}
+
+.paging-area {
+    float: right;
+    margin: 10px 0;
+}
+
+.paging {
+
+}
+
+.paging > li {
+    float: left;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.paging  a[disabled=disabled] {
+    color: #cccccc;;
+}
+
+.paging input[type=text] {
+    border: 1px solid #ccc;
+    width: 30px;
+    border-radius: 3px;
+}
+
+.paging input[type=text] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

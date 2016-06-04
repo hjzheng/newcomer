@@ -116,7 +116,17 @@
 	});
 
 	angular.module('app').controller('MyOrderListCtrl', function($scope, order){
-		$scope.orders = order;
+
+		$scope.options = {
+			currentPage: 1,
+			totalItems: order.length,
+			pageSize: 20
+		};
+
+		$scope.reloadData = function(pageSetting){
+			console.log('reload data');
+			$scope.orders = _.slice(order, (pageSetting.currentPage - 1) * pageSetting.pageSize, pageSetting.currentPage * pageSetting.pageSize);
+		}
 	});
 
 })();
