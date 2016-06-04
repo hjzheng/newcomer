@@ -47,7 +47,7 @@
 7. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
 8. 练习
     - Tab http://www.angularjs.cn/
-    - Todo List AngularJS官网的Todo List, 用原生JS写 https://angularjs.org/
+    - Todo List 用原生JS写AngularJS官网的Todo List https://angularjs.org/
     - login http://www.angularjs.cn/login
 
 
