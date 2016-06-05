@@ -1,28 +1,28 @@
 var todoList = [
-    {text: "learn angular", done: true},
-    {text: "build an angular app", done: false}
+    {text: 'learn angular', done: true},
+    {text: 'build an angular app', done: false}
 ];
 
 
-window.onload = function () {
-    var input = document.getElementById('in');
-    var liList = document.getElementById('ul')
-    var archive = document.getElementById('archive');
-    var btn = document.getElementById('btn');
-    var remainEl = document.getElementById('remain');
+window.onload = function() {
+	var input = document.getElementById('in');
+	var liList = document.getElementById('ul')
+	var archive = document.getElementById('archive');
+	var btn = document.getElementById('btn');
+	var remainEl = document.getElementById('remain');
 
     init();
 
-    btn.onclick = function () {
-        if(input.value){
-            var todo = {text: input.value, done: false};
-            todoList.push(todo)
-            appendTodo(todo);
-            updateSummary();
-        }
-    };
+	btn.onclick = function() {
+		if (input.value) {
+			var todo = {text: input.value, done: false};
+			todoList.push(todo)
+			appendTodo(todo);
+			updateSummary();
+		}
+	};
 
-    archive.onclick = function () {
+	archive.onclick = function () {
         todoList = todoList.filter(function(todo){
             return todo.done === false;
         });

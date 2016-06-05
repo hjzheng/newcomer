@@ -1,0 +1,23 @@
+{
+  "name": "newcomer",
+  "version": "1.0.0",
+  "description": "新人培训 (零基础培训)",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjzheng/newcomer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjzheng/newcomer/issues"
+  },
+  "homepage": "https://github.com/hjzheng/newcomer#readme",
+  "devDependencies": {
+    "eslint": "^2.11.1",
+    "eslint-config-defaults": "^9.0.0"
+  }
+}
