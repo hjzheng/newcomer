@@ -1,4 +1,4 @@
-(function () {
+(function() {
 	angular.module('app.directive', []);
 	angular.module('app.directive').directive('myRank', function(){
 		return {
