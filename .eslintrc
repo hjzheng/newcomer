@@ -6,7 +6,7 @@
     "console": true
   },
 
-  "extends": ["defaults"],
+  "extends": "defaults",
 
   "rules": {
     //在定义对象的时候，getter/setter需要同时出现
@@ -211,10 +211,6 @@
     "wrap-iife": [2, "any"],
     //yoda条件语句就是字面量应该写在比较操作符的左边，而变量应该写在比较操作符的右边。
     //而下面的规则要求，变量写在前面，字面量写在右边
-    "yoda": [2, "never"],
-
-    "standard/object-curly-even-spacing": [2, "either"],
-    "standard/array-bracket-even-spacing": [2, "either"],
-    "standard/computed-property-even-spacing": [2, "even"]
+    "yoda": [2, "never"]
   }
 }
