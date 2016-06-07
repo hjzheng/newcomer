@@ -1,37 +1,37 @@
 (function() {
 	angular.module('app.directive', []);
-	angular.module('app.directive').directive('myRank', function(){
+	angular.module('app.directive').directive('myRank', function() {
 		return {
 			restrict: 'E',
 			scope: {
 				rank: '@'
 			},
 			templateUrl: './directives/myRank.html',
-			controller: function($scope){
-				var num = new Number($scope.rank);
-				var stars = []
-				for(var i=0; i<num; i++){
-					stars.push(true)
+			controller: function($scope) {
+				var num = Number($scope.rank);
+				var stars = [];
+				for (var i = 0; i < num; i++) {
+					stars.push(true);
 				}
-				for(var i=0; i<(5 - num); i++){
-					stars.push(false)
+				for (var j = 0; j < (5 - num); j++) {
+					stars.push(false);
 				}
 				$scope.stars = stars;
 			}
-		}
+		};
 	});
 
-	angular.module('app.directive').directive('myRestaurantCard', function () {
+	angular.module('app.directive').directive('myRestaurantCard', function() {
 		return {
 			restrict: 'E',
 			scope: {
 				restaurant: '='
 			},
 			templateUrl: './directives/myRestaurantCard.html'
-		}
+		};
 	});
 
-	angular.module('app.directive').directive('myPaging', function () {
+	angular.module('app.directive').directive('myPaging', function() {
 		return {
 			restrict: 'E',
 			/*
@@ -39,10 +39,10 @@
 			* */
 			scope: {
 				options: '=',
-				onChange: '&',
+				onChange: '&'
 			},
 			templateUrl: './directives/myPaging.html',
-			controller: function ($scope, $element, $attrs) {
+			controller: function($scope, $element, $attrs) {
 
 				$scope.options.pageSize = $scope.options.pageSize || 10;
 
@@ -59,25 +59,22 @@
 				};
 
 				$scope.prevPage = function() {
-					$scope.options.currentPage = $scope.jumpToPageNum =
-						parseInt($scope.options.currentPage) <= 1 ? 1 : parseInt($scope.options.currentPage) - 1;
+					$scope.options.currentPage = $scope.jumpToPageNum = parseInt($scope.options.currentPage, 10) <= 1 ? 1 : parseInt($scope.options.currentPage, 10) - 1;
 				};
 
 				$scope.nextPage = function() {
-					$scope.options.currentPage = $scope.jumpToPageNum =
-						$scope.options.currentPage < $scope.totalPages ? parseInt($scope.options.currentPage) + 1 : $scope.totalPages;
+					$scope.options.currentPage = $scope.jumpToPageNum = $scope.options.currentPage < $scope.totalPages ? parseInt($scope.options.currentPage, 10) + 1 : $scope.totalPages;
 				};
 
 				$scope.lastPage = function() {
 					$scope.options.currentPage = $scope.jumpToPageNum = $scope.totalPages;
 				};
 
-				$scope.$watchCollection($attrs.options, function(newValue, oldValue){
+				$scope.$watchCollection($attrs.options, function(newValue, oldValue) {
 					if (newValue.pageSize !== oldValue.pageSize) {
-						//当 pageSize 数据变化, 更新新总页数
+						// 当 pageSize 数据变化, 更新新总页数
 						$scope.totalPages = getTotalPages();
-					
-						if(newValue.currentPage !== 1){
+						if (newValue.currentPage !== 1) {
 							newValue.currentPage = 1;
 						} else {
 							$scope.onChange({pageSetting: newValue});
@@ -89,7 +86,7 @@
 
 				$scope.jumpToPageNum = 1;
 
-				$scope.jumpTo = function () {
+				$scope.jumpTo = function() {
 					if (!/^[0-9]*[1-9][0-9]*$/.test($scope.jumpToPageNum) || $scope.jumpToPageNum > $scope.totalPages) {
 						$scope.jumpToPageNum = $scope.options.currentPage;
 					} else {
@@ -97,6 +94,6 @@
 					}
 				};
 			}
-		}
-	})
+		};
+	});
 })();

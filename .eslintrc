@@ -3,10 +3,19 @@
     "document": true,
     "navigator": true,
     "window": true,
-    "console": true
+    "console": true,
+    "angular": true,
+    "_": true
   },
 
   "extends": "defaults",
+
+  /*
+  配置规则 http://eslint.org/docs/user-guide/configuring
+  "off" or 0 - turn the rule off
+  "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
+  "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
+  */
 
   "rules": {
     //在定义对象的时候，getter/setter需要同时出现

@@ -1,10 +1,10 @@
 /**
  * Created by hjzheng on 16/5/31.
  */
-(function () {
+(function() {
 	angular.module('app', ['ui.router', 'app.directive']);
 
-	angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
+	angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('home', {
 				url: '/home',
@@ -22,9 +22,9 @@
 				controller: 'MyOrderListCtrl',
 				resolve: {
 					order: function($http, $stateParams, $filter) {
-						return $http.get('data/order.json').then(function(response){
+						return $http.get('data/order.json').then(function(response) {
 							return $filter('filter')(response.data, {'phoneNumber': $stateParams.phoneNumber});
-						}, function () {
+						}, function() {
 							return '出错了';
 						});
 					}
@@ -36,9 +36,9 @@
 				controller: 'MyRestaurantCtrl',
 				resolve: {
 					restaurant: function($http, $stateParams) {
-						return $http.get('data/restaurant.json').then(function(response){
-							return _.find(response.data, {'id': new Number($stateParams.id)});
-						}, function () {
+						return $http.get('data/restaurant.json').then(function(response) {
+							return _.find(response.data, {'id': Number($stateParams.id)});
+						}, function() {
 							return '出错了';
 						});
 					}
@@ -62,60 +62,60 @@
 
 		$urlRouterProvider.otherwise('/home');
 	});
-	
-	angular.module('app').controller('MainCtrl', function ($scope) {
+
+	angular.module('app').controller('MainCtrl', function($scope) {
 
 	});
 
-	angular.module('app').controller('HomeCtrl', function ($scope, $http) {
+	angular.module('app').controller('HomeCtrl', function($scope, $http) {
 
-		$http.get('data/restaurant.json').then(function(response){
+		$http.get('data/restaurant.json').then(function(response) {
 			$scope.restaurants = response.data;
-		}, function () {
-			$scope.showMessage = "服务器出错了, 请联系管理员";
+		}, function() {
+			$scope.showMessage = '服务器出错了, 请联系管理员';
 		});
 
 		$scope.tastes = [
-			{name: '全部口味', value : undefined},
-			{name: '中餐', value:'中餐'},
-			{name: '西餐', value:'西餐'},
+			{name: '全部口味', value: undefined},
+			{name: '中餐', value: '中餐'},
+			{name: '西餐', value: '西餐'},
 			{name: '日韩', value: '日韩'}
 		];
 
 		$scope.sorts = [
-			{name: '综合排序', value : undefined},
+			{name: '综合排序', value: undefined},
 			{name: '销量排序', value: 'salesVolume'},
-			{name: '评价排序', value:'rank'},
+			{name: '评价排序', value: 'rank'},
 			{name: '起送价', value: 'startPrice'}
 		];
 
 	});
 
 	angular.module('app').controller('MyOrderCtrl', function($scope, $state) {
-		$scope.query = function(){
+		$scope.query = function() {
 			$state.go('myOrderList', {phoneNumber: $scope.phoneNumber});
-		}
+		};
 	});
 
-	angular.module('app').controller('MyRestaurantCtrl', function($scope, $state, restaurant){
+	angular.module('app').controller('MyRestaurantCtrl', function($scope, $state, restaurant) {
 		$scope.restaurant = restaurant;
 		$state.go('restaurants.menu');
 	});
 
-	angular.module('app').controller('MyMenuCtrl', function($scope, $stateParams){
-		//嵌套视图, 默认继承传递的参数
-		console.log($stateParams.id);
+	angular.module('app').controller('MyMenuCtrl', function($scope, $stateParams) {
+		// 嵌套视图, 默认继承传递的参数
+		// console.log($stateParams.id);
 	});
 
-	angular.module('app').controller('MyEvaluateCtrl', function($scope, $stateParams){
-		console.log($stateParams.id);
+	angular.module('app').controller('MyEvaluateCtrl', function($scope, $stateParams) {
+		// console.log($stateParams.id);
 	});
 
-	angular.module('app').controller('MyCommentCtrl', function($scope, $stateParams){
-		console.log($stateParams.id);
+	angular.module('app').controller('MyCommentCtrl', function($scope, $stateParams) {
+		// console.log($stateParams.id);
 	});
 
-	angular.module('app').controller('MyOrderListCtrl', function($scope, order){
+	angular.module('app').controller('MyOrderListCtrl', function($scope, order) {
 
 		$scope.options = {
 			currentPage: 1,
@@ -123,10 +123,10 @@
 			pageSize: 20
 		};
 
-		$scope.reloadData = function(pageSetting){
-			console.log('reload data');
+		$scope.reloadData = function(pageSetting) {
+			// console.log('reload data');
 			$scope.orders = _.slice(order, (pageSetting.currentPage - 1) * pageSetting.pageSize, pageSetting.currentPage * pageSetting.pageSize);
-		}
+		};
 	});
 
 })();

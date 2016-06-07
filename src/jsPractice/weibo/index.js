@@ -55,7 +55,7 @@ window.onload = function() {
 
 	oA.onclick = function() {
 		if (this.className === 'disable') {
-			console.log('maybe has problem!');
+			// console.log('maybe has problem!');
 		} else {
 			window.alert('发布成功！');
 		}
