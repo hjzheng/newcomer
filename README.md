@@ -80,6 +80,10 @@
    - [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 3. [ESLint规范](https://github.com/Jocs/ESLint_docs)
 
+#### Git使用 和 代码review
+
+1. [git使用](http://rogerdudler.github.io/git-guide/)
+2. [代码review](https://gist.github.com/arzyu/0deeac12b8cc4db3b6e0)
 
 #### 补充资料
 
@@ -96,4 +100,6 @@
     - Ajax http://www.imooc.com/learn/250
 
 
-#### 添加 ESlint 校验, 以后再慢慢修改吧
+#### TODO
+1. 添加ESLint校验, 并修改代码
+2. 添加CSS校验 (目前还不清楚选择什么)
