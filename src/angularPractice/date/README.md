@@ -7,4 +7,4 @@
     5. 基本的HTML和CSS使用
 
 - 参考资料:
-    - JQuery UI等日历插件的 HTML结果和CSS
+    - JQuery UI等日历插件的 HTML结构和CSS

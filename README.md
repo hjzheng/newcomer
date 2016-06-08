@@ -95,11 +95,10 @@
 
 - 对于技术优秀的实习生, 可以直接通过练习, 检测其水平, 水平合格者, 可以直接跳过相应的阶段.
 - 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材, 当学生通过下面的知识学习后, 再回头学习犀牛书.
-    - JS入门 http://www.imooc.com/learn/36
-    - JS高级 http://www.imooc.com/learn/10
-    - Ajax http://www.imooc.com/learn/250
-
+    - [JS入门](http://www.imooc.com/learn/36)
+    - [JS高级](http://www.imooc.com/learn/10)
+    - [Ajax](http://www.imooc.com/learn/250)
 
 #### TODO
 1. 添加ESLint校验, 并修改代码
-2. 添加CSS校验 (目前还不清楚选择什么)
+2. 添加CSSLint校验, 了解CSSlint规则

@@ -4,7 +4,8 @@
   "description": "新人培训 (零基础培训)",
   "main": "index.js",
   "scripts": {
-    "test": "eslint src"
+    "test": "eslint src",
+    "csslint": "csslint src"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/hjzheng/newcomer#readme",
   "devDependencies": {
+    "csslint": "^0.10.0",
     "eslint": "^2.11.1",
     "eslint-config-defaults": "^9.0.0"
   }

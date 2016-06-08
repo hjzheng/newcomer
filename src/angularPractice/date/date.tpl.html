@@ -3,10 +3,12 @@
         <thead>
             <tr>
                 <th colspan="7">
+                    <a href="javascript:void(0)" ng-click="prev()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
                     <select ng-options="item.value as item.name for item in vm.months" ng-model="month">
                     </select>
                     <select ng-options="item.value as item.name for item in vm.years" ng-model="year">
                     </select>
+                    <a href="javascript:void(0)" ng-click="next()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </th>
             </tr>
             <tr>

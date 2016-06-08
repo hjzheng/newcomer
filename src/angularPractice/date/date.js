@@ -57,7 +57,7 @@
 					daysMatrix[j].push(i);
 					if (daysMatrix[j].length === 7) {
 						j++;
-						daysMatrix[j] = [];
+						if (i !== days) daysMatrix[j] = [];
 					}
 				}
 
@@ -67,6 +67,18 @@
 				this.dateArr = date.split('-');
 			}
 		};
+
+		// 根据用户填写的数据自动生成年份 上下各推5年
+		function getYears(year) {
+			var years = [];
+			var start = year - 5;
+			var end = year + 5;
+			for (var i = start; i < end; i++) {
+				years.push({name: i + '年', value: i});
+			}
+
+			return years;
+		}
 
 		return {
 			restrict: 'E',
@@ -96,27 +108,23 @@
 					{name: '十二月', value: 11}
 				];
 
-				// TODO 根据用户填写的数据自动生成年份
-
-				that.years = [
-					{name: '2008年', value: 2008},
-					{name: '2009年', value: 2009},
-					{name: '2010年', value: 2010},
-					{name: '2011年', value: 2011},
-					{name: '2012年', value: 2012},
-					{name: '2013年', value: 2013},
-					{name: '2014年', value: 2014},
-					{name: '2015年', value: 2015},
-					{name: '2016年', value: 2016}
-				];
+				that.years = getYears(Number(dateUtil.dateArr[0]));
 
 				that.selectDay = function(day) {
 					$scope.day = day;
-					console.log($scope.year, $scope.month, $scope.day );
+					// console.log($scope.year, $scope.month, $scope.day);
 				};
 
 				$scope.month = dateUtil.getDate().getMonth();
 				$scope.year = dateUtil.getDate().getFullYear();
+
+				$scope.prev = function() {
+					$scope.month = $scope.month - 1 === -1 ? 11 : $scope.month - 1;
+				};
+
+				$scope.next = function() {
+					$scope.month = $scope.month + 1 === 12 ? 0 : $scope.month + 1;
+				};
 
 				$scope.$watchGroup(['year', 'month'], function(newValue) {
 					if (newValue) {
