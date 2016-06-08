@@ -64,7 +64,7 @@
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
 6. 练习
    - Todo list
-   - 写一个指令 Tabs
+   - 写指令 Tabs, 简单日历
    - 饿了吗页面
 
 #### ES6
@@ -94,7 +94,7 @@
 #### 计划变更
 
 - 对于技术优秀的实习生, 可以直接通过练习, 检测其水平, 水平合格者, 可以直接跳过相应的阶段.
-- 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材.
+- 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材, 当学生通过下面的知识学习后, 再回头学习犀牛书.
     - JS入门 http://www.imooc.com/learn/36
     - JS高级 http://www.imooc.com/learn/10
     - Ajax http://www.imooc.com/learn/250
