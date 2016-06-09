@@ -21,6 +21,7 @@
 				return new Date(tempDateArr.join('-'));
 			},
 			// 取得当月中的天数
+			// 参数 年, 月(0-11)
 			getDaysInMonth: function(year, month) {
 				var days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 				if (month === 1) {
