@@ -162,3 +162,5 @@ test(); // ['var', 'var']
 - apply/call调用模式
 
 更多内容, 请参考本人在 segmentfault 上的回答 https://segmentfault.com/q/1010000003902369/a-1020000003902506
+
+#### 高阶函数

@@ -37,12 +37,12 @@
 **以自学为主, 有问题问导师, 独自完成练习, 导师可以带着做一个简单的练习**
 
 1. 语法: 标识符, 数字, 字符串, 语句, 表达式, 字面量, 函数
-2. 对象, 函数, 继承, 数组, 正则, 变量提升, 闭包, 原型继承, 立即自执行函数, 高阶函数等
+2. 对象, 函数, 继承, 数组, 正则, 变量提升, 闭包, 原型继承, 立即自执行函数, 高阶函数, 函数的四种调用方式等
+3. DOM, BOM 和 Ajax 请求
     - [JavaScript权威指南](http://item.jd.com/10974436.html)
     - [codecademy.com Javascript 练习](https://www.codecademy.com/learn/javascript) (可选)
     - [NodeSchool JS教程](https://github.com/sethvincent/javascripting) (可选)
-3. 函数的四种调用模式 (重点介绍) 前3点都可以参考 [JavaScript语言精髓](http://item.jd.com/11090963.html) (选读)
-4. DOM, BOM 和 Ajax请求
+4. [JavaScript语言精髓](http://item.jd.com/11090963.html) (选读)
 5. [Effective JavaScript：编写高质量JavaScript代码的68个有效方法](http://item.jd.com/11354665.html)
 6. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
 7. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
@@ -65,7 +65,7 @@
 6. 练习
    - Todo list
    - 写指令 Tabs, 简单日历
-   - 饿了吗页面
+   - 飞饭或饿了吗页面
 
 #### ES6
 
@@ -80,7 +80,7 @@
    - [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 3. [ESLint规范](https://github.com/Jocs/ESLint_docs)
 
-#### Git使用 和 代码review
+#### Git 使用和代码 review
 
 1. [git使用](http://rogerdudler.github.io/git-guide/)
 2. [代码review](https://gist.github.com/arzyu/0deeac12b8cc4db3b6e0)
