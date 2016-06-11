@@ -127,8 +127,9 @@ function minErr(module, ErrorConstructor) {
 JavaScript 支持词法作用域, 除了极少数例外, 对变量的引用都会被绑定到声明变量最近的作用域中. 但是, JavaScript 不支持块级作用域, 即变量定义的作用域不是离它最近的封闭语句或代码块,而是包含他们的函数.
 
 关于变量提升, 很多面试题中, 会考察该知识点, 所以务必掌握, 关于变量提升, 参考以下内容:
-[变量提升](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting)
-[var](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/var)
+
+- [变量提升](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting)
+- [var](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/var)
 
 JavaScript 没有块级作用域的一个例外恰好是异常处理,就是 catch 语句块.
 
