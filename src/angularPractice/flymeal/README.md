@@ -13,3 +13,7 @@
     - 图标 font-awesome
     - 如果牵扯到复杂的数组操作, 可以使用 Lodash
     - UI-Router官网
+
+- 本例的使用方法
+    - npm install
+    - 在web容器中, 访问 index.html
