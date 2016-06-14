@@ -8,7 +8,7 @@
     "_": true
   },
 
-  "extends": ["defaults", "angular"],
+  "extends": ["defaults"],
 
   /*
   如果觉得规则不合适, 可以在rules中对上面的规则进行覆盖 参考 https://github.com/Gillespie59/eslint-plugin-angular
