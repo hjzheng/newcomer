@@ -76,7 +76,7 @@
     //const申明的变量禁止修改
     "no-const-assign": 2,
     //在正则表达式中禁止使用控制符（详见官网）
-    "no-control-regex": 2,
+    "no-control-regex": 0,
     //禁止使用debugger语句
     "no-debugger": 2,
     //禁止使用delete删除var申明的变量

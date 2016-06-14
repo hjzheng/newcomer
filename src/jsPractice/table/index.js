@@ -43,3 +43,4 @@ var options3 = {
 var t1 = new Table(options1);
 var t2 = new Table(options2);
 var t3 = new Table(options3);
+
