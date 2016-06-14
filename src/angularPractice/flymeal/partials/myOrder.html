@@ -1,7 +1,7 @@
 <div class="container myorder">
     <h3 class="myorder-title">订单查询 <span style="color:red;" ng-show="search.phoneNumber.$error.pattern">请输入正确的手机号码</span></h3>
     <form class="myorder-search" name="search">
-        <label>手机号</label><input type="text" name="phoneNumber" ng-model="phoneNumber" ng-pattern="/^(?:13\d|15[89])-?\d{5}(\d{3}|\*{3})$/"> <button ng-disabled="search.$invalid" ng-click="query()">查询</button>
+        <label>手机号</label><input type="text" name="phoneNumber" ng-model="vm.phoneNumber" ng-pattern="/^(?:13\d|15[89])-?\d{5}(\d{3}|\*{3})$/"> <button ng-disabled="search.$invalid" ng-click="vm.query()">查询</button>
     </form>
     <div class="backhome"><a ui-sref="home"><i class="fa fa-share backicon" aria-hidden="true"></i>回到选餐馆页面</a></div>
 </div>

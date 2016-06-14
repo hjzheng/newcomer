@@ -9,17 +9,29 @@
 			.state('home', {
 				url: '/home',
 				templateUrl: './partials/home.html',
-				controller: 'HomeCtrl'
+				controller: 'HomeController',
+				controllerAs: 'vm',
+				resolve: {
+					restaurants: function($http) {
+						return $http.get('data/restaurant.json').then(function(response) {
+							return response.data;
+						}, function() {
+							return '服务器出错了, 请联系管理员';
+						});
+					}
+				}
 			})
 			.state('myOrder', {
 				url: '/myOrder',
 				templateUrl: './partials/myOrder.html',
-				controller: 'MyOrderCtrl'
+				controller: 'MyOrderController',
+				controllerAs: 'vm'
 			})
 			.state('myOrderList', {
 				url: '/myOrderList/:phoneNumber',
 				templateUrl: './partials/myOrderList.html',
-				controller: 'MyOrderListCtrl',
+				controller: 'MyOrderListController',
+				controllerAs: 'vm',
 				resolve: {
 					order: function($http, $stateParams, $filter) {
 						return $http.get('data/order.json').then(function(response) {
@@ -33,7 +45,8 @@
 			.state('restaurants', {
 				url: '/restaurants/:id',
 				templateUrl: './partials/myRestaurant.html',
-				controller: 'MyRestaurantCtrl',
+				controller: 'MyRestaurantController',
+				controllerAs: 'vm',
 				resolve: {
 					restaurant: function($http, $stateParams) {
 						return $http.get('data/restaurant.json').then(function(response) {
@@ -47,42 +60,43 @@
 			.state('restaurants.menu', {
 				url: '/menu',
 				templateUrl: './partials/myMenu.html',
-				controller: 'MyMenuCtrl'
+				controller: 'MyMenuController',
+				controllerAs: 'vm'
 			})
 			.state('restaurants.evaluate', {
 				url: '/evaluate',
 				templateUrl: './partials/myEvaluate.html',
-				controller: 'MyEvaluateCtrl'
+				controller: 'MyEvaluateController',
+				controllerAs: 'vm'
 			})
 			.state('restaurants.comment', {
 				url: '/comment',
 				templateUrl: './partials/myComments.html',
-				controller: 'MyCommentCtrl'
+				controller: 'MyCommentController',
+				controllerAs: 'vm'
 			});
 
 		$urlRouterProvider.otherwise('/home');
 	});
 
-	angular.module('app').controller('MainCtrl', function($scope) {
+	angular.module('app').controller('MainController', function($scope) {
 
 	});
 
-	angular.module('app').controller('HomeCtrl', function($scope, $http) {
+	angular.module('app').controller('HomeController', function($scope, restaurants) {
 
-		$http.get('data/restaurant.json').then(function(response) {
-			$scope.restaurants = response.data;
-		}, function() {
-			$scope.showMessage = '服务器出错了, 请联系管理员';
-		});
+		var vm = this;
 
-		$scope.tastes = [
+		vm.restaurants = restaurants;
+
+		vm.tastes = [
 			{name: '全部口味', value: undefined},
 			{name: '中餐', value: '中餐'},
 			{name: '西餐', value: '西餐'},
 			{name: '日韩', value: '日韩'}
 		];
 
-		$scope.sorts = [
+		vm.sorts = [
 			{name: '综合排序', value: undefined},
 			{name: '销量排序', value: 'salesVolume'},
 			{name: '评价排序', value: 'rank'},
@@ -91,41 +105,45 @@
 
 	});
 
-	angular.module('app').controller('MyOrderCtrl', function($scope, $state) {
-		$scope.query = function() {
-			$state.go('myOrderList', {phoneNumber: $scope.phoneNumber});
+	angular.module('app').controller('MyOrderController', function($state) {
+		var vm = this;
+		vm.query = function() {
+			$state.go('myOrderList', {phoneNumber: vm.phoneNumber});
 		};
 	});
 
-	angular.module('app').controller('MyRestaurantCtrl', function($scope, $state, restaurant) {
-		$scope.restaurant = restaurant;
+	angular.module('app').controller('MyRestaurantController', function($state, restaurant) {
+		var vm = this;
+		vm.restaurant = restaurant;
 		$state.go('restaurants.menu');
 	});
 
-	angular.module('app').controller('MyMenuCtrl', function($scope, $stateParams) {
+	angular.module('app').controller('MyMenuController', function($stateParams) {
 		// 嵌套视图, 默认继承传递的参数
 		// console.log($stateParams.id);
 	});
 
-	angular.module('app').controller('MyEvaluateCtrl', function($scope, $stateParams) {
+	angular.module('app').controller('MyEvaluateController', function($stateParams) {
 		// console.log($stateParams.id);
 	});
 
-	angular.module('app').controller('MyCommentCtrl', function($scope, $stateParams) {
+	angular.module('app').controller('MyCommentController', function($stateParams) {
 		// console.log($stateParams.id);
 	});
 
-	angular.module('app').controller('MyOrderListCtrl', function($scope, order) {
+	angular.module('app').controller('MyOrderListController', function(order) {
 
-		$scope.options = {
+		var vm = this;
+
+		vm.options = {
 			currentPage: 1,
 			totalItems: order.length,
 			pageSize: 20
 		};
 
-		$scope.reloadData = function(pageSetting) {
+		vm.reloadData = function(pageSetting) {
 			// console.log('reload data');
-			$scope.orders = _.slice(order, (pageSetting.currentPage - 1) * pageSetting.pageSize, pageSetting.currentPage * pageSetting.pageSize);
+			vm.orders = _.slice(order, (pageSetting.currentPage - 1) * pageSetting.pageSize, pageSetting.currentPage * pageSetting.pageSize);
 		};
 	});
 

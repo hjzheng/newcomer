@@ -6,10 +6,10 @@
     <form class="search clearfix">
         <ul class="search-ac">
             <li>
-                <select ng-model="sort" ng-options="item.value as item.name for item in sorts"></select>
+                <select ng-model="sort" ng-options="item.value as item.name for item in vm.sorts"></select>
             </li>
             <li>
-                <select ng-model="taste" ng-options="item.value as item.name for item in tastes"></select>
+                <select ng-model="taste" ng-options="item.value as item.name for item in vm.tastes"></select>
             </li>
             <li class="line">|</li>
             <li>
@@ -26,7 +26,7 @@
     </form>
     <div class="restaurants clearfix">
         <ul>
-            <li ng-repeat="restaurant in restaurants | filter: {'supportOnlinePay':supportOnlinePay, 'supportIceTea':supportIceTea, 'taste': taste} | filter:search
+            <li ng-repeat="restaurant in vm.restaurants | filter: {'supportOnlinePay':supportOnlinePay, 'supportIceTea':supportIceTea, 'taste': taste} | filter:search
             | orderBy:sort">
                 <a href="#/restaurants/{{restaurant.id}}">
                     <my-restaurant-card restaurant="restaurant"></my-restaurant-card>

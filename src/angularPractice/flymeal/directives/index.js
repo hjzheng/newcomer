@@ -70,7 +70,7 @@
 					$scope.options.currentPage = $scope.jumpToPageNum = $scope.totalPages;
 				};
 
-				$scope.$watchCollection($attrs.options, function(newValue, oldValue) {
+				$scope.$watchCollection('options', function(newValue, oldValue) {
 					if (newValue.pageSize !== oldValue.pageSize) {
 						// 当 pageSize 数据变化, 更新新总页数
 						$scope.totalPages = getTotalPages();

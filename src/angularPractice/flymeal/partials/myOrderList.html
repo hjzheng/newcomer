@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="order in orders">
+            <tr ng-repeat="order in vm.orders">
                 <td>{{order.id}}</td>
                 <td>{{order.name}}</td>
                 <td>{{order.phoneNumber}}</td>
@@ -23,7 +23,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="6"> <div class="paging-area"><my-paging options="options" on-change="reloadData(pageSetting)"></my-paging></div></td>
+                <td colspan="6"> <div class="paging-area"><my-paging options="vm.options" on-change="vm.reloadData(pageSetting)"></my-paging></div></td>
             </tr>
         </tfoot>
     </table>
