@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch 练习</title>
+    <link rel="stylesheet" href="./switch.css">
+</head>
+<body ng-controller="MainController">
+    <h2>Switch</h2>
+    <p>
+        <my-switch on="on" off="off" ng-model="test1"></my-switch>
+        {{test1}}
+        <pre>
+            <code>
+ &lt;my-switch on="on" off="off" ng-model="test1"&gt;&lt;/my-switch&gt;
+            </code>
+        </pre>
+    </p>
+    <p>
+        <my-switch on="开" off="关" ng-model="test2"></my-switch>
+        {{test2}}
+        <pre>
+            <code>
+ &lt;my-switch on="开" off="关" ng-model="test2"&gt;&lt;/my-switch&gt;
+            </code>
+        </pre>
+    </p>
+    <p>
+        <my-switch on="亮" off="灭" size="large" true-value="亮" false-value="灭"  ng-model="test3"></my-switch>
+        {{test3}}
+        <pre>
+            <code>
+ &lt;my-switch on="亮" off="灭" size="large" true-value="亮" false-value="灭"  ng-model="test3"&gt;&lt;/my-switch&gt;
+            </code>
+        </pre>
+    </p>
+    <p>
+        <my-switch on="on" off="off" size="small"  true-value="on" false-value="off" color="blue" ng-model="test4"></my-switch>
+        {{test4}}
+        <pre>
+            <code>
+ &lt;my-switch on="on" off="off" size="small"  true-value="on" false-value="off" color="blue" ng-model="test4"&gt;&lt;/my-switch&gt;
+            </code>
+        </pre>
+    </p>
+    <p>
+        <my-switch on="喜" off="悲"  true-value="on" false-value="off" color="blue" ng-model="test6.switch"></my-switch>
+        {{test6.switch}}
+        <pre>
+            <code>
+ &lt;my-switch on="喜" off="悲"  true-value="on" false-value="off" color="blue" ng-model="test6.switch"&gt;&lt;/my-switch&gt;
+            </code>
+        </pre>
+    </p>
+    <p>
+        <my-switch on="on" off="off" size="small" color="blue" disabled="true" ng-model="test5"></my-switch>
+        {{test5}}
+        <pre>
+            <code>
+ &lt;my-switch on="on" off="off" size="small" color="blue" disabled="true" ng-model="test5"&gt;&lt;/my-switch&gt;
+            </code>
+        </pre>
+    </p>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="switch.js"></script>
+</html>
