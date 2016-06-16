@@ -1,0 +1,449 @@
+/*
+* CSS写的比较烂, 有时间再重构吧
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.header {
+    height: 56px;
+    border-top: 4px solid #ff6922;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 0 18px;
+}
+
+.mobile-client {
+    float: left;
+}
+
+.mobile-client i {
+    color: #ff6d29;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.mobile-client > li {
+    float: left;
+    line-height: 56px;
+}
+
+.mobile-client > li > a {
+    color: #ff6d29;
+    font-size: 16px;
+}
+
+.title {
+    width: 170px;
+    float: left;
+    position: relative;
+    left: 36%;
+    line-height: 56px;
+}
+
+.title > a {
+    color: #ff7745;
+    font-size: 28px;
+}
+
+.nav {
+    float: right;
+}
+
+.nav > li {
+    float: left;
+    margin: 0 7px;
+    line-height: 56px;
+}
+
+.nav > li > a {
+    color: #ff6d29;
+    font-size: 14px;
+}
+
+.nav > li:hover > a {
+    color: #d5d5d5;
+}
+
+.line {
+    color: #d5d5d5;
+}
+
+/* home page */
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.location {
+    margin-top: 42px;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 0 10px;
+}
+
+.location a {
+    color: #ff6e2a;
+}
+
+.advertisement {
+    border-bottom: 3px solid #ff6e2a;
+}
+
+.advertisement img{
+    vertical-align: bottom;
+}
+
+.search {
+    background: #fcfcfc;
+    line-height: 46px;
+}
+
+.search-ac {
+    float: left;
+}
+
+.search-ac > li {
+    float: left;
+    font-size: 14px;
+    margin: 0 9px;
+}
+
+.line {
+    color: #d3d3d3;
+}
+
+.search input {
+    height: 24px;
+    font-size: 14px;
+    box-sizing: content-box;
+    vertical-align: middle;
+}
+
+.search select {
+    font-size: 14px;
+    width: 85px;
+    border: 1px solid #d3d3d3;
+    color: #535353;
+}
+
+.select-box {
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+}
+
+.search-box {
+    float: right;
+}
+
+.search-box > li {
+    font-size: 14px;
+    line-height: 46px;
+}
+
+.restaurants > ul {
+    width: 1000px;
+}
+
+.restaurants > ul > li {
+    float: left;
+    width: 331px;
+    height: 116px;
+    border: 1px solid #f0f0f0;
+}
+
+.restaurants > ul > li:nth-child(3n + 3) {
+    border-right: 0px;
+}
+
+.restaurants > ul > li:nth-child(3n + 1) {
+    border-left: 0px;
+}
+
+.restaurant {
+    margin: 10px 5px;
+}
+
+.restaurant > li {
+    float: left;
+}
+
+.restaurant > li > img {
+    margin: 10px;
+}
+
+.restaurant > li > dl {
+    margin: 5px 10px;
+}
+
+.restaurant .name {
+    font-size: 16px;
+    line-height: 26px;
+    color: #727272;
+}
+
+.restaurant .star-points {
+    line-height: 24px;
+    font-size: 12px;
+    color: #ffc328;
+}
+
+.restaurant .desc {
+    line-height: 22px;
+    font-size: 12px;
+    color: #c4c4c4;
+}
+
+.onlinePay {
+    background: red;
+    color: #fff;
+    padding: 1px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.iceTea {
+    background: orange;
+    color: #fff;
+    padding: 1px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+/* my order */
+
+.myorder {
+    width: 800px;
+    padding: 30px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.myorder-title {
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.myorder-search {
+    margin: 13px 0;
+    height: 46px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);;
+}
+
+.myorder-search label {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+    line-height: 46px;
+}
+
+.myorder-search input {
+    font-size: 14px;
+    width: 294px;
+    font-weight: bold;
+    margin: 0 10px;
+    height: 24px;
+}
+
+.myorder-search button {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+    background: #ff8200;
+    padding: 5px 20px;
+    border: 1px solid #ff8200;
+}
+
+.backhome {
+    margin: 50px 0;
+}
+
+.backhome a {
+    color: #ff8200;
+    font-size: 14px;
+}
+
+.backicon {
+    font-size: 25px;
+}
+
+/* restaurant details */
+.restaurant-details {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.restaurant-details-header {
+    margin-top: 20px;
+    width: 960px;
+    height: 68px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+}
+
+.restaurant-details-info {
+    float:left;
+}
+
+.restaurant-details-info > li {
+    float:left;
+    padding: 0 8px;
+}
+
+
+.restaurant-details-info > li > dl {
+    padding: 6px 0;
+}
+
+.restaurant-details-info > li > dl > dt {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.restaurant-details-info > li > dl > dd {
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffc328;
+}
+
+.restaurant-details-nav {
+    float: left;
+}
+
+.restaurant-details-nav > li {
+    float: left;
+    line-height: 68px;
+    font-size: 18px;
+    margin: 0 28px;
+}
+
+.restaurant-details-nav > li > a.active {
+    color: #fff;
+    background: #ff6922;
+}
+
+.restaurant-details-nav > li > a {
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: #000;
+}
+
+.restaurant-details-nav > li:hover > a {
+    color: #fff;
+    background: #ff6922;
+}
+
+.restaurant-details-others {
+    float: right;
+}
+
+.restaurant-details-others > li {
+     float: left;
+     margin: 0 10px;
+ }
+
+.restaurant-details-others > li  dt {
+    line-height: 42px;
+    font-size: 28px;
+    color: #ff6922;
+}
+
+.restaurant-details-others > li  dd {
+    line-height: 26px;
+    font-size: 12px;
+}
+
+.opening {
+    font-size: 14px;
+    line-height: 40px;
+    color: #ffa764;
+}
+
+.back-button {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    left: -90px;
+    top: 0;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 24px;
+    color: orange;
+}
+
+.restaurant-details-body {
+    margin: 20px 0;
+}
+
+.order-list {
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.order-list-header {
+    margin: 10px 0;
+}
+
+.table {
+    width: 100%;
+}
+
+.table > thead > tr > td {
+    padding: 5px 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.table > tbody > tr > td {
+    padding: 5px 6px;
+    font-size: 14px;
+}
+
+.paging-area {
+    float: right;
+    margin: 10px 0;
+}
+
+.paging {
+
+}
+
+.paging > li {
+    float: left;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.paging  a[disabled=disabled] {
+    color: #cccccc;;
+}
+
+.paging input[type=text] {
+    border: 1px solid #ccc;
+    width: 30px;
+    border-radius: 3px;
+}
+
+.paging input[type=text] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

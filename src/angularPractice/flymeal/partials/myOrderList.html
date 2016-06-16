@@ -1,0 +1,30 @@
+<div class="container order-list">
+    <h3 class="order-list-header">我的订单列表</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>订单号</td>
+                <td>餐厅名称</td>
+                <td>您的手机号</td>
+                <td>下单时间</td>
+                <td>订单金额</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in vm.orders">
+                <td>{{order.id}}</td>
+                <td>{{order.name}}</td>
+                <td>{{order.phoneNumber}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.cost}}元</td>
+                <td><a href="">删除</a> | <a href="">退款</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"> <div class="paging-area"><my-paging options="vm.options" on-change="vm.reloadData(pageSetting)"></my-paging></div></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

@@ -7,7 +7,7 @@
 
 **适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面转换(PSD2HTML)**
 
-1. 如何使用 webstorm ( 强调快捷键使用 )
+1. 如何使用 Webstorm ( 强调快捷键使用 )
 2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式, [html规范](https://gist.github.com/hjzheng/e3a1fadb3ef7df69ecef)
 3. 使用Chrome dev tools 调试 CSS, HTML
 4. 使用 JSBin 写自己的 demo 页面
@@ -37,17 +37,19 @@
 **以自学为主, 有问题问导师, 独自完成练习, 导师可以带着做一个简单的练习**
 
 1. 语法: 标识符, 数字, 字符串, 语句, 表达式, 字面量, 函数
-2. 对象, 函数, 继承, 数组, 正则, 闭包, 原型继承, 立即自执行函数
+2. 对象, 函数, 继承, 数组, 正则, 变量提升, 闭包, 原型继承, 立即自执行函数, 高阶函数, 函数的四种调用方式等
+3. DOM, BOM 和 Ajax 请求
+    - [JavaScript权威指南](http://item.jd.com/10974436.html)
     - [codecademy.com Javascript 练习](https://www.codecademy.com/learn/javascript) (可选)
     - [NodeSchool JS教程](https://github.com/sethvincent/javascripting) (可选)
-3. 函数的四种调用模式 (重点介绍) 前3点都可以参考 [JavaScript语言精髓](http://item.jd.com/11090963.html) (选读)
-4. DOM, BOM 和 Ajax请求
-5. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
-6. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
-7. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
-8. 练习
+4. [JavaScript语言精髓](http://item.jd.com/11090963.html) (选读)
+5. [Effective JavaScript：编写高质量JavaScript代码的68个有效方法](http://item.jd.com/11354665.html)
+6. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
+7. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
+8. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
+9. 练习
     - Tab http://www.angularjs.cn/
-    - Todo List AngularJS官网的Todo List, 用原生JS写 https://angularjs.org/
+    - Todo List 用原生JS写AngularJS官网的Todo List https://angularjs.org/
     - login http://www.angularjs.cn/login
 
 
@@ -57,13 +59,14 @@
 
 1. AngularJS官方指南 https://docs.angularjs.org/guide
 2. PhoneCat https://docs.angularjs.org/tutorial
-3. [精通AngularJS](http://www.duokan.com/book/90947) (选读)
+3. [精通AngularJS](http://www.duokan.com/book/90947)
 4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/hjzheng/newcomer/blob/master/src/xmind/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
-6. 练习
+6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/)
+7. 练习
    - Todo list
-   - 写一个指令 Tabs
-   - 饿了吗页面
+   - 写指令 Tabs, 简单日历
+   - 飞饭或饿了吗页面
 
 #### ES6
 
@@ -78,6 +81,10 @@
    - [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 3. [ESLint规范](https://github.com/Jocs/ESLint_docs)
 
+#### Git 使用和代码 review
+
+1. [git使用](http://rogerdudler.github.io/git-guide/)
+2. [代码review](https://gist.github.com/arzyu/0deeac12b8cc4db3b6e0)
 
 #### 补充资料
 
@@ -88,7 +95,11 @@
 #### 计划变更
 
 - 对于技术优秀的实习生, 可以直接通过练习, 检测其水平, 水平合格者, 可以直接跳过相应的阶段.
-- 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材.
-    - JS入门 http://www.imooc.com/learn/36
-    - JS高级 http://www.imooc.com/learn/10
-    - Ajax http://www.imooc.com/learn/250
+- 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材, 当学生通过下面的知识学习后, 再回头学习犀牛书.
+    - [JS入门](http://www.imooc.com/learn/36)
+    - [JS高级](http://www.imooc.com/learn/10)
+    - [Ajax](http://www.imooc.com/learn/250)
+
+#### TODO
+1. 添加ESLint校验, 并修改代码
+2. 添加CSSLint校验, 了解CSSlint规则

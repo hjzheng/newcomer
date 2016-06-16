@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="location">西北工业大学 (长安校区) <a href="#">[切换地址]</a></div>
+    <div class="advertisement">
+        <img width="1000px" height="130px" src="./image/banner.jpg">
+    </div>
+    <form class="search clearfix">
+        <ul class="search-ac">
+            <li>
+                <select ng-model="sort" ng-options="item.value as item.name for item in vm.sorts"></select>
+            </li>
+            <li>
+                <select ng-model="taste" ng-options="item.value as item.name for item in vm.tastes"></select>
+            </li>
+            <li class="line">|</li>
+            <li>
+                <input type="checkbox" id="supportOnlinePay" ng-true-value="true" ng-false-value="undefined" ng-model="supportOnlinePay"> <label for="supportOnlinePay">在线支付</label>
+            </li>
+            <li class="line">|</li>
+            <li>
+                <input type="checkbox" id="supportIceTea" ng-true-value="true" ng-false-value="undefined" ng-model="supportIceTea"> <label for="supportIceTea">冰红茶特惠套餐</label>
+            </li>
+        </ul>
+        <ul class="search-box">
+            <li><input type="text" ng-model="search" placeholder="搜索餐厅"></li>
+        </ul>
+    </form>
+    <div class="restaurants clearfix">
+        <ul>
+            <li ng-repeat="restaurant in vm.restaurants | filter: {'supportOnlinePay':supportOnlinePay, 'supportIceTea':supportIceTea, 'taste': taste} | filter:search
+            | orderBy:sort">
+                <a href="#/restaurants/{{restaurant.id}}">
+                    <my-restaurant-card restaurant="restaurant"></my-restaurant-card>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

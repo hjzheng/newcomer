@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>微博发布框 Angular练习</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="div1" class="main" ng-controller="MainCtrl">
+        <div class="msg-content">
+            <span class="text">还可以输入</span><span class="number">{{140 - content.length}}</span>字
+        </div>
+        <form class="send" name="weibo">
+            <textarea ng-model="content" my-maxlength="140" ng-required="true"></textarea>
+        </form>
+        <a href="javascript:;" ng-class="{'disable': weibo.$invalid}">发布</a>
+    </div>
+    <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

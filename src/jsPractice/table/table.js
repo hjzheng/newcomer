@@ -2,7 +2,7 @@
 * 一个简单的table练习
 * */
 
-(function (w) {
+(function(w) {
 
 	function Table(options) {
 		this.domEle = document.getElementById(options.domId);
@@ -35,7 +35,7 @@
 
 	function _buildHtmlTableBody(options) {
 		var tbodyEle = document.createElement('tbody');
-		for(var i=0; i<options.data.length; i++) {
+		for (var i = 0; i < options.data.length; i++) {
 			var rowEle = _buildHtmlRow(options.columns, options.data[i]);
 			tbodyEle.appendChild(rowEle);
 		}
@@ -44,7 +44,7 @@
 
 	function _buildHtmlRow(columns, data) {
 		var trEle = document.createElement('tr');
-		for(var i=0; i < columns.length; i++) {
+		for (var i = 0; i < columns.length; i++) {
 			var tdEle = document.createElement('td');
 			tdEle.innerHTML = data ? data[columns[i].key] : columns[i].label;
 			trEle.appendChild(tdEle);

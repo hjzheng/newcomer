@@ -1,0 +1,32 @@
+<div class="date-box">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="7">
+                    <a href="javascript:void(0)" ng-click="prev()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+                    <select ng-options="item.value as item.name for item in vm.months" ng-model="month">
+                    </select>
+                    <select ng-options="item.value as item.name for item in vm.years" ng-model="year">
+                    </select>
+                    <a href="javascript:void(0)" ng-click="next()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                </th>
+            </tr>
+            <tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="week in vm.daysMatrix track by $index">
+                <td ng-repeat="day in week track by $index">
+                    <a href="javascript:void(0)" ng-click="vm.selectDay(day)">{{day}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

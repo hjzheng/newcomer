@@ -1,0 +1,41 @@
+<div class="container restaurant-details">
+    <div class="restaurant-details-header">
+        <a class="back-button" ui-sref="home"><i class="fa fa-undo" aria-hidden="true"></i>返回</a>
+        <ul class="restaurant-details-info">
+            <li><img width="70px" height="70px" src="{{vm.restaurant.img}}"></li>
+            <li>
+                <dl>
+                    <dt>{{vm.restaurant.name}}</dt>
+                    <dd><my-rank rank="{{vm.restaurant.rank}}"></my-rank> 月销量 {{vm.restaurant.salesVolume}}</dd>
+                </dl>
+            </li>
+            <li class="opening">正在营业</li>
+         </ul>
+         <ul class="restaurant-details-nav">
+            <li><a ui-sref-active="active" ui-sref="restaurants.menu">菜单</a></li>
+            <li><a ui-sref-active="active" ui-sref="restaurants.evaluate">评价</a></li>
+            <li><a ui-sref-active="active" ui-sref="restaurants.comment">留言</a></li>
+         </ul>
+        <ul class="restaurant-details-others">
+            <li>
+                <dl>
+                    <dt>{{vm.restaurant.startPrice}}元</dt>
+                    <dd>起送价</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>{{vm.restaurant.deliverTime}}分钟</dt>
+                    <dd>送餐速度</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt><i class="fa fa-heart" aria-hidden="true"></i></dt>
+                    <dd>已收藏</dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="restaurant-details-body" ui-view></div>
+</div>
