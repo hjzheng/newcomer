@@ -15,33 +15,47 @@
     <button ng-click="vm._save()">$save</button>
     <button ng-click="vm._delete()">$delete</button>
 
-    <p ng-repeat="u in vm.users">{{u.id}} {{u.name}} {{u.grade}}</p>
 </body>
 <script src="./angular.min.js"></script>
 <script src="./angular-resource.min.js"></script>
 <script>
     (function() {
         angular.module('app', ['ngResource']);
-        angular.module('app').controller('MainController', function(UserResource) {
+        angular.module('app').controller('MainController', function(UserResource, BookResource) {
             var vm = this;
 
-            vm.get = function () {
+            vm.get = function() {
                 UserResource.get({id: 1}, function(data) {
                     console.log(data);
                 });
+                BookResource.get({id: 1}, function(data) {
+                    console.log(data);
+                });
             };
-            vm.save = function () {
+
+            vm.save = function() {
                 UserResource.save({name: 'haha', grade: 99}, function(data) {
                     console.log(data);
                 });
-            };
-            vm.query = function () {
-                UserResource.query(function(data) {
+                BookResource.save({name: '$resource有这么难吗', grade: 5}, function(data) {
                     console.log(data);
                 });
             };
-            vm.delete = function () {
+
+            vm.query = function() {
+                UserResource.query(function(data) {
+                    console.log(data);
+                });
+                BookResource.list(function(data) {
+                    console.log(data);
+                });
+            };
+
+            vm.delete = function() {
                 UserResource.delete({id: 1}, function(data) {
+                    console.log(data);
+                });
+                BookResource.delete({id: 1}, function(data) {
                     console.log(data);
                 });
             };
@@ -50,13 +64,17 @@
                 user3 = data;
             });
 
-            vm._save = function () {
+            vm._save = function() {
                 user3.name = 'XXXX';
+                user3.grade = '78';
                 user3.$save(function(data) {
                     console.log(data);
                 });
+
+                console.log(user3.isPass());
             };
-            vm._delete = function () {
+
+            vm._delete = function() {
                 user3.$delete({id: user3.id}, function(data) {
                     console.log(data);
                 });
@@ -74,8 +92,31 @@
             User.prototype.isPass = function() {
                 return this.grade >= 60;
             };
+
             return User;
         });
+
+        // 当请求不符合 RESTful 时候, 通过第三个参数 进行重写
+        angular.module('app').service('BookResource', function($resource) {
+            var Book = $resource('/book?id=:id', {id: '@_id'}, {
+                list: {
+                    method: 'GET',
+                    url: '/book/list',
+                    isArray: true
+                },
+                save: {
+                    method: 'POST',
+                    url: '/book/save'
+                },
+                delete: {
+                    method: 'GET',
+                    url: '/book/delete'
+                }
+            });
+
+            return Book;
+        });
+
     }());
 </script>
 </html>

@@ -45,6 +45,36 @@ router
 		res.json({success: true});
 	});
 
+
+var books = [
+	{id: 1, name: '精通AngularJS', grade: 5},
+	{id: 2, name: '精通CSS', grade: 4},
+	{id: 3, name: '犀牛书', grade: 4},
+	{id: 4, name: 'JavaScript语言精髓', grade: 4},
+	{id: 5, name: 'JavaScript设计模式', grade: 4}
+];
+
+router
+	.get('/book', function(req, res, next) {
+		if (req.query.id) {
+			res.json(_.find(books, { 'id': parseInt(req.query.id, 10)}));
+		}
+	})
+	.get('/book/list', function(req, res, next) {
+		res.json(books);
+	})
+	.post('/book/save', function(req, res, next) {
+		req.body.id = books.length + 1;
+		books.push(req.body);
+		res.json({success: true});
+	})
+	.get('/book/delete', function(req, res, next) {
+		_.remove(books, function(b) {
+			return b.id === parseInt(req.query.id, 10);
+		});
+		res.json({success: true});
+	});
+
 app.use(router);
 
 app.get('/', function(req, res) {
