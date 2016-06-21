@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>$resource用法</title>
+</head>
+<body ng-controller="MainController as vm">
+    <h2>$resource</h2>
+    <button ng-click="vm.get()">get</button>
+    <button ng-click="vm.save()">save</button>
+    <button ng-click="vm.query()">query</button>
+    <button ng-click="vm.delete()">delete</button>
+
+    <h2>$resource</h2>
+    <button ng-click="vm._save()">$save</button>
+    <button ng-click="vm._delete()">$delete</button>
+
+</body>
+<script src="./angular.min.js"></script>
+<script src="./angular-resource.min.js"></script>
+<script>
+    (function() {
+        angular.module('app', ['ngResource']);
+        angular.module('app').controller('MainController', function(UserResource, BookResource) {
+            var vm = this;
+
+            vm.get = function() {
+                UserResource.get({id: 1}, function(data) {
+                    console.log(data);
+                });
+                BookResource.get({id: 1}, function(data) {
+                    console.log(data);
+                });
+            };
+
+            vm.save = function() {
+                UserResource.save({name: 'haha', grade: 99}, function(data) {
+                    console.log(data);
+                });
+                BookResource.save({name: '$resource有这么难吗', grade: 5}, function(data) {
+                    console.log(data);
+                });
+            };
+
+            vm.query = function() {
+                UserResource.query(function(data) {
+                    console.log(data);
+                });
+                BookResource.list(function(data) {
+                    console.log(data);
+                });
+            };
+
+            vm.delete = function() {
+                UserResource.delete({id: 1}, function(data) {
+                    console.log(data);
+                });
+                BookResource.delete({id: 1}, function(data) {
+                    console.log(data);
+                });
+            };
+
+            var user3 = UserResource.get({id: 3}, function(data) {
+                user3 = data;
+            });
+
+            vm._save = function() {
+                user3.name = 'XXXX';
+                user3.grade = '78';
+                user3.$save(function(data) {
+                    console.log(data);
+                });
+
+                console.log(user3.isPass());
+            };
+
+            vm._delete = function() {
+                user3.$delete({id: user3.id}, function(data) {
+                    console.log(data);
+                });
+            };
+
+        });
+
+        angular.module('app').service('UserResource', function($resource) {
+            var User = $resource('/users/:id', {id: '@_id'}, {
+                update: {
+                    method: 'PUT'
+                }
+            });
+
+            User.prototype.isPass = function() {
+                return this.grade >= 60;
+            };
+
+            return User;
+        });
+
+        // 当请求不符合 RESTful 时候, 通过第三个参数 进行重写
+        angular.module('app').service('BookResource', function($resource) {
+            var Book = $resource('/book?id=:id', {id: '@_id'}, {
+                list: {
+                    method: 'GET',
+                    url: '/book/list',
+                    isArray: true
+                },
+                save: {
+                    method: 'POST',
+                    url: '/book/save'
+                },
+                delete: {
+                    method: 'GET',
+                    url: '/book/delete'
+                }
+            });
+
+            return Book;
+        });
+
+    }());
+</script>
+</html>
