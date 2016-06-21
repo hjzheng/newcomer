@@ -88,9 +88,12 @@
 
 #### 补充资料
 
-- [PSD2HTML - Day 1](http://designmodo.com/create-website-day-1/)
-- [PSD2HTML - Day 2](http://designmodo.com/create-website-day-2/)
-- [PSD2HTML - Day 3](http://designmodo.com/create-website-day-3/)
+- [JS查漏补缺1](https://gist.github.com/hjzheng/30b4a235dc082bfe6b1e)
+- [JS查漏补缺2](https://gist.github.com/hjzheng/0c365ddca36568191820)
+- [JS查漏补缺3](https://gist.github.com/hjzheng/87d9baf58bc70fdec425)
+- [JS查漏补缺4](https://gist.github.com/hjzheng/bb6a83ca2fd68a584698)
+- [JS查漏补缺5](https://gist.github.com/hjzheng/9cc77fa68f85d2a7717d)
+- [JS查漏补缺6](https://gist.github.com/hjzheng/46fcecb34d09785f9181)
 
 #### 计划变更
 
