@@ -102,8 +102,3 @@
     - [JS入门](http://www.imooc.com/learn/36)
     - [JS高级](http://www.imooc.com/learn/10)
     - [Ajax](http://www.imooc.com/learn/250)
-
-#### TODO
-1. 添加ESLint校验, 并修改代码
-2. 添加CSSLint校验, 了解CSSlint规则
-3. 添加提交模板
