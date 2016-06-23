@@ -20,17 +20,17 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog"
+      "path": "./node_modules/shuyun-cz-conventional-changelog"
     }
   },
   "homepage": "https://github.com/hjzheng/newcomer#readme",
   "devDependencies": {
     "csslint": "^0.10.0",
-    "cz-conventional-changelog": "^1.1.6",
     "eslint": "^2.11.1",
     "eslint-config-angular": "^0.5.0",
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-angular": "^1.0.1",
-    "husky": "^0.11.4"
+    "husky": "^0.11.4",
+    "shuyun-cz-conventional-changelog": "github:shuyunxianfeschool/shuyun-cz-conventional-changelog"
   }
 }
