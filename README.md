@@ -106,3 +106,4 @@
 #### TODO
 1. 添加ESLint校验, 并修改代码
 2. 添加CSSLint校验, 了解CSSlint规则
+3. 添加提交模板
