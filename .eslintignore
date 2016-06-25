@@ -1,6 +1,7 @@
 .idea
 src/angularPractice/flymeal/node_modules
 src/angularPractice/resource
+src/angularPractice/http-server
 node_modules
 npm-debug.log
 src/jsPractice/table/index.js
