@@ -34,7 +34,7 @@ router
 		res.json({success: true});
 	})
 	.post('/users', function(req, res, next) {
-		req.body.id = users.length + 1;
+		req.body.id = users[users.length - 1].id + 1;
 		users.push(req.body);
 		res.json({success: true});
 	})
@@ -64,7 +64,7 @@ router
 		res.json(books);
 	})
 	.post('/book/save', function(req, res, next) {
-		req.body.id = books.length + 1;
+		req.body.id = books[books.length - 1].id + 1;
 		books.push(req.body);
 		res.json({success: true});
 	})
