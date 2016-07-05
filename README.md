@@ -29,7 +29,7 @@
     - 最终效果与设计稿一致
 11. CSS3 和 HTML5 (可选)
 12. CSS框架 bootstrap (可选)
-13. [精通CSS 高级Web标准解决方案](https://book.douban.com/subject/4736167/) (可选)
+13. [精通CSS 高级Web标准解决方案](https://book.douban.com/subject/4736167/)
 14. CSS规范 http://codeguide.bootcss.com/
 
 #### JS基础 (ES5)
