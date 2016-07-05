@@ -39,6 +39,8 @@
                 });
                 BookResource.save({name: '$resource有这么难吗', grade: 5}, function(data) {
                     console.log(data);
+                }, function(res){
+                    console.log(res);
                 });
             };
 

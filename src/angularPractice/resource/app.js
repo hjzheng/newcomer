@@ -64,9 +64,10 @@ router
 		res.json(books);
 	})
 	.post('/book/save', function(req, res, next) {
-		req.body.id = books[books.length - 1].id + 1;
-		books.push(req.body);
-		res.json({success: true});
+		// req.body.id = books[books.length - 1].id + 1;
+		// books.push(req.body);
+		// res.json({success: true});
+		res.status(500).json({'message': '服务器端出错啦!!!'});
 	})
 	.get('/book/delete', function(req, res, next) {
 		_.remove(books, function(b) {
