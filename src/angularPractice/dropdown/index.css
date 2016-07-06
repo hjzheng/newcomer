@@ -11,12 +11,18 @@ li {
     list-style: none;
 }
 
+
+
+
 .main {
     width: 600px;
     margin: 20px auto;
 }
+
 .dropdown {
     position: relative;
+    float: left;
+    margin: 0 30px;
 }
 
 .dropdown-toggle {

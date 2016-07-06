@@ -38,19 +38,35 @@
 			restrict: 'A',
 			controller: function($scope, $element, $attrs) {
 				var vm = this;
+
 				vm.setDropdownMenu = function(ele) {
 					vm.dropdownEle = ele;
 				};
+
+				vm.open = function() {
+					vm.dropdownEle.addClass(myDropdownToggleClass);
+					$document.bind('click', dropdownClose);
+				};
+
+				vm.close = function() {
+					vm.dropdownEle.removeClass(myDropdownToggleClass);
+					$document.unbind('click', dropdownClose);
+				};
+
 				vm.toggle = function(event) {
-					vm.dropdownEle.toggleClass(myDropdownToggleClass);
+					if (vm.dropdownEle.hasClass(myDropdownToggleClass)) {
+						vm.close();
+					} else {
+						vm.open();
+					}
 					event.stopPropagation();
 				};
 
-				$document.bind(myDropdownToggleEvent, function(event) {
+				function dropdownClose(event) {
 					if (!$element[0].contains(event.target)) {
-						vm.dropdownEle.removeClass(myDropdownToggleClass);
+						vm.close();
 					}
-				});
+				}
 			},
 			controllerAs: 'dropdownCtrl'
 		};
