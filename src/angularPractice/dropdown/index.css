@@ -52,7 +52,7 @@ li {
 
 .dropdown-menu > li > a {
     display: block;
-    padding: 3px 20px;
+    padding: 3px 10px;
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
@@ -62,4 +62,27 @@ li {
 
 .dropdown-menu > li > a:hover {
     background: #cccccc;
+}
+
+.fa {
+    width: 14px;
+    height: 14px;
+}
+.btn {
+    padding: 0 12px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
