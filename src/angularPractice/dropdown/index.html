@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>dropdown 练习</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dropdown.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body ng-controller="MainController">
+<div class="main">
+    <div my-dropdown on-toggle="toggle(open)" auto-close="true" class="dropdown">
+        <a href="#" my-dropdown-toggle class="dropdown-toggle">{{orderLabel}}
+            <i class="fa" ng-class="{'fa-arrow-down': orderIcon === 'desc', 'fa-arrow-up': orderIcon === 'asc'}" aria-hidden="true"></i>
+        </a>
+        <ul my-dropdown-menu class="dropdown-menu">
+            <li ng-repeat="order in orderSortList" ng-click="orderClick(order, $index)">
+                <a href="#"><i class="fa" ng-class="{'fa-check': selectedIndex === $index}" aria-hidden="true"></i> {{order.label}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div my-dropdown class="dropdown">
+        <button my-dropdown-toggle class="dropdown-toggle btn">Menu</button>
+        <ul my-dropdown-menu class="dropdown-menu">
+            <li><a href="#">第一行</a></li>
+            <li><a href="#">第二行</a></li>
+            <li><a href="#">第三行</a></li>
+            <li><a href="#">第四行</a></li>
+        </ul>
+    </div>
+
+    <div my-dropdown class="dropdown">
+        <a href="#" my-dropdown-toggle class="dropdown-toggle">show</a>
+        <ul my-dropdown-menu class="dropdown-menu">
+            <li><a href="#">第一行</a></li>
+            <li><a href="#">第二行</a></li>
+            <li><a href="#">第三行</a></li>
+            <li><a href="#">第四行</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="dropdown.js"></script>
+</html>
