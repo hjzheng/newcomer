@@ -65,8 +65,8 @@
 6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/)
 7. 练习
    - Todo list
-   - 写指令 Tabs, 简单日历
-   - 飞饭或饿了吗页面
+   - 写指令 Tabs, [简单日历](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/date), [panel](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/panel), [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
+   - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/flymeal)
 
 #### ES6
 
