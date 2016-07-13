@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>slide 练习</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./slide.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body ng-controller="MainController">
+<div class="main">
+    <my-slide image-list="imageList"></my-slide>
+    <my-slide image-list="imageList" image-width="60px" image-height="60px" image-margin="15px"></my-slide>
+</div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="slide.js"></script>
+</html>

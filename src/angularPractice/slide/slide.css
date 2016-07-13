@@ -1,0 +1,53 @@
+.clearfix:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.slide {
+    position: relative;
+    height: 110px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.slide .btn {
+    width: 25px;
+    background: rgba(204, 204, 204, 0.8);
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slide .left-btn {
+    left: 0;
+    top: 0
+}
+
+.slide .right-btn {
+    right: 0;
+    top: 0;
+}
+
+.slide > ul {
+    width: 1000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s;
+}
+
+.slide > ul > li {
+    float: left;
+}
+
+.slide > ul > li > .desc {
+    text-align: right;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.slide > ul > li:last-child {
+    margin: 0;
+}
+
