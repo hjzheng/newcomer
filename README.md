@@ -60,9 +60,9 @@
 1. AngularJS官方指南 https://docs.angularjs.org/guide
 2. PhoneCat https://docs.angularjs.org/tutorial
 3. [精通AngularJS](http://www.duokan.com/book/90947)
-4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/hjzheng/newcomer/blob/master/src/xmind/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
+4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/hjzheng/newcomer/blob/master/src/angularPractice/angularSkillTree/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
-6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/)
+6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [相应的xmind 和 png](https://github.com/hjzheng/newcomer/blob/master/src/angularPractice/angularCodeReview/AngularJS1.x%20Code%20Review%20CheckList.png)
 7. 练习
    - Todo list
    - 写指令 Tabs, [简单日历](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/date), [panel](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/panel), [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
@@ -81,10 +81,10 @@
    - [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 3. [ESLint规范](https://github.com/Jocs/ESLint_docs)
 
-#### Git 使用和代码 review
+#### 团队协作
 
 1. [git使用](http://rogerdudler.github.io/git-guide/)
-2. [代码review](https://gist.github.com/arzyu/0deeac12b8cc4db3b6e0)
+2. [前端代码质量控制](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/others)
 
 #### 补充资料
 
