@@ -1,0 +1,5 @@
+<div class="panel">
+    <h3 class="panel-title" ng-disabled="vm.disabled" ng-click="vm.toggle()">{{vm.title}} <i class="fa panel-title-icon" ng-class="{'fa-angle-down': vm.isOpened, 'fa-angle-up':!vm.isOpened}"></i></h3>
+    <div class="panel-body" ng-transclude ng-show="vm.isOpened">
+    </div>
+</div>
