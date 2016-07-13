@@ -1,0 +1,20 @@
+.panel {
+    margin-bottom: 10px;
+}
+
+.panel .panel-title {
+    border-left: 2px solid cornflowerblue;
+    padding-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.panel .panel-title .panel-title-icon {
+    color: #cacaca;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.panel .panel-body {
+    padding: 7px 16px 17px 10px;
+}

@@ -22,7 +22,7 @@ li {
 .dropdown {
     position: relative;
     float: left;
-    margin: 0 30px;
+    margin: 0 50px;
 }
 
 .dropdown-toggle {
@@ -78,9 +78,6 @@ li {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #eee;
-    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
-    background-image: linear-gradient(#fcfcfc, #eee);
     border: 1px solid #d5d5d5;
     -webkit-appearance: none;
     -moz-appearance: none;
