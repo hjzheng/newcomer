@@ -47,7 +47,7 @@
 				vm.totalWidth = vm.totalWidth || '400px';
 				vm.imageWidth = vm.imageWidth || '90px';
 				vm.imageHeight = vm.imageHeight || '90px';
-				vm.imageMargin = vm.imageMargin || '14px';
+				vm.imageMargin = vm.imageMargin || '15px';
 
 				var offsetW = parseInt(vm.imageWidth, 10) + parseInt(vm.imageMargin, 10);
 				var imagesTotalWidth = offsetW * vm.imageList.length - parseInt(vm.imageMargin, 10);
