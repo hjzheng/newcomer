@@ -1,0 +1,14 @@
+<div class="slide" style="width: {{vm.totalWidth}}">
+    <div class="btn left-btn" style="height: {{vm.imageHeight}}" ng-click="vm.toLeft()" ng-show="vm.isShowLeft">
+        <i class="fa fa-angle-left icon" style="line-height: {{vm.imageHeight}}" aria-hidden="true"></i>
+    </div>
+    <ul class="clearfix" style="left:0px">
+        <li ng-repeat="img in vm.imageList" style="margin-right: {{vm.imageMargin}}">
+            <img ng-src="{{img.url}}" alt="{{img.label}}" width="{{vm.imageWidth}}" height="{{vm.imageHeight}}">
+            <div ng-if="img.label" class="desc">{{img.label}}</div>
+        </li>
+    </ul>
+    <div class="btn right-btn" style="height: {{vm.imageHeight}}" ng-click="vm.toRight()" ng-show="vm.isShowRight">
+        <i class="fa fa-angle-right icon" style="line-height: {{vm.imageHeight}}" aria-hidden="true"></i>
+    </div>
+</div>
