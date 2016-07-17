@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东订单页面</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* reset table style */
+        table, caption, tbody, tfoot, thead, tr, th, td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .order {
+            width: 1050px;
+            margin: 20px auto;
+        }
+
+        .order td {
+            border: 1px solid #e5e5e5;
+        }
+
+        .order .order-th {
+            background: #f5f5f5;
+            height: 31px;
+            line-height: 31px;
+            color: #aaa;
+            overflow: hidden;
+            font-size: 12px;
+        }
+
+        .order-th .date {
+            margin: 0 30px 0 15px;
+        }
+
+        .order-th .orderId {
+            width: 226px;
+            display: inline-block;
+        }
+
+        .order-th .orderId > span {
+            color: #000;
+        }
+
+        .order-th .trash {
+            float: right;
+            font-size: 16px;
+            color: #858585;
+            margin-right: 16px;
+        }
+
+        .order .order-tb {
+            text-align: center;
+            vertical-align: top;
+            font-size: 12px;
+        }
+
+        .order .order-tb td {
+            padding: 14px 0;
+        }
+
+        .order-tb td:first-child {
+            text-align: left;
+            line-height: 18px;
+        }
+
+        .order-tb .goods {
+            margin-right: 74px;
+            width: 340px;
+            display: inline-block;
+        }
+
+        .order-tb .goods .goods-info .name {
+            height: 36px;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .order-tb .goods .goods-info .name > a {
+            color: #484848;
+        }
+
+        .order-tb .goods .goods-info .other {
+            color: #c1c1c1;
+        }
+
+        .order-tb .goods .goods-img {
+            float: left;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #efefef;
+            margin: 0 14px;
+        }
+
+        .order-tb .number {
+            width: 70px;
+            display: inline-block;
+            vertical-align: top;
+            color: #b2b2b2;
+        }
+
+        .order-tb .operation {
+            display: inline-block;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .order-tb td:nth-child(2) > div {
+            margin: 0 16px;
+            line-height: 18px;
+        }
+
+        .order-tb td:nth-child(2) > div > i {
+            color: #aaaaaa;
+            font-size: 18px;
+            line-height: 8px;
+            margin-left: 5px;
+        }
+
+        .order-tb td:nth-child(3) > div {
+            margin: 0 8px;
+            display: inline-block;
+            line-height: 18px;
+        }
+
+        .order-tb td:nth-child(3) .total {
+            color: #aaa;
+            padding: 0 10px 10px 10px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .order-tb td:nth-child(3) .payway {
+            color: #aaa;
+            line-height: 20px;
+        }
+
+        .order-tb td:nth-child(4) > div {
+            display: inline-block;
+            padding: 0 30px;
+            line-height: 18px;
+        }
+
+        .order-tb td:nth-child(4) > div > div {
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .order-tb td:nth-child(5) > div {
+            line-height: 18px;
+            margin: 0 18px;
+        }
+
+        .order-tb td:nth-child(5) > div > .buy {
+            width: 84px;
+            border: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="order">
+        <tbody>
+            <tr class="order-th">
+               <td colspan="5">
+                   <span class="date">2016-07-11 23:24:16</span>
+                   <span class="orderId">订单号：<span>20286695154</span></span>
+                   <span>京东</span>
+                   <span class="trash"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+               </td>
+            </tr>
+            <tr class="order-tb">
+                <td>
+                    <div>
+                        <div class="goods">
+                            <div class="goods-img">
+                                <a><img src="#"></a>
+                            </div>
+                            <div class="goods-info">
+                                <div class="name">
+                                    <a href="#">【京东超市】奥迪双钻（AULDEY）超级飞侠 儿童玩具男孩益智变形机器人-多多 </a>
+                                </div>
+                                <div class="other">
+                                    <i class="fa fa-trello" aria-hidden="true"></i> 找搭配
+                                </div>
+                            </div>
+                        </div>
+                        <div class="number">x1</div>
+                        <div class="operation">返修/退换货</div>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div>
+                        <span>郑豪举</span>
+                        <i class="fa fa-male" aria-hidden="true"></i>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div>
+                        <div class="total">总额 ¥118.00</div>
+                        <div class="payway">在线支付</div>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div>
+                        <div>已完成</div>
+                        <div>+22</div>
+                        <div>订单详情</div>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div>
+                        <div>评价|晒单</div>
+                        <div class="buy"><i class="fa fa-bolt" aria-hidden="true" style="color: #c4c4c4;padding-right: 5px;"></i>立即购买</div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="order-tb">
+                <td class="order-col-1">
+                    <div>
+                        <div class="goods">
+                            <div class="goods-img">
+                                <a><img src="#"></a>
+                            </div>
+                            <div class="goods-info">
+                                <div class="name">
+                                    <a href="#">【京东超市】奥迪双钻(AULDEY)超级飞侠 儿童玩具男孩益智变形机器人-胡须爷爷 </a>
+                                </div>
+                                <div class="other">
+                                    <i class="fa fa-trello" aria-hidden="true"></i> 找搭配
+                                </div>
+                            </div>
+                        </div>
+                        <div class="number">x1</div>
+                        <div class="operation">返修/退换货</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
