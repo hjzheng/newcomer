@@ -394,17 +394,8 @@ a {
     margin: 20px 0;
 }
 
-.order-list {
-    padding: 10px;
-    margin: 10px auto;
-}
-
 .order-list-header {
     margin: 10px 0;
-}
-
-.table {
-    width: 100%;
 }
 
 .table > thead > tr > td {
@@ -446,4 +437,25 @@ a {
 .paging input[type=text] {
     border: 1px solid #ccc;
     border-radius: 3px;
+}
+
+.my-order {
+    padding: 10px;
+    width: 1024px;
+    margin: 10px auto;
+}
+
+.my-order .left {
+    float: left;
+}
+
+.my-order .right {
+    float: left;
+}
+
+.area {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
 }
