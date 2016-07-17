@@ -1,7 +1,7 @@
 ### 使用AngularJS实现飞饭首页
 
 - 考察点:
-    1. UI-Router 使用
+    1. UI-Router 使用 (注意嵌套路由和命名路由的使用)
     2. $http 获取 JSON 数据
     3. AngularJS filter使用 (加分)
     4. AngularJS 指令 (重复的HTML片段, 可以进行封装) (加分)
