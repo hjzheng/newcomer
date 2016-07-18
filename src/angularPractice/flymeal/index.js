@@ -29,16 +29,29 @@
 			})
 			.state('myOrderList', {
 				url: '/myOrderList/:phoneNumber',
-				templateUrl: './partials/myOrderList.html',
-				controller: 'MyOrderListController',
-				controllerAs: 'vm',
-				resolve: {
-					order: function($http, $stateParams, $filter) {
-						return $http.get('data/order.json').then(function(response) {
-							return $filter('filter')(response.data, {'phoneNumber': $stateParams.phoneNumber});
-						}, function() {
-							return '出错了';
-						});
+				views: {
+					'': {
+						templateUrl: './partials/myOrderList.html'
+					},
+					'list@myOrderList': {
+						templateUrl: './partials/list.html',
+						controller: 'MyOrderListController',
+						controllerAs: 'vm',
+						resolve: {
+							order: function($http, $stateParams, $filter) {
+								return $http.get('data/order.json').then(function(response) {
+									return $filter('filter')(response.data, {'phoneNumber': $stateParams.phoneNumber});
+								}, function() {
+									return '出错了';
+								});
+							}
+						}
+					},
+					'leftnav@myOrderList': {
+						templateUrl: './partials/leftnav.html'
+					},
+					'personal@myOrderList': {
+						templateUrl: './partials/personal.html'
 					}
 				}
 			})
