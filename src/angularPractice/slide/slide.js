@@ -55,16 +55,20 @@
 				vm.isShowLeft = false;
 
 				vm.toLeft = function() {
-					$element.find('ul').css('left', parseInt($element.find('ul').css('left'), 10) + offsetW + 'px');
+					if (vm.isShowLeft) {
+						$element.find('ul').css('left', parseInt($element.find('ul').css('left'), 10) + offsetW + 'px');
+					}
 					checkBtn();
 				};
 				vm.toRight = function() {
-					$element.find('ul').css('left', parseInt($element.find('ul').css('left'), 10) - offsetW + 'px');
+					if (vm.isShowRight) {
+						$element.find('ul').css('left', parseInt($element.find('ul').css('left'), 10) - offsetW + 'px');
+					}
 					checkBtn();
 				};
 
 				function checkBtn() {
-					if (parseInt($element.find('ul').css('left'), 10) + imagesTotalWidth <= parseInt(vm.totalWidth, 10)) {
+					if (parseInt($element.find('ul').css('left'), 10) + imagesTotalWidth < parseInt(vm.totalWidth, 10)) {
 						vm.isShowRight = false;
 					} else {
 						vm.isShowRight = true;
