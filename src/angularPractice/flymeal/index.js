@@ -133,15 +133,15 @@
 
 	angular.module('app').controller('MyMenuController', function($stateParams) {
 		// 嵌套视图, 默认继承传递的参数
-		// console.log($stateParams.id);
+		console.log($stateParams);
 	});
 
 	angular.module('app').controller('MyEvaluateController', function($stateParams) {
-		// console.log($stateParams.id);
+		console.log($stateParams);
 	});
 
 	angular.module('app').controller('MyCommentController', function($stateParams) {
-		// console.log($stateParams.id);
+		console.log($stateParams);
 	});
 
 	angular.module('app').controller('MyOrderListController', function(order) {
