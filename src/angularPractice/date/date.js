@@ -4,7 +4,45 @@
 (function() {
 	angular.module('app', []);
 
-	angular.module('app').controller('MainCtrl', function() {
+	angular.module('app').controller('MainCtrl', function($scope) {
+		$scope.date = '2016-7-11';
+	});
+
+	angular.module('app').directive('myDateInput', function($compile, $rootScope) {
+		return {
+			restrict: 'A',
+			require: 'ngModel',
+			controller: function() {
+			},
+			bindToController: true,
+			controllerAs: 'vm',
+			link: function(scope, element, attrs, ngModelCtrl) {
+
+				var angularDomEl = angular.element('<my-date style="position: absolute" date="{{date}}" get-date="getDate(date)" close="true"></my-date>');
+				var newScope = $rootScope.$new();
+
+				// UI - model
+				newScope.getDate = function(date) {
+					ngModelCtrl.$setViewValue(date);
+					ngModelCtrl.$render();
+					element.attr('value', date);
+				};
+				// model -> UI
+				ngModelCtrl.$render = function() {
+					newScope.date = ngModelCtrl.$modelValue;
+					element.attr('value', newScope.date);
+				};
+
+				// show date box
+				element.on('focus', function() {
+					var html = $compile(angularDomEl)(newScope);
+					html.css('display', 'block');
+					html.css('left', element[0].offsetX);
+					html.css('top', element[0].offsetY);
+					element.after(html);
+				});
+			}
+		};
 	});
 	angular.module('app').directive('myDate', function() {
 		var dateUtil = {
@@ -85,9 +123,11 @@
 			restrict: 'E',
 			templateUrl: './date.tpl.html',
 			scope: {
-				date: '@'
+				date: '@',
+				getDate: '&',
+				close: '@'
 			},
-			controller: function($scope) {
+			controller: function($scope, $element) {
 				var that = this;
 
 				dateUtil.init(this.date);
@@ -113,11 +153,15 @@
 
 				that.selectDay = function(day) {
 					$scope.day = day;
-					// console.log($scope.year, $scope.month, $scope.day);
+					this.getDate({date: $scope.year + '-' + ($scope.month + 1) + '-' + $scope.day});
+					if (this.close) {
+						$element.css('display', 'none');
+					}
 				};
 
 				$scope.month = dateUtil.getDate().getMonth();
 				$scope.year = dateUtil.getDate().getFullYear();
+				$scope.day = dateUtil.getDate().getDate();
 
 				$scope.prev = function() {
 					$scope.month = $scope.month - 1 === -1 ? 11 : $scope.month - 1;
