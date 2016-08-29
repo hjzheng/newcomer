@@ -18,14 +18,20 @@
 			controllerAs: 'vm',
 			link: function(scope, element, attrs, ngModelCtrl) {
 
-				var angularDomEl = angular.element('<my-date style="position: absolute" date="{{date}}" get-date="getDate(date)" close="true"></my-date>');
+				var angularDomEl = angular.element('<my-date style="position: absolute" date="{{date}}" on-selected="onSelected(date)"></my-date>');
 				var newScope = $rootScope.$new();
 
+				var html = $compile(angularDomEl)(newScope);
+				html.css('display', 'none');
+				html.css('left', element[0].offsetX);
+				html.css('top', element[0].offsetY);
+				element.after(html);
+
 				// UI - model
-				newScope.getDate = function(date) {
+				newScope.onSelected = function(date) {
 					ngModelCtrl.$setViewValue(date);
-					ngModelCtrl.$render();
 					element.attr('value', date);
+					html.css('display', 'none');
 				};
 				// model -> UI
 				ngModelCtrl.$render = function() {
@@ -35,11 +41,7 @@
 
 				// show date box
 				element.on('focus', function() {
-					var html = $compile(angularDomEl)(newScope);
 					html.css('display', 'block');
-					html.css('left', element[0].offsetX);
-					html.css('top', element[0].offsetY);
-					element.after(html);
 				});
 			}
 		};
@@ -124,7 +126,7 @@
 			templateUrl: './date.tpl.html',
 			scope: {
 				date: '@',
-				getDate: '&',
+				onSelected: '&',
 				close: '@'
 			},
 			controller: function($scope, $element) {
@@ -153,10 +155,7 @@
 
 				that.selectDay = function(day) {
 					$scope.day = day;
-					this.getDate({date: $scope.year + '-' + ($scope.month + 1) + '-' + $scope.day});
-					if (this.close) {
-						$element.css('display', 'none');
-					}
+					this.onSelected({date: $scope.year + '-' + ($scope.month + 1) + '-' + $scope.day});
 				};
 
 				$scope.month = dateUtil.getDate().getMonth();
