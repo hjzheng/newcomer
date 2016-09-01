@@ -4,7 +4,6 @@
         <li><a href="javascript:void(0)" ng-click="prevPage()" ng-disabled="options.currentPage === 1">上一页</a></li>
         <li><a href="javascript:void(0)" ng-click="nextPage()" ng-disabled="options.currentPage === totalPages">下一页</a></li>
         <li><a href="javascript:void(0)" ng-click="lastPage()" ng-disabled="options.currentPage === totalPages">尾页</a></li>
-        <li><a href="javascript:void(0)" ng-click="jumpTo($event)">跳转</a></li>
         <li>第<input type="text" ng-model="jumpToPageNum" ng-blur="jumpTo()"/>页</li>
         <li>{{options.currentPage}}/{{totalPages}}</li>
         <li>
