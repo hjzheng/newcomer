@@ -120,6 +120,7 @@
 
 	angular.module('app').controller('MyOrderController', function($state) {
 		var vm = this;
+		vm.phoneNumber = '13389242190';
 		vm.query = function() {
 			$state.go('myOrderList', {phoneNumber: vm.phoneNumber});
 		};
