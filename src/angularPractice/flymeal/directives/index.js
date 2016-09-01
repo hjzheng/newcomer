@@ -42,7 +42,7 @@
 				onChange: '&'
 			},
 			templateUrl: './directives/myPaging.html',
-			controller: function($scope, $element, $attrs) {
+			controller: function($scope) {
 
 				$scope.options.pageSize = $scope.options.pageSize || 10;
 
@@ -70,7 +70,7 @@
 					$scope.options.currentPage = $scope.jumpToPageNum = $scope.totalPages;
 				};
 
-				$scope.$watchCollection('options', function(newValue, oldValue) {
+				$scope.$watch('options', function(newValue, oldValue) {
 					if (newValue.pageSize !== oldValue.pageSize) {
 						// 当 pageSize 数据变化, 更新新总页数
 						$scope.totalPages = getTotalPages();
@@ -82,7 +82,7 @@
 					} else {
 						$scope.onChange({pageSetting: newValue});
 					}
-				});
+				}, true);
 
 				$scope.jumpToPageNum = 1;
 
