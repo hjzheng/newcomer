@@ -131,3 +131,7 @@ PotatoesOnRice.prototype.getIngredients = function() {
 var laMianWithBeef = new LaMianWithBeef('毛细型拉面', '大块牛肉');
 
 ```
+
+#### 应用
+gulp-load-plugins
+https://github.com/jackfranklin/gulp-load-plugins/blob/master/index.js
