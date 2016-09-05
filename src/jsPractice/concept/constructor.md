@@ -1,7 +1,9 @@
 ### 构造器模式
+
 Use to create new objects with their own object scope.
 
 #### 关键点
+
 - creates a brand new object
 - links to an object prototype
 - binds 'this' to new object scope
@@ -10,9 +12,8 @@ Use to create new objects with their own object scope.
 #### 实现
 
 ```js
-function Task(name, description) {
+function Task(name) {
     this.name = name;
-    this.description = description;
 }
 
 Task.prototype.finish = function() {

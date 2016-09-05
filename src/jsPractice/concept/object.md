@@ -56,3 +56,20 @@ Object.defineProperties(urgentTask, 'toString', {
     configurable: true
 });
 ```
+
+#### 补充 get 和 set
+
+```js
+Object.defineProperties(urgentTask, 'level', {
+    value: null,
+    writeable: true,
+    enumerable: true,
+    configurable: true,
+    get: function() {
+        return level;
+    },
+    set: function() {
+        this.level = level;
+    }
+});
+```

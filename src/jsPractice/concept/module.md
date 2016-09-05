@@ -1,6 +1,8 @@
 ### module 模式
 
-#### 说白了, module 模式就是一个 toolbox
+说白了, module 模式就是一个 toolbox
+
+#### 实现方式
 ```JS
 // 对象字面量
 var module = {
@@ -29,8 +31,10 @@ var module = function() {
 
 #### AngularJS 的 module 实现
 
+```js
 angular.module('app', []);
 angular.module('app');
+```
 
 ```js
 function setupModuleLoader(window) {
