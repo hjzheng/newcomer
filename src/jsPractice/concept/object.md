@@ -22,7 +22,7 @@ Object.defineProperties(task, 'toString', {
     },
     writeable: true,
     enumerable: true,
-    configurable: true,
+    configurable: true
 });
 
 console.log(task.toString());
@@ -40,11 +40,11 @@ Object.defineProperties(task, 'toString', {
     },
     writeable: false,
     enumerable: false,
-    configurable: false,
+    configurable: false
 });
 ```
 
-// 继承
+#### 继承
 ```js
 var urgentTask = Object.create(task)
 Object.defineProperties(urgentTask, 'toString', {
@@ -53,6 +53,6 @@ Object.defineProperties(urgentTask, 'toString', {
     },
     writeable: true,
     enumerable: true,
-    configurable: true,
+    configurable: true
 });
 ```
