@@ -39,7 +39,7 @@
 				imageHeight: '@',
 				imageMargin: '@'
 			},
-			templateUrl: './slide.html',
+			templateUrl: './slide.tpl.html',
 			controllerAs: 'vm',
 			controller: function($scope, $element) {
 				var vm = this;

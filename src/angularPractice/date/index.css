@@ -8,30 +8,35 @@ table {
     padding: 10px;
     width: 204px;
     margin-bottom: 20px;
-    background-color: #f5f5f5;
     border: 1px solid #e3e3e3;
-    border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
 
 .date-box td {
      text-align: center;
-     border: 1px solid #d3d3d3;
-     background: #e6e6e6;
      font-weight: normal;
      color: #555555;
-     padding: 5px;
 }
 
 .date-box td > a {
     text-decoration: none;
+    color: rgba(0,0,0,0.87);
+    font-size: 10px;
+    padding: 5px;
+    display: inline-block;
 }
 
-.date-box td:hover {
-    background: lightblue;
+.date-box td > a.selected {
+    background: cornflowerblue;
+    border-radius: 50%;
+    color: white;
+}
+
+.date-box th {
+    height: 20px;
 }
 
 .date-box th > a {
     margin: 0 5px;
-    font-size: 14px;
+    font-size: 12px;
 }

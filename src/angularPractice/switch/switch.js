@@ -16,7 +16,7 @@
 	angular.module('app').directive('mySwitch', function() {
 		return {
 			restrict: 'E',
-			templateUrl: './switch.html',
+			templateUrl: './switch.tpl.html',
 			replace: true,
 			scope: {
 				size: '@',
