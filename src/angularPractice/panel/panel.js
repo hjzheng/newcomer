@@ -22,7 +22,7 @@
 				isOpened: '@',
 				onToggle: '&'
 			},
-			templateUrl: './panel.html',
+			templateUrl: './panel.tpl.html',
 			controller: function() {
 				var vm = this;
 				if (angular.isDefined(vm.isOpened)) {

@@ -24,7 +24,7 @@
         <tbody>
             <tr ng-repeat="week in vm.daysMatrix track by $index">
                 <td ng-repeat="num in week track by $index">
-                    <a href="javascript:void(0)" ng-if="num === day" style='color:red;' ng-click="vm.selectDay(num)">{{num}}</a>
+                    <a href="javascript:void(0)" ng-if="num === day" ng-class="{'selected': num === day}" ng-click="vm.selectDay(num)">{{num}}</a>
                     <a href="javascript:void(0)" ng-if="num !== day" ng-click="vm.selectDay(num)">{{num}}</a>
                 </td>
             </tr>
