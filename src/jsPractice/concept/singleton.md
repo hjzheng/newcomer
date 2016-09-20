@@ -32,7 +32,10 @@ var TaskRepo = (function() {
     }
 })();
 
-var taskRepo = TaskRepo.getInstance();
+var taskRepo1 = TaskRepo.getInstance();
+var taskRepo2 = TaskRepo.getInstance();
+
+taskRepo1 === taskRepo2;
 
 // ES6 的实现
 class TaskRepo {
