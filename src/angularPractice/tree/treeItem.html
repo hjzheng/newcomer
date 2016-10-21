@@ -1,7 +1,7 @@
 <li class="treeItem" ng-class="{'treeLeaf': vm.isLeaf(vm.data)}">
     <span class="treeItemContent" ng-class="{'selected': vm.selected === true}">
-        <i class="fa treeArr" ng-class="{'fa-caret-down': !vm.isLeaf(vm.data)}" aria-hidden="true" ng-click="vm.toggleTreeItem(vm.showChildren)"></i>
-        <i class="fa treeIcon" ng-class="{'fa-folder-o': !vm.isLeaf(vm.data)}" aria-hidden="true"></i>
+        <i ng-if="!vm.isLeaf(vm.data)" class="fa treeArr" ng-class="{'fa-caret-right': !vm.showChildren, 'fa-caret-down': vm.showChildren}" aria-hidden="true" ng-click="vm.toggleTreeItem(vm.showChildren)"></i>
+        <i ng-if="!vm.isLeaf(vm.data)" class="fa fa-folder-o treeIcon"  aria-hidden="true"></i>
         <my-tree-label-edit data="vm.data" ng-click="vm.select(vm.data)"></my-tree-label-edit>
     </span>
     <ul class="treeChildren" ng-if="!vm.isLeaf(vm.data)" ng-show="vm.showChildren">
