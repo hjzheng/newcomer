@@ -1,0 +1,8 @@
+<span>
+    <span class="treeLabel" ng-hide="vm.isEdit" ng-dblclick="vm.enableEdit()">{{vm.data.label}}</span>
+    <span class="treeLabel" ng-show="vm.isEdit">
+        <input type="text" class="labelEdit" ng-model="vm.newLabel"/>
+        <i class="fa fa-check" aria-hidden="true" ng-click="vm.save(vm.newLabel)"></i>
+        <i class="fa fa-times" aria-hidden="true" ng-click="vm.cancel()"></i>
+    </span>
+</span>

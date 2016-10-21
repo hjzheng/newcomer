@@ -1,0 +1,10 @@
+<li class="treeItem" ng-class="{'treeLeaf': vm.isLeaf(vm.data)}">
+    <span class="treeItemContent" ng-class="{'selected': vm.selected === true}">
+        <i class="fa treeArr" ng-class="{'fa-caret-down': !vm.isLeaf(vm.data)}" aria-hidden="true" ng-click="vm.toggleTreeItem(vm.showChildren)"></i>
+        <i class="fa treeIcon" ng-class="{'fa-folder-o': !vm.isLeaf(vm.data)}" aria-hidden="true"></i>
+        <my-tree-label-edit data="vm.data" ng-click="vm.select(vm.data)"></my-tree-label-edit>
+    </span>
+    <ul class="treeChildren" ng-if="!vm.isLeaf(vm.data)" ng-show="vm.showChildren">
+        <my-tree-item data="treeItem" ng-repeat="treeItem in vm.data.children"></my-tree-item>
+    </ul>
+</li>
