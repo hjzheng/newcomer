@@ -138,21 +138,6 @@
 				vm.toggleTreeItem = function(bool) {
 					vm.showChildren = !bool;
 				};
-
-				vm.enableEdit = function() {
-					vm.isEdit = true;
-				};
-
-				vm.save = function(value) {
-					if (vm.data.label !== value) {
-						vm.data.label = value;
-					}
-					vm.isEdit = false;
-				};
-
-				vm.cancel = function() {
-					vm.isEdit = false;
-				};
 			},
 			link: function(scope, element, attrs, vm) {
 				vm.scopes.push(scope);
