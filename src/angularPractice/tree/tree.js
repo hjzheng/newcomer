@@ -138,38 +138,26 @@
 				vm.toggleTreeItem = function(bool) {
 					vm.showChildren = !bool;
 				};
-
-				vm.enableEdit = function() {
-					vm.isEdit = true;
-				};
-
-				vm.save = function(value) {
-					if (vm.data.label !== value) {
-						vm.data.label = value;
-					}
-					vm.isEdit = false;
-				};
-
-				vm.cancel = function() {
-					vm.isEdit = false;
-				};
 			},
 			link: function(scope, element, attrs, vm) {
 				vm.scopes.push(scope);
-				scope.vm.select = function() {
-					vm.clearAll(scope.vm.data);
-					scope.vm.selected = true;
+				scope.vm.select = function($event) {
+					if ($event.target.classList.contains('treeLabel')) {
+						vm.clearAll(scope.vm.data);
+						scope.vm.selected = true;
+					}
 				};
 			}
 		};
 	});
 
-	angular.module('app').directive('myTreeLabelEdit', function() {
+	angular.module('app').directive('myTreeLabelEdit', function($timeout) {
 		return {
 			restrict: 'E',
 			templateUrl: './treeLabelEdit.html',
 			scope: {
-				data: '='
+				data: '=',
+				onSelected: '&'
 			},
 			bindToController: true,
 			controllerAs: 'vm',
@@ -182,17 +170,41 @@
 
 				vm.isEdit = false;
 
-				vm.enableEdit = function() {
+				// Bind Different Events to Click and Double Click
+				// https://css-tricks.com/snippets/javascript/bind-different-events-to-click-and-double-click/
+
+				var timer = 0;
+				var delay = 200;
+				var prevent = false;
+
+				vm.select = function($event) {
+					timer = $timeout(function() {
+						if (!prevent) {
+							vm.onSelected && vm.onSelected({$event: $event});
+						}
+						prevent = false;
+					}, delay);
+					$event.stopPropagation();
+				};
+
+				vm.enableEdit = function($event) {
+					$timeout.cancel(timer);
+					prevent = true;
 					vm.isEdit = true;
+					$event.stopPropagation();
 				};
 
-				vm.save = function(value) {
-					vm.data.label = value;
+				vm.save = function(value, $event) {
+					if (vm.data.label !== value) {
+						vm.data.label = value;
+					}
 					vm.isEdit = false;
+					$event.stopPropagation();
 				};
 
-				vm.cancel = function() {
+				vm.cancel = function($event) {
 					vm.isEdit = false;
+					$event.stopPropagation();
 				};
 			}
 		};
