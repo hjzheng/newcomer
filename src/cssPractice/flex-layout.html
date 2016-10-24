@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex 布局练习</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        body {
+            margin: 10px auto;
+            width: 1122px;
+        }
+
+        .main {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .main > .skillInfo {
+            flex: 4;
+            margin-right: 20px;
+        }
+
+        .main .skill {
+            display: flex;
+            margin: 0 0 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        .main .skill > .name {
+            flex-basis: 30px;
+            width: 30px;
+            height: 80px;
+            box-sizing: border-box;
+            line-height: 1.2;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            padding: 8px 7px 0px;
+        }
+
+        .main .skill > .name.first {
+            background: #ff3300;
+        }
+
+        .main .skill > .name.second {
+            background: #00aaff;
+        }
+
+        .main .skill > .name.third {
+            background: #1a873a;
+        }
+
+        .main .skill > .desc {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .main .desc > .subskill {
+            flex: 0 1 20%;
+            display: flex;
+            align-items: center;
+        }
+
+        .main .subskill > i {
+            flex-basis: 35px;
+            font-size: 30px;
+        }
+
+        .main .subskill > div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main .subskill > div > h3 {
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .main .subskill > div > div {
+            flex: 1;
+            font-size: 12px;
+        }
+
+        .main > .othersInfo {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            height: 244px;
+        }
+
+        .main > .othersInfo > .title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .main > .othersInfo > p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="skillInfo">
+            <div class="skill">
+                <h2 class="name first">物理攻击</h2>
+                <div class="desc">
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>疾风步</h3>
+                            <div>隐身，并增加其移动速度</div>
+                        </div>
+                    </div>
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>致命一击</h3>
+                            <div>有15%的机率在攻击时造成更多的伤害</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h2 class="name second">化学攻击</h2>
+                <div class="desc">
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>治疗波</h3>
+                            <div>与连锁闪电相反，以连锁闪电的方式为单位疗伤，每次跳跃治疗效果都会变弱</div>
+                        </div>
+                    </div>
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>治疗波</h3>
+                            <div>与连锁闪电相反，以连锁闪电的方式为单位疗伤，每次跳跃治疗效果都会变弱</div>
+                        </div>
+                    </div>
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>治疗波</h3>
+                            <div>与连锁闪电相反，以连锁闪电的方式为单位疗伤</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h2 class="name third">魔法攻击</h2>
+                <div class="desc">
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>眼镜蛇守卫</h3>
+                            <div>眼镜蛇守卫，这个就类似于低成本的箭塔！他们射出火球造成可观的伤害，但只有100点生命值。</div>
+                        </div>
+                    </div>
+                    <div class="subskill">
+                        <i class="fa fa-wpbeginner" aria-hidden="true"></i>
+                        <div>
+                            <h3>眼镜蛇守卫</h3>
+                            <div>眼镜蛇守卫，这个就类似于低成本的箭塔！他们射出火球造成可观的伤害，但只有100点生命值。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="othersInfo">
+            <h2 class="title">魔兽新英雄HEI</h2>
+            <p>
+                介绍:虽然他们数量稀少,但HEI一直都是兽族部落中的精英战士.这些拥有精湛剑术的HEI曾经是火刃氏族的成员,后来火刃氏族被自身邪恶的力量摧毁了.在火刃氏族四分五裂之后,HEI身背氏族的图腾,为了拯救他们自己和氏族的兄弟们奋斗.在老大的领导下,这些SB又一次加入兽族部落,担任他们年轻领导人的贴身侍卫.虽然HEI是潜行和欺诈的高手,但他们看重个人的容易胜过一切。
+            </p>
+            <h2 class="title">活动优惠</h2>
+            <p>
+                超值优惠试用.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

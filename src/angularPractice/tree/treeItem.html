@@ -5,6 +5,6 @@
         <my-tree-label-edit data="vm.data" on-selected="vm.select($event)"></my-tree-label-edit>
     </span>
     <ul class="treeChildren" ng-if="!vm.isLeaf(vm.data)" ng-show="vm.showChildren">
-        <my-tree-item data="treeItem" ng-repeat="treeItem in vm.data.children"></my-tree-item>
+        <my-tree-item data="treeItem" ng-repeat="treeItem in vm.data.children track by $index"></my-tree-item>
     </ul>
 </li>
