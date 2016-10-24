@@ -2,59 +2,10 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Tree</title>
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./reset.css">
-    <style>
-        .tree {
-            font-size: 12px;
-            padding: 5px 0;
-        }
-
-        .tree .treeItem {
-            margin: 5px 3px 0 10px;
-            padding-left: 5px;
-            padding-top: 3px;
-            padding-bottom: 2px;
-        }
-
-        .tree .treeItem > .treeItemContent {
-            padding: 2px;
-        }
-
-        .tree .treeItem > .treeItemContent.selected {
-            background: #0e0e0e;
-            color: white;
-        }
-
-        .tree .treeItem > .treeItemContent > .treeIcon {
-            font-size: 12px;
-        }
-
-        .tree .treeItem > .treeItemContent > .treeArr {
-            font-size: 8px;
-            cursor: pointer;
-        }
-
-        .tree .treeLeaf {
-            margin-left: 20px;
-        }
-
-        .tree .treeItem .treeLabel {
-            font-size: 12px;
-            line-height: 12px;
-        }
-
-        .tree .treeItem .treeLabel > .labelEdit {
-            font-style: oblique;
-            text-decoration: underline;
-        }
-
-        .tree .treeItem > .treeChildren {
-            padding: 0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./tree.css">
 </head>
 <body ng-controller="MainController">
     <my-tree data="tree" on-selected="select(item)"></my-tree>
