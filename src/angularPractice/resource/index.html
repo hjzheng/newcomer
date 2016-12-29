@@ -20,17 +20,31 @@
 <script src="./angular-resource.min.js"></script>
 <script>
     (function() {
-        angular.module('app', ['ngResource']);
+        angular.module('app', ['ngResource']).config(function ($httpProvider) {
+            $httpProvider.interceptors.push(function() {
+                return {
+                    'request': function(config) {
+                        console.log('----- $httpProvider interceptor request ----');
+                        return config;
+                    },
+                    'response': function(response) {
+                        console.log('----- $httpProvider interceptor response ----');
+                        return response;
+                    }
+                };
+            });
+        });
         angular.module('app').controller('MainController', function(UserResource, BookResource) {
             var vm = this;
 
             vm.get = function() {
                 UserResource.get({id: 1}, function(data) {
+                    console.log('----- user resource get success ----');
                     console.log(data);
                 });
-                BookResource.get({id: 1}, function(data) {
-                    console.log(data);
-                });
+//                BookResource.get({id: 1}, function(data) {
+//                    console.log(data);
+//                });
             };
 
             vm.save = function() {
@@ -86,6 +100,22 @@
 
         angular.module('app').service('UserResource', function($resource) {
             var User = $resource('/users/:id', {id: '@_id'}, {
+                get: {
+                    transformRequest: [function(data, headersGetter){
+                        console.log('----- user resource get transformRequest function ----');
+                        return data;
+                    }],
+                    transformResponse: [function(data, headersGetter, status){
+                        console.log('----- user resource get transformResponse function ----');
+                        return angular.fromJson(data);
+                    }],
+                    interceptor: {
+                        'response': function(response) {
+                            console.log('----- user resource get interceptor response ----');
+                            return response;
+                        }
+                    }
+                },
                 update: {
                     method: 'PUT'
                 }
@@ -113,6 +143,22 @@
                 delete: {
                     method: 'GET',
                     url: '/book/delete'
+                },
+                get: {
+                    transformRequest: [function(data, headersGetter){
+                        console.log('----- book resource get transformRequest function ----');
+                        return data;
+                    }],
+                    transformResponse: [function(data, headersGetter, status){
+                        console.log('----- book resource get transformResponse function ----');
+                        return angular.fromJson(data);
+                    }],
+                    interceptor: {
+                        'response': function(response) {
+                            console.log('----- book resource get interceptor response ----');
+                            return response;
+                        }
+                    }
                 }
             });
 
