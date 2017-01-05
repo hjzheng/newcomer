@@ -2,7 +2,8 @@
 src/angularPractice/flymeal/node_modules
 src/angularPractice/resource
 src/angularPractice/http-server
-src/angularPractice/pca
+src/jsPractice/pca
+src/jsPractice/searchpca
 src/angularPractice/dropdown
 node_modules
 npm-debug.log
