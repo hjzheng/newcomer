@@ -1,12 +1,14 @@
 window.onload = function() {
 	var arr = [];
 	var data = {};
-	search(areas, '西安', arr, data);
-	console.log(arr);
+	console.time('test');
+	search(areas, '西藏', arr, data, 10);
+	//console.log(arr);
+	console.timeEnd('test');
 };
 
-function search(areas, keyword, arr, data) {
-	for(let area of areas) {
+function search(areas, keyword, arr, data, limit) {
+	for (let area of areas) {
 		if (area.level === 1) {
 			delete data.c;
 			delete data.a;
@@ -21,9 +23,12 @@ function search(areas, keyword, arr, data) {
 		}
 		if (area.name.indexOf(keyword) !== -1) {
 			arr.push(Object.assign({}, data));
+			if (arr.length >= 10) {
+				break;
+			}
 		}
 		if (area.children) {
-			search(area.children, keyword, arr, data);
+			search(area.children, keyword, arr, data, limit);
 		}
 	}
 }
