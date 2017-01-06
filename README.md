@@ -8,12 +8,12 @@
 **适当的讲一下, 但不要过多的占用自己时间, 最终目的, 独立完成UX设计稿到静态HTML页面转换(PSD2HTML)**
 
 1. 如何使用 Webstorm ( 强调快捷键使用 )
-2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式, [html规范](https://gist.github.com/hjzheng/e3a1fadb3ef7df69ecef)
+2. 熟悉 html 页面结构 ( 强调 doctype ), 写一个人简历页面, 不要用 CSS 样式, 注意 [html规范](https://gist.github.com/hjzheng/e3a1fadb3ef7df69ecef)
 3. 使用Chrome dev tools 调试 CSS, HTML
-4. 使用 JSBin 写自己的 demo 页面
+4. 使用 jsbin.com 写自己的 demo 页面
 5. reset.css 例如 normalize.css (为什么会有rest.css 和 浏览器的差异性)
 6. 盒模型
-7. CSS Layout 一些知识 http://zh.learnlayout.com/
+7. CSS Layout 一些知识 [传送门](http://zh.learnlayout.com/)
     - block, inline 和 inline-block 元素特点 [传送门](http://zhenghaoju700.blog.163.com/blog/static/1358595182014542594926/)
     - 浮动布局 和 清理浮动 [传送门](http://zhenghaoju700.blog.163.com/blog/static/1358595182014583144423/)
     - 定位布局 [传送门](http://zhenghaoju700.blog.163.com/blog/static/13585951820145109128773/)
@@ -30,7 +30,7 @@
 11. CSS3 和 HTML5 (可选)
 12. CSS框架 bootstrap (可选)
 13. [精通CSS 高级Web标准解决方案](https://book.douban.com/subject/4736167/)
-14. CSS规范 http://codeguide.bootcss.com/
+14. [CSS规范](http://codeguide.bootcss.com/)
 
 #### JS基础 (ES5)
 
@@ -47,9 +47,9 @@
 6. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
 7. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
 8. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
-9. 练习
+9. [练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/jsPractice)
     - Tab http://www.angularjs.cn/
-    - Todo List 用原生JS写AngularJS官网的Todo List https://angularjs.org/
+    - Todo List 用原生JS写 AngularJS 官网的 [Todo List](https://angularjs.org/)
     - login http://www.angularjs.cn/login
 
 
@@ -57,16 +57,21 @@
 
 **以自学为主, 有问题问导师, 独自完成练习**
 
-1. AngularJS官方指南 https://docs.angularjs.org/guide
-2. PhoneCat https://docs.angularjs.org/tutorial
+1. [AngularJS官方指南](https://docs.angularjs.org/guide)
+2. [PhoneCat](https://docs.angularjs.org/tutorial)
 3. [精通AngularJS](http://www.duokan.com/book/90947)
 4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/hjzheng/newcomer/blob/master/src/angularPractice/angularSkillTree/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
-6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [相应的xmind 和 png](https://github.com/hjzheng/newcomer/blob/master/src/angularPractice/angularCodeReview/AngularJS1.x%20Code%20Review%20CheckList.png)
+6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [xmind总结](https://github.com/hjzheng/newcomer/blob/master/src/angularPractice/angularCodeReview/AngularJS1.x%20Code%20Review%20CheckList.png)
 7. 练习
    - Todo list
-   - 写指令 Tabs, [简单日历](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/date), [panel](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/panel), [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
-   - [开关](https://github.com/hjzheng/newcomer/tree/master/src/angularPractice/switch), [幻灯片](https://github.com/hjzheng/newcomer/tree/master/src/angularPractice/slide)
+   - 写指令
+     - Tabs
+     - [简单日历](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/date)
+     - [panel](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/panel)
+     - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
+     - [开关](https://github.com/hjzheng/newcomer/tree/master/src/angularPractice/switch)
+     - [幻灯片](https://github.com/hjzheng/newcomer/tree/master/src/angularPractice/slide)
    - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/flymeal)
 
 #### ES6
