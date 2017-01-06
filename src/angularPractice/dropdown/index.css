@@ -11,8 +11,11 @@ li {
     list-style: none;
 }
 
-
-
+.clearfix:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
 
 .main {
     width: 600px;
@@ -22,7 +25,7 @@ li {
 .dropdown {
     position: relative;
     float: left;
-    margin: 0 50px;
+    margin: 0 10px;
 }
 
 .dropdown-toggle {
@@ -35,6 +38,7 @@ li {
     position: absolute;
     top: 100%;
     left: 0;
+    width: 140px;
     z-index: 1000;
     display: none;
     float: left;
@@ -50,7 +54,25 @@ li {
     border: 1px solid rgba(0,0,0,.15);
 }
 
-.dropdown-menu > li > a {
+.menu-container {
+    position: relative;
+}
+
+.menu-container .section {
+    float: left;
+    height: 200px;
+    width: 122px;
+    border: 1px solid #000303;
+    border-width: 0 1px 0 0;
+    overflow: auto;
+}
+
+.section > li {
+    float: left;
+    width: 120px;
+}
+
+.section > li > a {
     display: block;
     padding: 3px 10px;
     clear: both;
@@ -60,7 +82,7 @@ li {
     white-space: nowrap;
 }
 
-.dropdown-menu > li > a:hover {
+.section > li > a:hover {
     background: #cccccc;
 }
 

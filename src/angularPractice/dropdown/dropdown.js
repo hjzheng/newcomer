@@ -22,6 +22,37 @@
 			$scope.orderIcon = order.dir;
 			$scope.selectedIndex = $index;
 		};
+
+		$scope.autoClose = false;
+
+		$scope.address = '地区:';
+
+		$scope.province = province;
+
+		$scope.showCity = function(p) {
+			$scope.proName = p.name;
+			$scope.cityName = '';
+			$scope.areaName = '';
+			$scope.city = city.filter(function(c) {
+				return c.ProID === p.ProID;
+			});
+		};
+
+		$scope.showArea = function(c) {
+			$scope.cityName = c.name;
+			$scope.areaName = '';
+			$scope.area = area.filter(function(a) {
+				return a.CityID === c.CityID;
+			});
+		};
+
+		$scope.check = function(a) {
+			$scope.areaName = a.DisName;
+			$scope.autoClose = true;
+			window.setTimeout(function() {
+				$scope.autoClose = false;
+			});
+		};
 	});
 
 	angular.module('app').constant('myDropdownConfig', {
