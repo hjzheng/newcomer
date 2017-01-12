@@ -22,10 +22,10 @@
 				var newScope = $rootScope.$new();
 
 				var html = $compile(angularDomEl)(newScope);
+
 				html.css('display', 'none');
-				html.css('left', element[0].offsetX);
-				html.css('top', element[0].offsetY);
 				element.after(html);
+
 
 				// UI - model
 				newScope.onSelected = function(date) {
@@ -41,7 +41,10 @@
 
 				// show date box
 				element.on('focus', function() {
+					var elemRect = element[0].getBoundingClientRect();
 					html.css('display', 'block');
+					html.css('left', elemRect.left + 'px');
+					html.css('top', elemRect.top + elemRect.height + 'px');
 				});
 			}
 		};
