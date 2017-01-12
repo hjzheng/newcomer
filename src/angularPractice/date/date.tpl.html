@@ -3,12 +3,12 @@
         <thead>
             <tr>
                 <th colspan="7">
-                    <a href="javascript:void(0)" ng-click="prev()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
-                    <select ng-options="item.value as item.name for item in vm.months" ng-model="month">
+                    <a href="javascript:void(0)" ng-click="vm.prev()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+                    <select ng-options="item.value as item.name for item in vm.months" ng-model="vm._month">
                     </select>
-                    <select ng-options="item.value as item.name for item in vm.years" ng-model="year">
+                    <select ng-options="item.value as item.name for item in vm.years" ng-model="vm._year">
                     </select>
-                    <a href="javascript:void(0)" ng-click="next()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0)" ng-click="vm.next()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                 </th>
             </tr>
             <tr>
@@ -24,8 +24,8 @@
         <tbody>
             <tr ng-repeat="week in vm.daysMatrix track by $index">
                 <td ng-repeat="num in week track by $index">
-                    <a href="javascript:void(0)" ng-if="num === day" ng-class="{'selected': num === day}" ng-click="vm.selectDay(num)">{{num}}</a>
-                    <a href="javascript:void(0)" ng-if="num !== day" ng-click="vm.selectDay(num)">{{num}}</a>
+                    <a href="javascript:void(0)" ng-if="num === vm._day" ng-class="{'selected': num === vm._day}" ng-click="vm.selectDay(num)">{{num}}</a>
+                    <a href="javascript:void(0)" ng-if="num !== vm._day" ng-click="vm.selectDay(num)">{{num}}</a>
                 </td>
             </tr>
         </tbody>
