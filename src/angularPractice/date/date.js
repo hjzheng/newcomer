@@ -129,10 +129,10 @@
 				onSelected: '&',
 				close: '@'
 			},
-			controller: function($scope, $element) {
+			controller: function($scope) {
 				var that = this;
 
-				dateUtil.init(this.date);
+				dateUtil.init(that.date);
 
 				// that.daysMatrix = dateUtil.getDaysMatrix();
 
@@ -154,23 +154,23 @@
 				that.years = getYears(Number(dateUtil.dateArr[0]));
 
 				that.selectDay = function(day) {
-					$scope.day = day;
-					this.onSelected({date: $scope.year + '-' + ($scope.month + 1) + '-' + $scope.day});
+					that._day = day;
+					this.onSelected({date: that._year + '-' + (that._month + 1) + '-' + that._day});
 				};
 
-				$scope.month = dateUtil.getDate().getMonth();
-				$scope.year = dateUtil.getDate().getFullYear();
-				$scope.day = dateUtil.getDate().getDate();
+				that._month = dateUtil.getDate().getMonth();
+				that._year = dateUtil.getDate().getFullYear();
+				that._day = dateUtil.getDate().getDate();
 
-				$scope.prev = function() {
-					$scope.month = $scope.month - 1 === -1 ? 11 : $scope.month - 1;
+				that.prev = function() {
+					that._month = that._month - 1 === -1 ? 11 : that._month - 1;
 				};
 
-				$scope.next = function() {
-					$scope.month = $scope.month + 1 === 12 ? 0 : $scope.month + 1;
+				that.next = function() {
+					that._month = that._month + 1 === 12 ? 0 : that._month + 1;
 				};
 
-				$scope.$watchGroup(['year', 'month'], function(newValue) {
+				$scope.$watchGroup(['vm._year', 'vm._month'], function(newValue) {
 					if (newValue) {
 						dateUtil.dateArr[0] = newValue[0];
 						dateUtil.dateArr[1] = newValue[1] + 1;
