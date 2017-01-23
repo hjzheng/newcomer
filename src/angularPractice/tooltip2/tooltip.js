@@ -16,18 +16,35 @@
 		var getTpl = function() {
 			return $templateRequest('./tooltip.tpl.html');
 		};
-		
+
+		// 计算位置
 		var getPosition = function(element, tooltipEle, placement) {
 
 			var eleRect = element.getBoundingClientRect();
 			var tooltipEleRect = tooltipEle[0].getBoundingClientRect();
-			var bodyRect = body[0].getBoundingClientRect();
+			var htmlRect = $document[0].documentElement.getBoundingClientRect();
+
+			function computeArrowLeftValue(location) {
+				if (location === 'left') {
+					return (eleRect.width / 2) / (tooltipEleRect.width) * 100 + '%';
+				} else if (location === 'right') {
+					return (100 - (eleRect.width / 2) / (tooltipEleRect.width) * 100) + '%';
+				}
+			}
+
+			function setArrow(orientation, location) {
+				// 设置三角方向
+				tooltipEle[0].classList.add(orientation);
+				// 重新计算三角位置
+				tooltipEle[0].querySelector('.tooltip-arrow').style.left = computeArrowLeftValue(location);
+			}
 
 			// 空隙
 			var space = 6;
 
 			var left = 0;
 			var top = 0;
+
 			// 四个方向, 可能的最大值
 			var tL = eleRect.left - tooltipEleRect.width - space;
 			var tT = eleRect.top - tooltipEleRect.height - space;
@@ -48,7 +65,7 @@
 				top = eleRect.height + eleRect.top + space + 'px';
 			} else {
 				// 用户未配置 placement
-				var isLeft = false, isTop = false, isRight = false, isBottom = false;
+				var isLeft = false, isTop = false, isRight = false, isBottom = false; // eslint-disable-line
 
 				if (tL > 0) {
 					isLeft = true;
@@ -56,10 +73,10 @@
 				if (tT > 0) {
 					isTop = true;
 				}
-				if (tR < bodyRect.width) {
+				if (tR < htmlRect.width) {
 					isRight = true;
 				}
-				if (tB < bodyRect.height) {
+				if (tB < htmlRect.height) {
 					isBottom = true;
 				}
 
@@ -67,29 +84,21 @@
 					if (isTop === false) {
 						left = 0;
 						top = eleRect.height + eleRect.top + space + 'px';
-						tooltipEle[0].classList.add('bottom');
-						// 重新计算三角位置
-						tooltipEle[0].querySelector('.tooltip-arrow').style.left = (eleRect.width / 2) / (tooltipEleRect.width) * 100 + '%';
+						setArrow('bottom', 'left');
 					} else if (isBottom === false) {
 						left = 0;
 						top = eleRect.top - tooltipEleRect.height - space + 'px';
-						tooltipEle[0].classList.add('top');
-						// 重新计算三角位置
-						tooltipEle[0].querySelector('.tooltip-arrow').style.left = (eleRect.width / 2) / (tooltipEleRect.width) * 100 + '%';
+						setArrow('top', 'left');
 					}
 				} else if (isRight === false) {
 					if (isTop === false) {
-						left = bodyRect.width - tooltipEleRect.width + 'px';
+						left = htmlRect.width - tooltipEleRect.width + 'px';
 						top = eleRect.height + eleRect.top + space + 'px';
-						tooltipEle[0].classList.add('bottom');
-						// 重新计算三角位置
-						tooltipEle[0].querySelector('.tooltip-arrow').style.left = (100 - (eleRect.width / 2) / (tooltipEleRect.width) * 100) + '%';
+						setArrow('bottom', 'right');
 					} else if (isBottom === false) {
-						left = bodyRect.width - tooltipEleRect.width + 'px';
+						left = htmlRect.width - tooltipEleRect.width + 'px';
 						top = eleRect.top - tooltipEleRect.height - space + 'px';
-						tooltipEle[0].classList.add('top');
-						// 重新计算三角位置 计算百分率
-						tooltipEle[0].querySelector('.tooltip-arrow').style.left = (100 - (eleRect.width / 2) / (tooltipEleRect.width) * 100) + '%';
+						setArrow('top', 'right');
 					}
 				} else {
 					left = eleRect.left + eleRect.width + space + 'px';
@@ -112,6 +121,7 @@
 				var scope = $scope.$new();
 				scope.content = iAttrs.tooltip;
 				scope.placement = iAttrs.placement;
+				scope.type = iAttrs.type || 'default';
 
 				getTpl().then(function(tpl) {
 					tooltipEle = $compile(tpl)(scope);

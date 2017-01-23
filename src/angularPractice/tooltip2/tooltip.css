@@ -3,12 +3,31 @@
     border: 2px solid #b2b2b2;
 }
 
+.tooltip.warning, .tooltip.info, .tooltip.danger{
+    border: none;
+}
+
 .tooltip.bottom .tooltip-arrow {
     top: -7px;
     left: 50%;
     margin-left: -6px;
     border-width: 0 6px 6px;
     border-bottom-color: #b2b2b2;
+}
+
+.tooltip.warning.bottom .tooltip-arrow {
+    border-bottom-color: #fef1e3;
+    top: -5px;
+}
+
+.tooltip.info.bottom .tooltip-arrow {
+    border-bottom-color: #e4f3fd;
+    top: -5px;
+}
+
+.tooltip.danger.bottom .tooltip-arrow {
+    border-bottom-color: #ffe3e0;
+    top: -5px;
 }
 
 .tooltip.right .tooltip-arrow {
@@ -19,6 +38,21 @@
     border-right-color: #b2b2b2;
 }
 
+.tooltip.warning.right .tooltip-arrow {
+    border-right-color: #fef1e3;
+    left: -5px;
+}
+
+.tooltip.info.right .tooltip-arrow {
+    border-right-color: #e4f3fd;
+    left: -5px;
+}
+
+.tooltip.danger.right .tooltip-arrow {
+    border-right-color: #ffe3e0;
+    left: -5px;
+}
+
 .tooltip.left .tooltip-arrow {
     top: 50%;
     right: -7px;
@@ -27,12 +61,42 @@
     border-left-color: #b2b2b2;
 }
 
+.tooltip.warning.left .tooltip-arrow {
+    border-left-color: #fef1e3;
+    right: -5px;
+}
+
+.tooltip.info.left .tooltip-arrow {
+    border-left-color: #e4f3fd;
+    right: -5px;
+}
+
+.tooltip.danger.left .tooltip-arrow {
+    border-left-color: #ffe3e0;
+    right: -5px;
+}
+
 .tooltip.top .tooltip-arrow {
     bottom: -7px;
     left: 50%;
     margin-left: -6px;
     border-width: 6px 6px 0;
     border-top-color: #b2b2b2;
+}
+
+.tooltip.warning.top .tooltip-arrow {
+    border-top-color: #fef1e3;
+    bottom: -5px;
+}
+
+.tooltip.info.top .tooltip-arrow {
+    border-top-color: #e4f3fd;
+    bottom: -5px;
+}
+
+.tooltip.danger.top .tooltip-arrow {
+    border-top-color: #ffe3e0;
+    bottom: -5px;
 }
 
 .tooltip .tooltip-arrow {
@@ -67,6 +131,45 @@
     left: 0;
 }
 
+.tooltip.warning.bottom .tooltip-arrow .tooltip-arrow.cover {
+    border-bottom-color: #fef1e3;
+}
+.tooltip.warning.top .tooltip-arrow .tooltip-arrow.cover {
+    border-top-color: #fef1e3;
+}
+.tooltip.warning.left .tooltip-arrow .tooltip-arrow.cover {
+    border-left-color: #fef1e3;
+}
+.tooltip.warning.right .tooltip-arrow .tooltip-arrow.cover {
+    border-right-color: #fef1e3;
+}
+
+.tooltip.info.bottom .tooltip-arrow .tooltip-arrow.cover {
+    border-bottom-color: #e4f3fd;
+}
+.tooltip.info.top .tooltip-arrow .tooltip-arrow.cover {
+    border-top-color: #e4f3fd;
+}
+.tooltip.info.left .tooltip-arrow .tooltip-arrow.cover {
+    border-left-color: #e4f3fd;
+}
+.tooltip.info.right .tooltip-arrow .tooltip-arrow.cover {
+    border-right-color: #e4f3fd;
+}
+
+.tooltip.danger.bottom .tooltip-arrow .tooltip-arrow.cover {
+    border-bottom-color: #ffe3e0;
+}
+.tooltip.danger.top .tooltip-arrow .tooltip-arrow.cover {
+    border-top-color: #ffe3e0;
+}
+.tooltip.danger.left .tooltip-arrow .tooltip-arrow.cover {
+    border-left-color: #ffe3e0;
+}
+.tooltip.danger.right .tooltip-arrow .tooltip-arrow.cover {
+    border-right-color: #ffe3e0;
+}
+
 .tooltip .tooltip-arrow.cover {
     border-width: 4px;
 }
@@ -75,6 +178,23 @@
     background-color: #ffffff;
     color: #222222;
 }
+
+.tooltip.warning .tooltip-inner {
+    background-color: #fef1e3;
+    color: #d7842b;
+}
+
+.tooltip.info .tooltip-inner {
+    background-color: #e4f3fd;
+    color: #28a3ef;
+}
+
+.tooltip.danger .tooltip-inner {
+    background-color: #ffe3e0;
+    color: #ea4a36;
+}
+
+
 .tooltip .tooltip-inner {
     padding: 9px 11px;
     text-decoration: none;
