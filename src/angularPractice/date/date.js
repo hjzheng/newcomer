@@ -12,8 +12,6 @@
 		return {
 			restrict: 'A',
 			require: 'ngModel',
-			controller: function() {
-			},
 			bindToController: true,
 			controllerAs: 'vm',
 			link: function(scope, element, attrs, ngModelCtrl) {
