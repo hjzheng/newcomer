@@ -19,8 +19,12 @@
 <script src="./angular.min.js"></script>
 <script src="./angular-resource.min.js"></script>
 <script>
+    // http://stackoverflow.com/questions/22186671/angular-resource-delete-wont-send-body-to-express-js-server
+    // 为什么 $resource 的 delete 方法不支持 request body, 实际上并不是 http 规范不支持, 而是 AngularJS 做了特殊处理
+    // 因此我们需要添加一些配置
     (function() {
         angular.module('app', ['ngResource']).config(function ($httpProvider) {
+            $httpProvider.defaults.headers.delete = { "Content-Type": "application/json;charset=utf-8" };
             $httpProvider.interceptors.push(function() {
                 return {
                     'request': function(config) {
@@ -68,7 +72,7 @@
             };
 
             vm.delete = function() {
-                UserResource.delete({id: 1}, function(data) {
+                UserResource.delete({id: 1}, {test: 1000}, function(data) {
                     console.log(data);
                 });
                 BookResource.delete({id: 1}, function(data) {
@@ -98,7 +102,7 @@
 
         });
 
-        angular.module('app').service('UserResource', function($resource) {
+        angular.module('app').service('UserResource', function($resource, $http) {
             var User = $resource('/users/:id', {id: '@_id'}, {
                 get: {
                     transformRequest: [function(data, headersGetter){
@@ -123,6 +127,15 @@
 
             User.prototype.isPass = function() {
                 return this.grade >= 60;
+            };
+
+            // this is a hack
+            User.delete = function(params, postData, success, error) {
+                return $http({
+                    url: '/users/' + params.id,
+                    method: 'DELETE',
+                    data: postData
+                }).then(success, error);
             };
 
             return User;

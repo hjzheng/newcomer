@@ -39,6 +39,7 @@ router
 		res.json({success: true});
 	})
 	.delete('/users/:id', function(req, res, next) {
+		console.log(req.body);
 		_.remove(users, function(u) {
 			return u.id === parseInt(req.params.id, 10);
 		});
