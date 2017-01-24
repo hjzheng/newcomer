@@ -2,6 +2,10 @@
 
 }
 
+.checkbox[disabled] {
+    color: darkgray;
+}
+
 /*.checkbox input {*/
     /*opacity: 0;*/
     /*position: absolute;*/
@@ -12,4 +16,8 @@
 
 .checkbox-label {
 
+}
+
+.checkbox[disabled]  .checkbox-label {
+    color: darkgray;
 }

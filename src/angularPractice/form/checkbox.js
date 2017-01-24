@@ -32,7 +32,10 @@
 			controllerAs: 'vm',
 			link: function(scope, element, attrs, ngModelCtrl) {
 				scope.vm.check = function(value, $event) {
+					if (scope.vm.disabled) return;
+
 					scope.vm.partial = false;
+
 					if (value === scope.vm.trueValue) {
 						scope.vm.ngModel = scope.vm.falseValue;
 					} else {
