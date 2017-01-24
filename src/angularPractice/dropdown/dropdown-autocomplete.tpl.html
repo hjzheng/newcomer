@@ -4,7 +4,8 @@
         <i class="fa fa-angle-down" style="float:right;line-height: 1.5;" aria-hidden="true"></i>
     </div>
     <ul my-dropdown-menu class="dropdown-menu">
-        <li ng-repeat="data in vm.dataList" data-value="{{data.value}}" ng-click="vm.selectOption(data)">
+        <li ng-repeat="data in vm.dataList" data-value="{{data.value}}" ng-click="vm.selectOption(data)"
+            ng-class="{'active': vm.ngModel === data.value}">
             <a href="#" ng-bind-html="data.label"></a>
         </li>
     </ul>

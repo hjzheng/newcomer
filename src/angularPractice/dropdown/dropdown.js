@@ -3,7 +3,7 @@
  */
 (function() {
 
-	angular.module('dropdown-ui', [])
+	angular.module('dropdown-ui', []);
 
 	angular.module('dropdown-ui').constant('myDropdownConfig', {
 		toggleClass: 'dropdown-menu-show',
@@ -44,7 +44,7 @@
 				};
 
 				vm.open = function() {
-					if(!$attrs.disabled) {
+					if (!$attrs.disabled) {
 						vm.dropdownEle.addClass(myDropdownConfig.toggleClass);
 						$document.bind('click', dropdownClose);
 						$attrs.onToggle ? $parse($attrs.onToggle)($scope, {open: true}) : angular.noop;

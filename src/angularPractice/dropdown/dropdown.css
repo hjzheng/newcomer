@@ -85,6 +85,12 @@
     background-color: #40adf1;
 }
 
+.dropdown-menu > li.active a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #40adf1;
+}
+
 .dropdown-menu-show {
     display: inline-block;
     z-index: 333;

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>form checkbox</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./checkbox.css">
+</head>
+<body ng-controller="MainCtrl">
+    <!--<label class="checkbox">-->
+        <!--<input type="checkbox">-->
+        <!--<i class="fa fa-minus-square-o" aria-hidden="true"></i>-->
+        <!--<span class="checkbox-label">AngularJS</span>-->
+    <!--</label>-->
+
+    <!--<label class="checkbox">-->
+        <!--<input type="checkbox">-->
+        <!--<i class="fa fa-check-square-o" aria-hidden="true"></i>-->
+        <!--<span class="checkbox-label">ES6</span>-->
+    <!--</label>-->
+
+    <!--<label class="checkbox">-->
+        <!--<input type="checkbox">-->
+        <!--<i class="fa fa-square-o" aria-hidden="true"></i>-->
+        <!--<span class="checkbox-label">React</span>-->
+    <!--</label>-->
+<p>
+    <h2>checkbox 1</h2>
+    <my-checkbox ng-model="framework[0]">AngularJS</my-checkbox>
+    <my-checkbox ng-model="framework[1]">Vue</my-checkbox>
+    <my-checkbox ng-model="framework[2]">React</my-checkbox>
+    <p>
+        framework: {{framework}}
+        <button ng-click="framework[2]=true">选择 React</button>
+    </p>
+</p>
+
+<p>
+    <h2>checkbox 2</h2>
+    <my-checkbox ng-model="tool[0]" true-value="ES6">ES6</my-checkbox>
+    <my-checkbox ng-model="tool[1]" true-value="Webpack">Webpack</my-checkbox>
+    <my-checkbox ng-model="tool[2]" true-value="NPM">NPM</my-checkbox>
+    <p>
+        tool: {{tool}}
+    </p>
+</p>
+
+<p>
+    <h2>半选</h2>
+    <my-checkbox ng-model="test" partial="partial">半选测试</my-checkbox>
+    <p>
+        <button ng-click="partial=true">恢复</button>
+    </p>
+</p>
+
+
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="./checkbox.js"></script>
+<script>
+    angular.module('app', ['ui-checkbox']).controller('MainCtrl', function($scope){
+        $scope.framework = [];
+        $scope.tool = ['ES6','Webpack', 'NPM'];
+        $scope.partial = true;
+    });
+
+</script>
+</html>
