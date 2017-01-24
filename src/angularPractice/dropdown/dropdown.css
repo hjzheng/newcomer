@@ -1,3 +1,120 @@
-*[my-dropdown-menu].dropdown-menu-show {
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown[disabled] .dropdown-toggle {
+    color: darkgray;
+}
+
+.dropdown-select {
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 3px 5px;
+    width: 110px;
+}
+
+.dropdown-autocomplete {
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 0 3px 0 0;
+}
+
+.dropdown-select > .dropdown-toggle {
+    width: 110px;
+    display: inline-block;
+    color: #0c020b;
+}
+
+.dropdown-autocomplete > .dropdown-toggle > input {
+    border: 0px solid #cccccc;
+    display: inline-block;
+    height: 20px;
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    outline: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    padding: 1px 0;
+    min-width: 120px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.1);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.dropdown-select > .dropdown-menu {
+    left: 0px;
+    top: 24px;
+}
+
+.dropdown-autocomplete > .dropdown-menu {
+    min-width: 145px;
+}
+
+.dropdown-menu > li a {
     display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #666666;
+    white-space: nowrap;
+}
+
+.dropdown-menu > li:hover a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #40adf1;
+}
+
+.dropdown-menu-show {
+    display: inline-block;
+    z-index: 333;
+}
+
+.dropdown-menu b {
+    color: red;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 2px 14px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #333333;
+    background-color: #eeeeee;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }

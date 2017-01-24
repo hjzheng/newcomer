@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="test">
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltip</title>
+    <link rel="stylesheet" href="./tooltip.css">
+
+</head>
+<body ng-controller="TestCtrl">
+    <div style="margin: auto; width: 600px;">
+        <p>
+            <a href="#" tooltip="This is a left tooltip" placement="left">just a left test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a right tooltip" placement="right">just a right test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a top tooltip" placement="top">just a top test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a bottom tooltip" placement="bottom">just a bottom test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a auto tooltip">just a test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a info tooltip" type="info">just a info test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a warning tooltip" type="warning">just a warning test</a>
+        </p>
+        <p>
+            <a href="#" tooltip="This is a danger tooltip" type="danger">just a danger test</a>
+        </p>
+    </div>
+    <p style="position: absolute; left: 0; top: 50%">
+        <a href="#" tooltip="This is a tooltip">just a test</a>
+    </p>
+
+    <p style="position: absolute; right: 0; top: 0px">
+        <a href="#" tooltip="This is a tooltip">just a test</a>
+    </p>
+
+    <p style="position: absolute; right: 0; top: 50%">
+        <a href="#" tooltip="This is a tooltip">just a test</a>
+    </p>
+
+    <p style="position: absolute; right: 0; bottom: 0px;">
+        <a href="#" tooltip="This is a tooltip">just a test</a>
+    </p>
+
+    <p style="position: absolute; left: 0; top: 0px">
+        <a href="#" tooltip="This is a tooltip">just a test</a>
+    </p>
+
+    <p style="position: absolute; left: 0; bottom: 0px">
+        <a href="#" tooltip="This is a tooltip">just a test</a>
+    </p>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="./tooltip.js"></script>
+<script>
+
+    angular.module('test', ['ui-tooltip']).controller('TestCtrl', function($scope) {
+        $scope.name = 'This ia another tooltip';
+    });
+</script>
+</html>

@@ -1,0 +1,6 @@
+<div my-dropdown class="dropdown dropdown-select" auto-close="true" disabled="{{vm.disabled}}">
+    <a my-dropdown-toggle class="dropdown-toggle" href="javascript:void(0)"> {{vm.selectLabel}} <i class="fa fa-angle-down" style="float:right;line-height: 1.5;" aria-hidden="true"></i></a>
+    <ul my-dropdown-menu class="dropdown-menu">
+        <li ng-repeat="data in vm.options" data-value="{{data.value}}" ng-click="vm.selectOption(data)"><a href="#">{{data.label}}</a></li>
+    </ul>
+</div>

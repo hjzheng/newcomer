@@ -20,88 +20,47 @@ li {
 .main {
     width: 600px;
     margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.dropdown {
-    position: relative;
-    float: left;
-    margin: 0 10px;
-}
-
-.dropdown-toggle {
-    color: #337ab7;
-    font-size: 16px;
-    line-height: 20px;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 140px;
-    z-index: 1000;
-    display: none;
-    float: left;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
+.area-btn {
+    width: 160px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 
 .menu-container {
-    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.menu-container .section {
-    float: left;
-    height: 200px;
-    width: 122px;
-    border: 1px solid #000303;
-    border-width: 0 1px 0 0;
+.menu-container > .section {
+    width: 120px;
+    border-right: 1px solid #cccccc;
+    height: 160px;
     overflow: auto;
 }
 
-.section > li {
-    float: left;
-    width: 120px;
+.menu-container > .section:last-child {
+    border-right: 0px solid #cccccc;
 }
 
 .section > li > a {
     display: block;
     padding: 3px 10px;
     clear: both;
-    font-weight: 400;
-    line-height: 1.42857143;
-    color: #333;
+    font-weight: normal;
+    line-height: 18px;
+    color: #666666;
     white-space: nowrap;
 }
 
-.section > li > a:hover {
-    background: #cccccc;
+.section > li:hover > a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #40adf1;
 }
 
-.fa {
-    width: 14px;
-    height: 14px;
-}
-.btn {
-    padding: 0 12px;
-    color: #333;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid #d5d5d5;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}

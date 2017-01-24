@@ -9,54 +9,164 @@
 </head>
 <body ng-controller="MainController">
 <div class="main">
-    <div my-dropdown on-toggle="toggle(open)" auto-close="true" class="dropdown">
-        <a href="#" my-dropdown-toggle class="dropdown-toggle">{{orderLabel}}
-            <i class="fa" ng-class="{'fa-arrow-down': orderIcon === 'desc', 'fa-arrow-up': orderIcon === 'asc'}" aria-hidden="true"></i>
-        </a>
-        <ul my-dropdown-menu class="dropdown-menu">
-            <li ng-repeat="order in orderSortList" ng-click="orderClick(order, $index)">
-                <a href="#"><i class="fa" ng-class="{'fa-check': selectedIndex === $index}" aria-hidden="true"></i> {{order.label}}</a>
-            </li>
-        </ul>
+    <h2>dropdown</h2>
+    <div>
+        <div my-dropdown on-toggle="toggle(open)" auto-close="true" class="dropdown">
+            <a href="#" my-dropdown-toggle class="dropdown-toggle">{{orderLabel}}
+                <i class="fa" ng-class="{'fa-arrow-down': orderIcon === 'desc', 'fa-arrow-up': orderIcon === 'asc', 'fa-star': orderIcon !== 'desc' && orderIcon !== 'asc'}" aria-hidden="true"></i>
+            </a>
+            <ul my-dropdown-menu class="dropdown-menu">
+                <li ng-repeat="order in orderSortList" ng-click="orderClick(order, $index)">
+                    <a href="#"><i class="fa" ng-class="{'fa-check': selectedIndex === $index, 'fa-star': selectedIndex !== $index}" aria-hidden="true"></i> {{order.label}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div my-dropdown class="dropdown">
-        <button my-dropdown-toggle class="dropdown-toggle btn">文件</button>
-        <ul my-dropdown-menu class="dropdown-menu">
-            <li><a href="#">打开新标签页</a></li>
-            <li><a href="#">打开新窗口</a></li>
-            <li><a href="#">打开新的隐身窗口</a></li>
-            <li><a href="#">打开文件...</a></li>
-            <li><a href="#">打开位置...</a></li>
-        </ul>
+    <div>
+        <div my-dropdown class="dropdown">
+            <button my-dropdown-toggle class="dropdown-toggle btn">文件</button>
+            <ul my-dropdown-menu class="dropdown-menu">
+                <li><a href="#">打开新标签页</a></li>
+                <li><a href="#">打开新窗口</a></li>
+                <li><a href="#">打开新的隐身窗口</a></li>
+                <li><a href="#">打开文件...</a></li>
+                <li><a href="#">打开位置...</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div my-dropdown class="dropdown" auto-close="{{autoClose}}">
-        <button my-dropdown-toggle class="dropdown-toggle btn">{{ address + proName + cityName + areaName }}</button>
-        <div my-dropdown-menu class="dropdown-menu" style="width: 380px">
-            <div class="menu-container clearfix">
-                <ul class="section">
-                    <li ng-repeat="p in province" ng-click="showCity(p)"><a href="#">{{ p.name }}</a></li>
-                </ul>
-                <ul class="section">
-                    <li ng-repeat="c in city" ng-click="showArea(c)" ><a href="#">{{ c.name }}</a></li>
-                </ul>
-                <ul class="section">
-                    <li ng-repeat="a in area" ng-click="check(a)"><a href="#">{{ a.DisName }}</a></li>
-                </ul>
+    <div>
+        <div my-dropdown class="dropdown" auto-close="{{autoClose}}">
+            <button my-dropdown-toggle class="dropdown-toggle btn area-btn">{{ address + proName + cityName + areaName }}</button>
+            <div my-dropdown-menu class="dropdown-menu" style="width: 380px">
+                <div class="menu-container clearfix">
+                    <ul class="section">
+                        <li ng-repeat="p in province" ng-click="showCity(p)"><a href="#">{{ p.name }}</a></li>
+                    </ul>
+                    <ul class="section">
+                        <li ng-repeat="c in city" ng-click="showArea(c)" ><a href="#">{{ c.name }}</a></li>
+                    </ul>
+                    <ul class="section">
+                        <li ng-repeat="a in area" ng-click="check(a)"><a href="#">{{ a.DisName }}</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <div my-dropdown class="dropdown">
-        <a href="#" my-dropdown-toggle class="dropdown-toggle">show</a>
-        <div my-dropdown-menu class="dropdown-menu">
-            <img src="#" width="100px" height="100px" alt="我是一个图片">
+    <div>
+        <div my-dropdown class="dropdown">
+            <a href="#" my-dropdown-toggle class="dropdown-toggle">图片</a>
+            <div my-dropdown-menu class="dropdown-menu">
+                <img src="#" width="100px" height="100px" alt="我是一个图片" style="padding: 5px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main">
+    <h2>dropdown select</h2>
+    <div>
+        <my-dropdown-select options="dataList" ng-model="selectValue"></my-dropdown-select>
+        <div>
+            {{selectValue}}
+        </div>
+    </div>
+
+    <div>
+        <my-dropdown-select options="dataList" ng-model="selectValue" disabled="true"></my-dropdown-select>
+        <div>
+            {{selectValue}}
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <h2>dropdown autocomplete</h2>
+    <div>
+        <my-dropdown-autocomplete options="dataList2" ng-model="autoValue"></my-dropdown-autocomplete>
+        <div>
+            {{autoValue}}
         </div>
     </div>
 </div>
 </body>
 <script src="./json.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-sanitize/1.5.6/angular-sanitize.min.js"></script>
 <script src="dropdown.js"></script>
+<script src="dropdown-select.js"></script>
+<script src="dropdown-autocomplete.js"></script>
+<script>
+    angular.module('app', ['dropdown-ui', 'ngSanitize']);
+
+    angular.module('app').controller('MainController', function($scope) {
+        $scope.toggle = function(open) {
+            console.log('open:', open);
+        };
+
+        $scope.orderLabel = '排序';
+        $scope.orderIcon = '';
+        $scope.orderSortList = [
+            {label: '价格 由低到高', sort: 'price', dir: 'asc'},
+            {label: '价格 由高到低', sort: 'price', dir: 'desc'},
+            {label: '服务 由低到高', sort: 'serve', dir: 'asc'},
+            {label: '服务 由高到低', sort: 'serve', dir: 'desc'}
+        ];
+        $scope.orderClick = function(order, $index) {
+            $scope.orderLabel = order.label.split(' ')[0];
+            $scope.orderIcon = order.dir;
+            $scope.selectedIndex = $index;
+        };
+
+        $scope.autoClose = false;
+
+        $scope.address = '地区:';
+
+        $scope.province = province;
+
+        $scope.showCity = function(p) {
+            $scope.proName = p.name;
+            $scope.cityName = '';
+            $scope.areaName = '';
+            $scope.city = city.filter(function(c) {
+                return c.ProID === p.ProID;
+            });
+        };
+
+        $scope.showArea = function(c) {
+            $scope.cityName = c.name;
+            $scope.areaName = '';
+            $scope.area = area.filter(function(a) {
+                return a.CityID === c.CityID;
+            });
+        };
+
+        $scope.check = function(a) {
+            $scope.areaName = a.DisName;
+            $scope.autoClose = true;
+            window.setTimeout(function() {
+                $scope.autoClose = false;
+            });
+        };
+
+        $scope.dataList = [
+            {value: 'xian', label: '西安'},
+            {value: 'shanghai', label: '上海'},
+            {value: 'beijing', label: '北京'}
+        ];
+
+        $scope.selectValue = 'beijing';
+
+        $scope.dataList2 = [
+            {value: 'xian', label: 'xian'},
+            {value: 'shanghai', label: 'shanghai'},
+            {value: 'beijing-1', label: 'beijing-1'},
+            {value: 'beijing-2', label: 'beijing-2'},
+            {value: 'beijing-3', label: 'beijing-3'}
+        ];
+    });
+</script>
 </html>
