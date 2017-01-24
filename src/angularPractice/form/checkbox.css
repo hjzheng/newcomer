@@ -6,18 +6,10 @@
     color: darkgray;
 }
 
-/*.checkbox input {*/
-    /*opacity: 0;*/
-    /*position: absolute;*/
-    /*z-index: -99999;*/
-    /*left: -9999px;*/
-    /*top: 0;*/
-/*}*/
-
 .checkbox-label {
 
 }
 
-.checkbox[disabled]  .checkbox-label {
+.checkbox[disabled] .checkbox-label {
     color: darkgray;
 }
