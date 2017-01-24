@@ -9,7 +9,7 @@
 		function getOptionLabelByValue(options, value) {
 			var label = '';
 			options.forEach(function(option) {
-				if(option.value === value) {
+				if (option.value === value) {
 					label = option.label;
 				}
 			});
@@ -31,13 +31,13 @@
 				var vm = this;
 				vm.selectLabel = vm.ngModel ? getOptionLabelByValue(vm.options, vm.ngModel) : vm.options[0].label;
 				$scope.$watch('vm.ngModel', function(newValue) {
-					if(newValue) vm.selectLabel = getOptionLabelByValue(vm.options, newValue)
+					if (newValue) vm.selectLabel = getOptionLabelByValue(vm.options, newValue);
 				});
 			},
 			bindToController: true,
 			controllerAs: 'vm',
 			link: function(scope, element, attrs, ngModelCtrl) {
-				scope.vm.selectOption = function (option) {
+				scope.vm.selectOption = function(option) {
 					ngModelCtrl.$setViewValue(option.value);
 					ngModelCtrl.$render();
 					scope.vm.selectLabel = option.label;

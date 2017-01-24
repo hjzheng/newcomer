@@ -1,0 +1,5 @@
+<label class="checkbox" ng-click="vm.check(vm.ngModel, $event)">
+    <i class="fa" ng-class="{'fa-check-square-o': (vm.ngModel === vm.trueValue && !vm.partial),
+    'fa-square-o': (vm.ngModel !== vm.trueValue && !vm.partial), 'fa-minus-square-o': vm.partial}" aria-hidden="true"></i>
+    <span class="checkbox-label" ng-transclude></span>
+</label>

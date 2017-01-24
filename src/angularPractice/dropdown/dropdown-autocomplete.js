@@ -8,9 +8,9 @@
 		function searchOptionByLabel(options, keyword) {
 			if (keyword && keyword !== '') {
 				options = angular.copy(options);
-				return options.filter(function (option) {
+				return options.filter(function(option) {
 					return option.label.indexOf(keyword) !== -1;
-				}).map(function (option) {
+				}).map(function(option) {
 					option.label = option.label.replace(keyword, '<b>' + keyword + '</b>');
 					return option;
 				});
@@ -40,7 +40,7 @@
 			controller: function($scope) {
 				var vm = this;
 				vm.toggle = function(open) {
-					if(open === true) {
+					if (open === true) {
 						vm.dataList = searchOptionByLabel(vm.options, vm.label);
 					}
 				};
@@ -54,7 +54,7 @@
 			bindToController: true,
 			controllerAs: 'vm',
 			link: function(scope, element, attrs, ngModelCtrl) {
-				scope.vm.selectOption = function (option) {
+				scope.vm.selectOption = function(option) {
 					ngModelCtrl.$setViewValue(option.value);
 					ngModelCtrl.$render();
 					scope.vm.selectLabel = removeHighlight(option.label);
