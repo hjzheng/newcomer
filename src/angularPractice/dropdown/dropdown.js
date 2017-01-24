@@ -44,9 +44,11 @@
 				};
 
 				vm.open = function() {
-					vm.dropdownEle.addClass(myDropdownConfig.toggleClass);
-					$document.bind('click', dropdownClose);
-					$attrs.onToggle ? $parse($attrs.onToggle)($scope, {open: true}) : angular.noop;
+					if(!$attrs.disabled) {
+						vm.dropdownEle.addClass(myDropdownConfig.toggleClass);
+						$document.bind('click', dropdownClose);
+						$attrs.onToggle ? $parse($attrs.onToggle)($scope, {open: true}) : angular.noop;
+					}
 				};
 
 				vm.close = function() {

@@ -9,7 +9,7 @@
 </head>
 <body ng-controller="MainController">
 <div class="main">
-
+    <h2>dropdown</h2>
     <div>
         <div my-dropdown on-toggle="toggle(open)" auto-close="true" class="dropdown">
             <a href="#" my-dropdown-toggle class="dropdown-toggle">{{orderLabel}}
@@ -64,12 +64,43 @@
         </div>
     </div>
 </div>
+
+
+<div class="main">
+    <h2>dropdown select</h2>
+    <div>
+        <my-dropdown-select options="dataList" ng-model="selectValue"></my-dropdown-select>
+        <div>
+            {{selectValue}}
+        </div>
+    </div>
+
+    <div>
+        <my-dropdown-select options="dataList" ng-model="selectValue" disabled="true"></my-dropdown-select>
+        <div>
+            {{selectValue}}
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <h2>dropdown autocomplete</h2>
+    <div>
+        <my-dropdown-autocomplete options="dataList2" ng-model="autoValue"></my-dropdown-autocomplete>
+        <div>
+            {{autoValue}}
+        </div>
+    </div>
+</div>
 </body>
 <script src="./json.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-sanitize/1.5.6/angular-sanitize.min.js"></script>
 <script src="dropdown.js"></script>
+<script src="dropdown-select.js"></script>
+<script src="dropdown-autocomplete.js"></script>
 <script>
-    angular.module('app', ['dropdown-ui']);
+    angular.module('app', ['dropdown-ui', 'ngSanitize']);
 
     angular.module('app').controller('MainController', function($scope) {
         $scope.toggle = function(open) {
@@ -120,6 +151,22 @@
                 $scope.autoClose = false;
             });
         };
+
+        $scope.dataList = [
+            {value: 'xian', label: '西安'},
+            {value: 'shanghai', label: '上海'},
+            {value: 'beijing', label: '北京'}
+        ];
+
+        $scope.selectValue = 'beijing';
+
+        $scope.dataList2 = [
+            {value: 'xian', label: 'xian'},
+            {value: 'shanghai', label: 'shanghai'},
+            {value: 'beijing-1', label: 'beijing-1'},
+            {value: 'beijing-2', label: 'beijing-2'},
+            {value: 'beijing-3', label: 'beijing-3'}
+        ];
     });
 </script>
 </html>

@@ -3,11 +3,49 @@
     display: inline-block;
 }
 
+.dropdown[disabled] .dropdown-toggle {
+    color: darkgray;
+}
+
+.dropdown-select {
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 3px 5px;
+    width: 110px;
+}
+
+.dropdown-autocomplete {
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 0 3px 0 0;
+}
+
+.dropdown-select > .dropdown-toggle {
+    width: 110px;
+    display: inline-block;
+    color: #0c020b;
+}
+
+.dropdown-autocomplete > .dropdown-toggle > input {
+    border: 0px solid #cccccc;
+    display: inline-block;
+    height: 20px;
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    outline: 0;
+}
+
 .dropdown-menu {
     position: absolute;
     display: none;
     padding: 1px 0;
-    min-width: 100px;
+    min-width: 120px;
     list-style: none;
     background-color: #ffffff;
     border: 1px solid #cccccc;
@@ -20,6 +58,15 @@
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     background-clip: padding-box;
+}
+
+.dropdown-select > .dropdown-menu {
+    left: 0px;
+    top: 24px;
+}
+
+.dropdown-autocomplete > .dropdown-menu {
+    min-width: 145px;
 }
 
 .dropdown-menu > li a {
@@ -41,6 +88,10 @@
 .dropdown-menu-show {
     display: inline-block;
     z-index: 333;
+}
+
+.dropdown-menu b {
+    color: red;
 }
 
 
