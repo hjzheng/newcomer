@@ -1,0 +1,9 @@
+<div class="steps-round">
+    <div ng-repeat="step in vm.steps" class="{{step.status}}" ng-class="{'last': $last}">
+        <div class="wrap">
+            <div class="round">{{step.id}}</div>
+            <div class="bar" ng-if="!$last" style="width: {{step.width}}"></div>
+        </div>
+        <label title="{{step.label}}">{{step.label}}</label>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Steps</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="steps.css" rel="stylesheet">
+</head>
+<body ng-controller="MainCtrl">
+    <h2>濒临死亡病人的心理反应</h2>
+    <my-steps steps="steps"></my-steps>
+    <p>
+        <button ng-click="finish()">一切都结束了</button>
+        <button ng-click="recovery()">恢复初始状态</button>
+    </p>
+    <h2>濒临死亡病人的心理反应</h2>
+    <my-steps steps="steps2"></my-steps>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="./steps.js"></script>
+<script>
+    angular.module('app', ['ui-steps']).controller('MainCtrl', function($scope){
+        $scope.steps = [
+            {id: 1, label: '第一阶段：否认与隔绝', status: 'finished', width: '200px'},
+            {id: 2, label: '第二阶段：愤怒', status: 'finished', width: '120px'},
+            {id: 3, label: '第三阶段：交涉', status: 'current'},
+            {id: 4, label: '第四阶段：抑郁', status: 'todo', width: '120px'},
+            {id: 5, label: '第五阶段：接受', status: 'todo'}
+        ];
+
+        $scope.steps2 = [
+            {id: 1, label: '第一阶段：否认与隔绝', status: 'finished', width: '140px'},
+            {id: 2, label: '第二阶段：愤怒', status: 'finished', width: '120px'},
+            {id: 3, label: '第三阶段：交涉', status: 'finished'},
+            {id: 4, label: '第四阶段：抑郁', status: 'finished', width: '120px'},
+            {id: 5, label: '第五阶段：接受', status: 'finished'}
+        ];
+        
+        $scope.finish = function () {
+            $scope.steps[2].status = 'finished';
+            $scope.steps[3].status = 'finished';
+            $scope.steps[4].status = 'finished';
+        };
+        
+        $scope.recovery = function () {
+            $scope.steps[2].status = 'current';
+            $scope.steps[3].status = 'todo';
+            $scope.steps[4].status = 'todo';
+        };
+    });
+</script>
+</html>
