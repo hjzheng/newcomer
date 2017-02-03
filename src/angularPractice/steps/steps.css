@@ -1,0 +1,87 @@
+.steps-round {
+    display: flex;
+    align-items: center;
+}
+
+.steps-round > div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.steps-round > div > .wrap {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.steps-round > div .round {
+    width: 22px;
+    height: 22px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #FFF;
+    line-height: 22px;
+    text-align: center;
+}
+
+.steps-round > div .bar {
+    margin: 0 0 0 10px;
+    width: 200px;
+    height: 6px;
+    border-radius: 4px;
+}
+
+.steps-round > div > label {
+    width: auto;
+    max-width: 50%;
+    margin-left: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+    margin-top: 6px;
+}
+
+/* _todo */
+
+.steps-round > .todo .round {
+    border: 4px #d3d3d3 solid;
+    background-color: #FFF;
+    color: #999999;
+}
+
+.steps-round > .todo .bar {
+    background-color: #eeeeee;
+}
+
+/* finished */
+
+.steps-round > .finished .round {
+    border: 4px #28a3ef solid;
+    background-color: #28a3ef;
+    color: #ffffff;
+}
+
+.steps-round > .finished .bar {
+    background-color: #28a3ef;
+}
+
+/* current */
+
+.steps-round > .current .round {
+    border: 4px #4cb9fc solid;
+    background-color: #4cb9fc;
+}
+
+.steps-round > .current .bar {
+    background-color: #4cb9fc;
+}
+
+/* last */
+
+.steps-round > .last > label {
+    max-width: 160px;
+}

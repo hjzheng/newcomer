@@ -1,0 +1,15 @@
+.radio {
+
+}
+
+.radio[disabled] {
+    color: darkgray;
+}
+
+.radio-label {
+
+}
+
+.radio[disabled] .radio-label {
+    color: darkgray;
+}

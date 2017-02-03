@@ -1,0 +1,4 @@
+<label class="radio" ng-click="vm.check(vm.ngModel, $event)">
+    <i class="fa" ng-class="{'fa-dot-circle-o': vm.ngModel === vm.ngValue, 'fa-circle-o': vm.ngModel !== vm.ngValue}" aria-hidden="true"></i>
+    <span class="radio-label" ng-transclude></span>
+</label>

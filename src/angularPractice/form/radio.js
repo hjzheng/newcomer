@@ -3,31 +3,23 @@
  */
 (function() {
 
-	angular.module('ui-checkbox', []);
-	angular.module('ui-checkbox').directive('myCheckbox', function() {
+	angular.module('ui-radio', []);
+
+	angular.module('ui-radio').directive('myRadio', function() {
 
 		return {
 			scope: {
-				trueValue: '@',
-				falseValue: '@',
+				ngValue: '@',
 				disabled: '=',
-				ngModel: '=',
-				partial: '='
+				ngModel: '='
 			},
 			restrict: 'E',
 			require: 'ngModel',
 			replace: true,
-			templateUrl: './checkbox.tpl.html',
+			templateUrl: './radio.tpl.html',
 			controller: function($scope, $element) {
 				var vm = this;
-				vm.trueValue = angular.isDefined(vm.trueValue) ? vm.trueValue : true;
-				vm.falseValue = angular.isDefined(vm.falseValue) ? vm.falseValue : false;
-
-				$scope.$watch('vm.partial', function(newValue) {
-					if (newValue) {
-						vm.ngModel = vm.falseValue;
-					}
-				});
+				vm.ngValue = angular.isDefined(vm.ngValue) ? vm.ngValue : true;
 
 				$scope.$watch('vm.disabled', function(newValue) {
 					if (newValue) {
@@ -43,14 +35,8 @@
 				scope.vm.check = function(value, $event) {
 					if (scope.vm.disabled) return;
 
-					if (scope.vm.partial) {
-						scope.vm.partial = false;
-					}
-
-					if (value === scope.vm.trueValue) {
-						scope.vm.ngModel = scope.vm.falseValue;
-					} else {
-						scope.vm.ngModel = scope.vm.trueValue;
+					if (value !== scope.vm.ngValue) {
+						scope.vm.ngModel = scope.vm.ngValue;
 					}
 
 					ngModelCtrl.$setViewValue(scope.vm.ngModel);

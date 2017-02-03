@@ -5,25 +5,20 @@
     <title>form checkbox</title>
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./checkbox.css">
+    <link rel="stylesheet" href="./radio.css">
 </head>
 <body ng-controller="MainCtrl">
-    <!--<label class="checkbox">-->
-        <!--<input type="checkbox">-->
-        <!--<i class="fa fa-minus-square-o" aria-hidden="true"></i>-->
-        <!--<span class="checkbox-label">AngularJS</span>-->
-    <!--</label>-->
 
-    <!--<label class="checkbox">-->
-        <!--<input type="checkbox">-->
-        <!--<i class="fa fa-check-square-o" aria-hidden="true"></i>-->
-        <!--<span class="checkbox-label">ES6</span>-->
-    <!--</label>-->
+<!--<label class="checkbox">-->
+    <!--<i class="fa fa-minus-square-o" aria-hidden="true"></i>-->
+    <!--<span class="checkbox-label">AngularJS</span>-->
+<!--</label>-->
 
-    <!--<label class="checkbox">-->
-        <!--<input type="checkbox">-->
-        <!--<i class="fa fa-square-o" aria-hidden="true"></i>-->
-        <!--<span class="checkbox-label">React</span>-->
-    <!--</label>-->
+<!--<label class="radio">-->
+    <!--<i class="fa fa-dot-circle-o" aria-hidden="true"></i>-->
+    <!--<span class="radio-label">程序员</span>-->
+<!--</label>-->
+
 <p>
     <h2>checkbox 1</h2>
     <my-checkbox ng-model="framework[0]">AngularJS</my-checkbox>
@@ -54,14 +49,50 @@
 </p>
 
 
+<p>
+    <h2>禁用</h2>
+    <my-checkbox ng-model="test2" disabled="disabled">测试</my-checkbox>
+    <p>
+        <button ng-click="disabled=false">恢复</button>
+        <button ng-click="disabled=true">禁用</button>
+    </p>
+</p>
+
+<p>
+    <h2>Radio</h2>
+    <my-radio ng-model="job" ng-value="test">测试</my-radio>
+    <my-radio ng-model="job" ng-value="dev">开发</my-radio>
+    <my-radio ng-model="job" ng-value="others">其他</my-radio>
+    <p>
+        {{job}}
+        <button ng-click="job='dev'">选择开发</button>
+    </p>
+</p>
+
+<p>
+    <h2>禁用</h2>
+    <my-radio ng-model="job" ng-value="test">测试</my-radio>
+    <my-radio ng-model="job" ng-value="dev">开发</my-radio>
+    <my-radio ng-model="job" ng-value="others" disabled="disabled2">其他</my-radio>
+    <p>
+        {{job}}
+        <button ng-click="disabled2=false">启用</button>
+        <button ng-click="disabled2=true">禁用</button>
+    </p>
+</p>
+
 </body>
 <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
 <script src="./checkbox.js"></script>
+<script src="./radio.js"></script>
 <script>
-    angular.module('app', ['ui-checkbox']).controller('MainCtrl', function($scope){
+    angular.module('app', ['ui-checkbox', 'ui-radio']).controller('MainCtrl', function($scope){
         $scope.framework = [];
         $scope.tool = ['ES6','Webpack', 'NPM'];
         $scope.partial = true;
+        $scope.disabled = true;
+
+        $scope.disabled2 = true;
     });
 
 </script>
