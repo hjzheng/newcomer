@@ -11,6 +11,7 @@
 		 * controller 默认是 function(){}
 		 * controllerAs 默认是 'vm'
 		 * locals 本地参数
+		 * headerTitle
 		 * */
 
 		return function(config) {
@@ -22,7 +23,10 @@
 			var controller = config.controller || function() {};
 			var controllerAs = config.controllerAs || 'vm';
 			var locals = config.locals || {};
+			var headerTitle = config.headerTitle || '我是一个标题';
+
 			var root = angular.element($document[0].querySelector('html'));
+			var backdrop = angular.element('<div class="modal-backdrop"></div>');
 			var modalHtml = $templateRequest('./modal.tpl.html');
 			var element = null;
 			var modalBodyHtml, scope;
@@ -33,15 +37,25 @@
 				modalBodyHtml = $templateRequest(config.templateUrl);
 			}
 
+			function appendModal(modalEle) {
+				root.append(modalEle);
+				root.append(backdrop);
+				modalEle.addClass('in');
+			}
+
+			function removeModal(modalEle) {
+				modalEle.removeClass('in');
+				modalEle.remove();
+				backdrop.remove();
+			}
+
 			function open() {
 				var deferred = $q.defer();
 				$q.all([modalHtml, modalBodyHtml]).then(function(htmls) {
 					if (!element) {
 						element = angular.element(htmls[0]);
 						element[0].querySelector('.modal-body').appendChild(angular.element(htmls[1])[0]);
-						var modalEle = compileModel(element, deferred);
-						root.append(modalEle);
-						modalEle.addClass('in');
+						appendModal(compileModel(element, deferred));
 					}
 				});
 
@@ -54,9 +68,10 @@
 
 				scope = $rootScope.$new();
 
+				scope.title = headerTitle;
+
 				scope.close = function() {
-					modalEle.removeClass('in');
-					modalEle.remove();
+					removeModal(modalEle);
 					if (scope[controllerAs].close) {
 						deferred.reject(scope[controllerAs].close());
 					} else {
@@ -65,8 +80,7 @@
 				};
 
 				scope.ok = function() {
-					modalEle.removeClass('in');
-					modalEle.remove();
+					removeModal(modalEle);
 					if (scope[controllerAs].ok) {
 						deferred.resolve(scope[controllerAs].ok());
 					} else {
@@ -75,8 +89,7 @@
 				};
 
 				scope.cancel = function() {
-					modalEle.removeClass('in');
-					modalEle.remove();
+					removeModal(modalEle);
 					if (scope[controllerAs].cancel) {
 						deferred.reject(scope[controllerAs].cancel());
 					} else {
