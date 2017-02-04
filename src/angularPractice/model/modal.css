@@ -1,6 +1,6 @@
 .modal {
     position: fixed;
-    top: 36%;
+    top: -36%;
     left: 50%;
     margin-left: -220px;
     z-index: 1050;
@@ -56,4 +56,22 @@ button.close {
     color: #666;
     text-shadow: 0 1px 0 #ffffff;
     outline: none;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: -1px;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    z-index: 1040;
+}
+
+.fade {
+    transition: opacity .3s linear, top .6s ease-out;
+}
+
+.fade.in {
+    top: 36%;
+    opacity: 1;
 }

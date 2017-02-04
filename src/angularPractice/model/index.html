@@ -7,32 +7,35 @@
     <link href="modal.css" rel="stylesheet">
 </head>
 <body ng-controller="MainCtrl">
-
+    <button ng-click="open()">打开对话框</button>
 </body>
 <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
 <script src="modal.js"></script>
 <script>
     angular.module('app', ['ui-modal']).controller('MainCtrl', function($scope, myModalService){
-        myModalService({
-            templateUrl: './modal.tpl.html',
-            controller: function () {
-                var vm = this;
-                vm.content = '我是内容';
+        $scope.open = function () {
+            myModalService({
+                templateUrl: './modal.body.html',
+                controller: function () {
+                    var vm = this;
+                    vm.title = '我是标题';
+                    vm.content = '我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容';
 
-                vm.ok = function () {
-                    return '成功';
-                };
+                    vm.ok = function () {
+                        return '成功';
+                    };
 
-                vm.cancel = function () {
-                    return '取消';
-                };
-            },
-            controllerAs: 'vm'
-        }).open().then(function(data){
-            console.log(data);
-        }).catch(function(data){
-            console.log(data);
-        });
+                    vm.cancel = function () {
+                        return '取消';
+                    };
+                },
+                controllerAs: 'vm'
+            }).open().then(function(data){
+                console.log(data);
+            }).catch(function(data){
+                console.log(data);
+            });
+        }
     });
 </script>
 </html>

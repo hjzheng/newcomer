@@ -10,6 +10,7 @@
 		 * templateUrl or template
 		 * controller 默认是 function(){}
 		 * controllerAs 默认是 'vm'
+		 * locals 本地参数
 		 * */
 
 		return function(config) {
@@ -20,41 +21,41 @@
 
 			var controller = config.controller || function() {};
 			var controllerAs = config.controllerAs || 'vm';
+			var locals = config.locals || {};
 			var root = angular.element($document[0].querySelector('html'));
+			var modalHtml = $templateRequest('./modal.tpl.html');
 			var element = null;
-			var html, scope;
+			var modalBodyHtml, scope;
 
 			if (config.template) {
-				html = $q.when(config.template);
+				modalBodyHtml = $q.when(config.template);
 			} else {
-				html = $templateRequest(config.templateUrl);
+				modalBodyHtml = $templateRequest(config.templateUrl);
 			}
 
-			function open(locals) {
+			function open() {
 				var deferred = $q.defer();
-				html.then(function(html) {
+				$q.all([modalHtml, modalBodyHtml]).then(function(htmls) {
 					if (!element) {
-						var modalEle = compileModel(html, locals, deferred);
+						element = angular.element(htmls[0]);
+						element[0].querySelector('.modal-body').appendChild(angular.element(htmls[1])[0]);
+						var modalEle = compileModel(element, deferred);
 						root.append(modalEle);
+						modalEle.addClass('in');
 					}
 				});
 
 				return deferred.promise;
 			}
 
-			function compileModel(html, locals, deferred) {
+			function compileModel(element, deferred) {
 
 				var modalEle = null;
-
-				element = angular.element(html);
-
-				if (element.length === 0) {
-					throw new Error('The template contains no elements; you need to wrap text nodes');
-				}
 
 				scope = $rootScope.$new();
 
 				scope.close = function() {
+					modalEle.removeClass('in');
 					modalEle.remove();
 					if (scope[controllerAs].close) {
 						deferred.reject(scope[controllerAs].close());
@@ -64,6 +65,7 @@
 				};
 
 				scope.ok = function() {
+					modalEle.removeClass('in');
 					modalEle.remove();
 					if (scope[controllerAs].ok) {
 						deferred.resolve(scope[controllerAs].ok());
@@ -73,6 +75,7 @@
 				};
 
 				scope.cancel = function() {
+					modalEle.removeClass('in');
 					modalEle.remove();
 					if (scope[controllerAs].cancel) {
 						deferred.reject(scope[controllerAs].cancel());
@@ -81,22 +84,15 @@
 					}
 				};
 
-				if (controller) {
-					if (!locals) {
-						locals = {};
-					}
-					for (var prop in locals) {
-						scope[prop] = locals[prop];
-					}
-
-					var ctrl = $controller(controller, {
-						$scope: scope
-					});
-
-					if (controllerAs) {
-						scope[controllerAs] = ctrl;
-					}
+				for (var prop in locals) {
+					scope[prop] = locals[prop];
 				}
+
+				var ctrl = $controller(controller, {
+					$scope: scope
+				});
+
+				scope[controllerAs] = ctrl;
 
 				modalEle = $compile(element)(scope);
 
