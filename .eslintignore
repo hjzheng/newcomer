@@ -4,6 +4,7 @@ src/angular-practice/resource
 src/angular-practice/http-server
 src/js-practice/searchpca
 src/angular-practice/dropdown/json.js
+src/angular-practice/voice
 node_modules
 npm-debug.log
 src/js-practice/table/index.js
