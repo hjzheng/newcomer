@@ -66,10 +66,13 @@
 7. 练习
    - Todo list
    - 写指令
-     - [panel](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/panel)
+     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/tooltip2)
      - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
-     - [开关](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/switch)
-     - [幻灯片](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/slide)
+     - [switch](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/switch)
+     - [modal](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/modal)
+     - [steps](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/steps)
+     - [loading](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/loading)
+     - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/form)
    - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/flymeal)
 
 #### ES6
