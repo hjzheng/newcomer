@@ -18,7 +18,7 @@
             },
             controller: VoiceController,
             controllerAs: 'vm',
-            templateUrl: './voice.tpl.html',
+            templateUrl: 'voice.tpl.html',
             bindToController: true
         };
         return directive;

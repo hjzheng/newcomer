@@ -2,7 +2,7 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./voice.css">
+    <link rel="stylesheet" href="voice.css">
     <title>模拟微信播放语音效果</title>
     <style>
         body {
@@ -18,7 +18,7 @@
     <voice  position="left" voice-play-callback="vm.audioPlayClick(vm.url1);" voice-stop-callback="vm.audioStopClick();" hasend="vm.hasend"></voice>
     <voice  position="right" voice-play-callback="vm.audioPlayClick(vm.url2);" voice-stop-callback="vm.audioStopClick();" hasend="vm.hasend"></voice>
     <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
-    <script src="./voice.directive.js"></script>
+    <script src="voice.directive.js"></script>
     <script src="demo.js"></script>
 
     <audio  ng-src="{{vm.sce(vm.currentAudio)}}"></audio>
