@@ -47,11 +47,11 @@
 6. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
 7. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
 8. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
-9. [练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/jsPractice)
+9. [练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/js-practice)
     - Tab http://www.angularjs.cn/
     - Todo List 用原生JS写 AngularJS 官网的 [Todo List](https://angularjs.org/)
     - login http://www.angularjs.cn/login
-10. [其他资料](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/jsPractice/concept/others.md)
+10. [其他资料](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/js-practice/concept/others.md)
 
 
 #### AngularJS
@@ -61,20 +61,20 @@
 1. [AngularJS官方指南](https://docs.angularjs.org/guide)
 2. [PhoneCat](https://docs.angularjs.org/tutorial)
 3. [精通AngularJS](http://www.duokan.com/book/90947)
-4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angularPractice/angularSkillTree/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
+4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angular-practice/angular-skill-tree/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
-6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [xmind总结](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angularPractice/angularCodeReview/AngularJS1.x%20Code%20Review%20CheckList.png)
+6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [xmind总结](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angular-practice/angular-code-review/AngularJS1.x%20Code%20Review%20CheckList.png)
 7. 练习
    - Todo list
    - 写指令
-     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/tooltip2)
-     - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
-     - [switch](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/switch)
-     - [modal](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/modal)
-     - [steps](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/steps)
-     - [loading](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/loading)
-     - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/form)
-   - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/flymeal)
+     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/tooltip2)
+     - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/dropdown)
+     - [switch](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/switch)
+     - [modal](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/modal)
+     - [steps](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/steps)
+     - [loading](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/loading)
+     - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/form)
+   - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/flymeal)
 
 #### ES6相关
 
