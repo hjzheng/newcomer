@@ -51,6 +51,7 @@
     - Tab http://www.angularjs.cn/
     - Todo List 用原生JS写 AngularJS 官网的 [Todo List](https://angularjs.org/)
     - login http://www.angularjs.cn/login
+10. [其他资料](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/jsPractice/concept/others.md)
 
 
 #### AngularJS
@@ -75,7 +76,7 @@
      - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/form)
    - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/flymeal)
 
-#### ES6
+#### ES6相关
 
 **实际项目中会用到ES6, 这里提供两个练习环境**
 
@@ -90,22 +91,7 @@
 
 #### 团队协作
 
+**实际项目关于 git 的使用, 以及通过一些工具例如 ESLint 等, 对代码风格控制, 以及通过单元测试, 保证代码质量**
+
 1. [git使用](http://rogerdudler.github.io/git-guide/)
 2. [前端代码质量控制](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/others)
-
-#### 补充资料
-
-1. [JS查漏补缺1](https://gist.github.com/hjzheng/30b4a235dc082bfe6b1e)
-2. [JS查漏补缺2](https://gist.github.com/hjzheng/0c365ddca36568191820)
-3. [JS查漏补缺3](https://gist.github.com/hjzheng/87d9baf58bc70fdec425)
-4. [JS查漏补缺4](https://gist.github.com/hjzheng/bb6a83ca2fd68a584698)
-5. [JS查漏补缺5](https://gist.github.com/hjzheng/9cc77fa68f85d2a7717d)
-6. [JS查漏补缺6](https://gist.github.com/hjzheng/46fcecb34d09785f9181)
-
-#### 计划变更
-
-1. 对于技术优秀的实习生, 可以直接通过练习, 检测其水平, 水平合格者, 可以直接跳过相应的阶段.
-2. 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材, 当学生通过下面的知识学习后, 再回头学习犀牛书.
-    - [JS入门](http://www.imooc.com/learn/36)
-    - [JS高级](http://www.imooc.com/learn/10)
-    - [Ajax](http://www.imooc.com/learn/250)
