@@ -1,0 +1,58 @@
+.loading {
+    display: inline-block;
+}
+
+.loading .label {
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+/*
+
+the animation, please refer to font-awesome
+https://github.com/FortAwesome/Font-Awesome/blob/v4.7.0/less/animated.less
+
+*/
+
+.loading .icon-pc-loading {
+    animation: rotation 2s infinite steps(8);
+    display: inline-block;
+    color: #28a3ef;
+}
+
+.loading .loading-normal.icon-pc-loading {
+    font-size: 50px;
+}
+
+.loading .loading-large.icon-pc-loading {
+    font-size: 80px;
+}
+
+.loading .loading-xlarge.icon-pc-loading {
+    font-size: 100px;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+@-moz-keyframes rotation {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(359deg);
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
