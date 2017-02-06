@@ -47,10 +47,11 @@
 6. [JavaScript模式](http://item.jd.com/11044070.html) (选读)
 7. [JavaScript DOM高级程序设计](http://item.jd.com/10138651.html) (选读)
 8. JS规范 [ESLint规范](https://github.com/Jocs/ESLint_docs)
-9. [练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/jsPractice)
+9. [练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/js-practice)
     - Tab http://www.angularjs.cn/
     - Todo List 用原生JS写 AngularJS 官网的 [Todo List](https://angularjs.org/)
     - login http://www.angularjs.cn/login
+10. [其他资料](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/js-practice/concept/others.md)
 
 
 #### AngularJS
@@ -60,22 +61,22 @@
 1. [AngularJS官方指南](https://docs.angularjs.org/guide)
 2. [PhoneCat](https://docs.angularjs.org/tutorial)
 3. [精通AngularJS](http://www.duokan.com/book/90947)
-4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angularPractice/angularSkillTree/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
+4. [A Better Way to Learn AngularJS](https://thinkster.io/a-better-way-to-learn-angularjs) 可以作为[AngularJS1.x知识的考察点](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angular-practice/angular-skill-tree/AngularJS1.x%20%E6%8A%80%E8%83%BD%E7%82%B9.png)
 5. AngularJS 1.x 规范 参考 [johnpapa/angular-styleguide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/zh-CN.md)
-6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [xmind总结](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angularPractice/angularCodeReview/AngularJS1.x%20Code%20Review%20CheckList.png)
+6. [AngularJS 1.x Code Review CheckList](https://angularcodereview.com/angularjs/) [xmind总结](https://github.com/ShuyunXIANFESchool/newcomer/blob/master/src/angular-practice/angular-code-review/AngularJS1.x%20Code%20Review%20CheckList.png)
 7. 练习
    - Todo list
    - 写指令
-     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/tooltip2)
-     - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
-     - [switch](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/switch)
-     - [modal](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/modal)
-     - [steps](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/steps)
-     - [loading](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/loading)
-     - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/form)
-   - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/flymeal)
+     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/tooltip2)
+     - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/dropdown)
+     - [switch](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/switch)
+     - [modal](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/modal)
+     - [steps](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/steps)
+     - [loading](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/loading)
+     - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/form)
+   - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/flymeal)
 
-#### ES6
+#### ES6相关
 
 **实际项目中会用到ES6, 这里提供两个练习环境**
 
@@ -90,22 +91,7 @@
 
 #### 团队协作
 
+**实际项目关于 git 的使用, 以及通过一些工具例如 ESLint 等, 对代码风格控制, 以及通过单元测试, 保证代码质量**
+
 1. [git使用](http://rogerdudler.github.io/git-guide/)
 2. [前端代码质量控制](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/others)
-
-#### 补充资料
-
-1. [JS查漏补缺1](https://gist.github.com/hjzheng/30b4a235dc082bfe6b1e)
-2. [JS查漏补缺2](https://gist.github.com/hjzheng/0c365ddca36568191820)
-3. [JS查漏补缺3](https://gist.github.com/hjzheng/87d9baf58bc70fdec425)
-4. [JS查漏补缺4](https://gist.github.com/hjzheng/bb6a83ca2fd68a584698)
-5. [JS查漏补缺5](https://gist.github.com/hjzheng/9cc77fa68f85d2a7717d)
-6. [JS查漏补缺6](https://gist.github.com/hjzheng/46fcecb34d09785f9181)
-
-#### 计划变更
-
-1. 对于技术优秀的实习生, 可以直接通过练习, 检测其水平, 水平合格者, 可以直接跳过相应的阶段.
-2. 初学者, 关于JS学习过程, 犀牛书过于理论化, 建议换用其他书作为入门教材, 当学生通过下面的知识学习后, 再回头学习犀牛书.
-    - [JS入门](http://www.imooc.com/learn/36)
-    - [JS高级](http://www.imooc.com/learn/10)
-    - [Ajax](http://www.imooc.com/learn/250)

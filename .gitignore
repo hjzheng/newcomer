@@ -1,7 +1,7 @@
 .DS_Store
 .idea
-src/angularPractice/flymeal/node_modules
-src/angularPractice/resource/node_modules
-src/angularPractice/http-server/node_modules
+src/angular-practice/flymeal/node_modules
+src/angular-practice/resource/node_modules
+src/angular-practice/http-server/node_modules
 node_modules
 npm-debug.log
