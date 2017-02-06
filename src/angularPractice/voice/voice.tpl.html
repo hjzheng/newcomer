@@ -1,0 +1,12 @@
+<div class="voice {{vm.position}}">
+    <a href="javascript:;" class="voice-wrap" ng-if="vm.position==='left'" ng-click="vm.play($event);">
+        <div class="small"></div>
+        <div class="middle stop"></div>
+        <div class="large stop"></div>
+    </a>
+    <a href="javascript:;"  class="voice-wrap" ng-if="vm.position==='right'" ng-click="vm.play($event);">
+        <div class="large stop"></div>
+        <div class="middle stop"></div>
+        <div class="small"></div>
+    </a>
+</div>
