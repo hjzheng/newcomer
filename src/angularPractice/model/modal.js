@@ -26,6 +26,7 @@
 			var headerTitle = config.headerTitle || '我是一个标题';
 
 			var root = angular.element($document[0].querySelector('html'));
+			// backdrop
 			var backdrop = angular.element('<div class="modal-backdrop"></div>');
 			var modalHtml = $templateRequest('./modal.tpl.html');
 			var element = null;
@@ -68,8 +69,10 @@
 
 				scope = $rootScope.$new();
 
+				// 设置标题
 				scope.title = headerTitle;
 
+				// 设置三个方法 close, ok, cancel, 通过 Promise, 如果用户定义三个方法, 获取方法返回值
 				scope.close = function() {
 					removeModal(modalEle);
 					if (scope[controllerAs].close) {
