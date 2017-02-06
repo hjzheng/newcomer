@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>dropdown 练习</title>
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./dropdown.css">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./dropdown.css">
+    <link rel="stylesheet" href="./date.css">
 </head>
 <body ng-controller="MainController">
 <div class="main">
@@ -92,6 +93,23 @@
         </div>
     </div>
 </div>
+
+<div class="main">
+    <h2>dropdown date</h2>
+    <div>
+        <my-dropdown-date ng-model="dateValue"></my-dropdown-date>
+        <div>
+            {{dateValue}}
+        </div>
+    </div>
+    <div>
+        <my-dropdown-date ng-model="dateValue2"></my-dropdown-date>
+        <div>
+            {{dateValue2}}
+        </div>
+    </div>
+</div>
+
 </body>
 <script src="./json.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
@@ -99,8 +117,10 @@
 <script src="dropdown.js"></script>
 <script src="dropdown-select.js"></script>
 <script src="dropdown-autocomplete.js"></script>
+<script src="date.js"></script>
+<script src="dropdown-date.js"></script>
 <script>
-    angular.module('app', ['dropdown-ui', 'ngSanitize']);
+    angular.module('app', ['dropdown-ui', 'ngSanitize', 'date-ui']);
 
     angular.module('app').controller('MainController', function($scope) {
         $scope.toggle = function(open) {
@@ -155,7 +175,12 @@
         $scope.dataList = [
             {value: 'xian', label: '西安'},
             {value: 'shanghai', label: '上海'},
-            {value: 'beijing', label: '北京'}
+            {value: 'beijing', label: '北京'},
+            {value: 'chengdu', label: '成都'},
+            {value: 'wuhan', label: '武汉'},
+            {value: 'shenzhen', label: '深圳'},
+            {value: 'luoyang', label: '洛阳'},
+            {value: 'hangzhou', label: '杭州'}
         ];
 
         $scope.selectValue = 'beijing';
@@ -167,6 +192,8 @@
             {value: 'beijing-2', label: 'beijing-2'},
             {value: 'beijing-3', label: 'beijing-3'}
         ];
+
+        $scope.dateValue = '2017-02-12';
     });
 </script>
 </html>

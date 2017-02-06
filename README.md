@@ -66,8 +66,6 @@
 7. 练习
    - Todo list
    - 写指令
-     - Tabs
-     - [简单日历](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/date)
      - [panel](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/panel)
      - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/dropdown)
      - [开关](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angularPractice/switch)

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="loading.css" rel="stylesheet">
+</head>
+<body ng-controller="MainCtrl">
+    <my-loading size="normal">Loading...</my-loading>
+    <my-loading size="large">等待中...</my-loading>
+    <my-loading size="xlarge">加载中...</my-loading>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="loading.js"></script>
+<script>
+    angular.module('app', ['ui-loading']).controller('MainCtrl', function(){
+    });
+</script>
+</html>

@@ -2,52 +2,8 @@
  * Created by hjzheng on 16/6/8.
  */
 (function() {
-	angular.module('app', []);
-
-	angular.module('app').controller('MainCtrl', function($scope) {
-		$scope.date = '2016-7-11';
-	});
-
-	angular.module('app').directive('myDateInput', function($compile, $rootScope) {
-		return {
-			restrict: 'A',
-			require: 'ngModel',
-			bindToController: true,
-			controllerAs: 'vm',
-			link: function(scope, element, attrs, ngModelCtrl) {
-
-				var angularDomEl = angular.element('<my-date style="position: absolute" date="{{date}}" on-selected="onSelected(date)"></my-date>');
-				var newScope = $rootScope.$new();
-
-				var html = $compile(angularDomEl)(newScope);
-
-				html.css('display', 'none');
-				element.after(html);
-
-
-				// UI - model
-				newScope.onSelected = function(date) {
-					ngModelCtrl.$setViewValue(date);
-					element.attr('value', date);
-					html.css('display', 'none');
-				};
-				// model -> UI
-				ngModelCtrl.$render = function() {
-					newScope.date = ngModelCtrl.$modelValue;
-					element.attr('value', newScope.date);
-				};
-
-				// show date box
-				element.on('focus', function() {
-					var elemRect = element[0].getBoundingClientRect();
-					html.css('display', 'block');
-					html.css('left', elemRect.left + 'px');
-					html.css('top', elemRect.top + elemRect.height + 'px');
-				});
-			}
-		};
-	});
-	angular.module('app').directive('myDate', function() {
+	angular.module('date-ui', []);
+	angular.module('date-ui').directive('myDate', function() {
 		var dateUtil = {
 			dateArr: null,
 			// 取得当前的日期对象
@@ -122,9 +78,14 @@
 			return years;
 		}
 
+		function fixDateNum(num) {
+			return (num + '').length === 2 ? '' + num : '0' + num;
+		}
+
+
 		return {
 			restrict: 'E',
-			templateUrl: './date.tpl.html',
+			templateUrl: 'date.tpl.html',
 			scope: {
 				date: '@',
 				onSelected: '&',
@@ -156,7 +117,7 @@
 
 				that.selectDay = function(day) {
 					that._day = day;
-					this.onSelected({date: that._year + '-' + (that._month + 1) + '-' + that._day});
+					this.onSelected({date: that._year + '-' + (fixDateNum(that._month + 1)) + '-' + fixDateNum(that._day)});
 				};
 
 				that._month = dateUtil.getDate().getMonth();

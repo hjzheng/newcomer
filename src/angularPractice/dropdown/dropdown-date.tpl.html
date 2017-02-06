@@ -1,0 +1,6 @@
+<div my-dropdown class="dropdown dropdown-date" auto-close="false" disabled="{{vm.disabled}}">
+    <a my-dropdown-toggle class="dropdown-toggle" href="javascript:void(0)"> {{vm.dateValue}} <i class="fa fa-angle-down" style="float:right;line-height: 1.5;" aria-hidden="true"></i></a>
+    <ul my-dropdown-menu class="dropdown-menu">
+        <my-date date="{{vm.dateValue}}" on-selected="vm.onSelected(date)"></my-date>
+    </ul>
+</div>

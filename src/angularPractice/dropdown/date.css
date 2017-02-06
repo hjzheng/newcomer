@@ -7,15 +7,14 @@ table {
     min-height: 20px;
     padding: 10px;
     width: 182px;
-    margin-bottom: 20px;
     border: 1px solid #e3e3e3;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
 
 .date-box td {
-     text-align: center;
-     font-weight: normal;
-     color: #555555;
+    text-align: center;
+    font-weight: normal;
+    color: #555555;
 }
 
 .date-box td > a {
