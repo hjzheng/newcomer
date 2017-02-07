@@ -15,7 +15,7 @@ https://github.com/FortAwesome/Font-Awesome/blob/v4.7.0/less/animated.less
 */
 
 .loading .icon-pc-loading {
-    animation: rotation 2s infinite steps(8);
+    animation: rotation 1s infinite steps(8);
     display: inline-block;
     color: #28a3ef;
 }

@@ -118,7 +118,9 @@
 			link: function($scope, iElement, iAttrs) {
 				var tooltipEle = null;
 
+				// 创建 scope
 				var scope = $scope.$new();
+
 				scope.content = iAttrs.tooltip;
 				scope.placement = iAttrs.placement;
 				scope.type = iAttrs.type || 'default';
@@ -133,6 +135,10 @@
 					if (!iElement[0].contains(event.target)) {
 						tooltipEle && tooltipEle.remove();
 						$document.unbind('mouseover', closeTooltip);
+						// 销毁 scope
+						if (scope && typeof scope.$destroy === 'function') {
+							scope.$destroy();
+						}
 					}
 				}
 

@@ -1,0 +1,14 @@
+.pagination {
+
+}
+
+.pagination ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.pagination ul > li {
+
+}
+
+

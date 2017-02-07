@@ -48,6 +48,11 @@
 				modalEle.removeClass('in');
 				modalEle.remove();
 				backdrop.remove();
+
+				// 当元素被删除时, 销毁 scope
+				if (scope && typeof scope.$destroy === 'function') {
+					scope.$destroy();
+				}
 			}
 
 			function open() {
@@ -74,30 +79,30 @@
 
 				// 设置三个方法 close, ok, cancel, 通过 Promise, 如果用户定义三个方法, 获取方法返回值
 				scope.close = function() {
-					removeModal(modalEle);
 					if (scope[controllerAs].close) {
 						deferred.reject(scope[controllerAs].close());
 					} else {
 						deferred.reject();
 					}
+					removeModal(modalEle);
 				};
 
 				scope.ok = function() {
-					removeModal(modalEle);
 					if (scope[controllerAs].ok) {
 						deferred.resolve(scope[controllerAs].ok());
 					} else {
 						deferred.resolve();
 					}
+					removeModal(modalEle);
 				};
 
 				scope.cancel = function() {
-					removeModal(modalEle);
 					if (scope[controllerAs].cancel) {
 						deferred.reject(scope[controllerAs].cancel());
 					} else {
 						deferred.reject();
 					}
+					removeModal(modalEle);
 				};
 
 				for (var prop in locals) {
