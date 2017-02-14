@@ -25,16 +25,13 @@ function DataBinder() {
 	// 数据模型
 	var Modal = {
 		modals: {},
-		update: function(modalName, value) {
+		set: function(modalName, value) {
 			this.modals[modalName] = value;
 			console.log('模型发生了变化, 通知视图');
 			PubSub.publish('modal-2-view', modalName, value);
 		},
 		get: function(modalName) {
 			return this.modals[modalName];
-		},
-		set: function(modalName, value) {
-			this.modals[modalName] = value;
 		}
 	};
 
@@ -45,15 +42,15 @@ function DataBinder() {
 		var modalName = target.getAttribute(directive);
 
 		if (modalName && modalName !== '') {
-			console.log('视图发生了变化, 通知 modal');
+			console.log('视图发生了变化, 通知模型');
 			PubSub.publish('ui-2-modal', modalName, target.value);
 		}
 	};
 
 	// 监听变化事件并代理到 PubSub
 	if (document.addEventListener) {
-		// document.addEventListener('keyup', changeHandler, false);
-		document.addEventListener('change', changeHandler, false);
+		document.addEventListener('keyup', changeHandler, false);
+		// document.addEventListener('change', changeHandler, false);
 	}
 
 	PubSub.subscribe('modal-2-view', function(modalName, newValue) {
@@ -84,12 +81,11 @@ function DataBinder() {
 
 window.onload = function() {
 	var user = DataBinder();
-	user.update('name', 'hjzheng');
-	user.update('test', 'test');
+	user.set('name', 'hjzheng');
 };
 
-// use.set 方法中 会发布事件 123:change (模型,修改数据)
+// use.set 方法中 会发布事件 (模型,修改数据)
 // DataBinder 会订阅该事件, 对 dom 进行更新 (视图)
 
-// 当我们修改 input 的值时, document.addEventListener 会触发 'change' 事件, 会发布事件 123:change (视图发生变化)
-// User 中的最后, 使用 set 方法修改数据 (模型)
+// 当我们修改 input 的值时, document.addEventListener 会触发 'change' 事件, 会发布事件 (视图发生变化)
+// 最后, 使用 set 方法修改数据 (模型)
