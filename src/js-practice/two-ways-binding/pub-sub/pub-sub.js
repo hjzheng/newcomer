@@ -83,7 +83,7 @@ function DataBinder() {
 }
 
 window.onload = function() {
-	window.user = DataBinder();
+	var user = DataBinder();
 	user.update('name', 'hjzheng');
 	user.update('test', 'test');
 };
