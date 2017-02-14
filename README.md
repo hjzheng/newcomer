@@ -67,7 +67,7 @@
 7. 练习
    - Todo list
    - 写指令
-     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/tooltip2)
+     - [tooltip](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/tooltip)
      - [dropdown](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/dropdown)
      - [switch](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/switch)
      - [modal](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/modal)
