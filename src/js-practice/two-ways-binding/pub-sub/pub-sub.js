@@ -19,26 +19,26 @@ PubSub.prototype.publish = function() {
 	}
 };
 
-function Modal(pubsub) {
+function Model(pubsub) {
 	this.modals = {};
 	this.pubsub = pubsub;
 }
 
-Modal.prototype.set = function(modalName, value) {
+Model.prototype.set = function(modalName, value) {
 	this.modals[modalName] = value;
 };
 
-Modal.prototype.get = function(modalName) {
+Model.prototype.get = function(modalName) {
 	return this.modals[modalName];
 };
 
 function DataBinder() {
 	this.directive = 'data-bind';
 	this.pubsub = new PubSub();
-	this.modal = new Modal();
+	this.model = new Model();
 	this.bindV2M();
 	this.bindM2V();
-	return this.modal;
+	return this.model;
 }
 
 DataBinder.prototype.bindV2M = function() {
@@ -50,18 +50,18 @@ DataBinder.prototype.bindV2M = function() {
 
 	function changeHandler(evt) {
 		var target = evt.target;
-		var modalName = target.getAttribute(_this.directive);
+		var modelName = target.getAttribute(_this.directive);
 
-		if (modalName && modalName !== '') {
+		if (modelName && modelName !== '') {
 			console.log('视图发生了变化, 通知模型');
-			_this.pubsub.publish('ui-2-modal', modalName, target.value);
+			_this.pubsub.publish('ui-2-model', modelName, target.value);
 		}
 	}
 
 	// 监听视图变化, 更新数据模型
-	_this.pubsub.subscribe('ui-2-modal', function(modalName, newValue) {
+	_this.pubsub.subscribe('ui-2-model', function(modelName, newValue) {
 		console.log('由于视图发生了变化, 更新模型');
-		_this.modal.set(modalName, newValue);
+		_this.model.set(modelName, newValue);
 	});
 
 };
@@ -70,22 +70,22 @@ DataBinder.prototype.bindM2V = function() {
 
 	var _this = this;
 
-	var _originSet = _this.modal.set;
+	var _originSet = _this.model.set;
 
 	// 模型发生变化, 通知视图(装饰原来的 set 方法)
-	_this.modal.set = function(modalName, value) {
-		_originSet.apply(_this.modal, arguments);
+	_this.model.set = function(modelName, value) {
+		_originSet.apply(_this.model, arguments);
 		console.log('模型发生了变化, 通知视图');
-		_this.pubsub.publish('modal-2-view', modalName, value);
+		_this.pubsub.publish('model-2-view', modelName, value);
 	};
 
 	// 监听模型变化, 更新视图
-	_this.pubsub.subscribe('modal-2-view', function(modalName, newValue) {
+	_this.pubsub.subscribe('model-2-view', function(modelName, newValue) {
 
 		console.log('由于模型发生了变化, 更新视图');
 
 		var	tagName;
-		var elements = document.querySelectorAll('[' + _this.directive + '="' + modalName + '"]');
+		var elements = document.querySelectorAll('[' + _this.directive + '="' + modelName + '"]');
 
 		for (var i = 0, len = elements.length; i < len; i++) {
 			tagName = elements[i].tagName.toLowerCase();
