@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <title>Pagination</title>
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        li {
+            list-style: none;
+        }
+
+        .main {
+            width: 800px;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
     <link href="pagination.css" rel="stylesheet">
 </head>
-<body ng-controller="MainCtrl">
-    <div class="pagination">
-        <ul>
-            <li class="prev disabled"><a href="#"><i class="sui-icon icon-pc-prev"></i></a></li>
-            <li class="prev disabled"><a href="#"><i class="sui-icon icon-pc-chevron-left"></i></a></li>
-            <li><input type="text" class="ex-page-num"><span>共10页</span></li>
-            <li class="next"><a href="#"><i class="sui-icon icon-pc-chevron-right"></i></a></li>
-            <li class="next"><a href="#"><i class="sui-icon icon-pc-next"></i></a></li>
-        </ul>
-    </div>
+<body ng-controller="MainCtrl" class="main">
+    <h2>分页导航</h2>
+    <my-pagination total-items="100", page-size="10" on-select-page="selectPage(start, end)"></my-pagination>
 </body>
 <script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
 <script src="pagination.js"></script>
 <script>
-    angular.module('app', ['ui-pagination']).controller('MainCtrl', function(){
+    angular.module('app', ['ui-pagination']).controller('MainCtrl', function($scope) {
+        $scope.selectPage = function(start, end) {
+            console.log(start, end);
+        };
     });
 </script>
 </html>

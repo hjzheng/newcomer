@@ -1,0 +1,9 @@
+<span class="pagination">
+    <ul>
+        <li class="prev disabled"><a href="javascript:void(0)" ng-click="vm.selectPage(1)" ng-class="{'disable' : vm.currentPage === 1}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+        <li class="prev disabled"><a href="javascript:void(0)" ng-click="vm.prePage()" ng-class="{'disable' : vm.currentPage === 1}"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        <li><input type="text" ng-model="vm._currentPage" ng-blur="vm.changePage()" class="page-num"><span class="total-num"> / 共{{vm.maxPage}}页</span></li>
+        <li class="next"><a href="javascript:void(0)" ng-click="vm.nextPage()" ng-class="{'disable' : vm.currentPage === vm.maxPage}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        <li class="next"><a href="javascript:void(0)" ng-click="vm.selectPage(vm.maxPage)" ng-class="{'disable' : vm.currentPage === vm.maxPage}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+    </ul>
+</span>

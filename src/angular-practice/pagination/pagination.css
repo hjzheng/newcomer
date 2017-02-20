@@ -5,10 +5,47 @@
 .pagination ul {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .pagination ul > li {
+    line-height: 18px;
+    padding: 0 5px;
+}
 
+.pagination ul > li > a {
+    padding: 4px 2px;
+    display: inline-block;
+}
+
+.pagination ul > li i {
+    color: #28a3ef;
+}
+
+.pagination .page-num {
+    display: inline-block;
+    height: 18px;
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border linear .2s, box-shadow linear .2s;
+    width: 18px;
+    margin: 0px 5px;
+    border-radius: 0;
+}
+
+.pagination .total-num {
+    line-height: 18px;
+    font-size: 12px;
+}
+
+.pagination .disable i {
+    color: #aaaaaa;
 }
 
 
