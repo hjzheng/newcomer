@@ -42,13 +42,13 @@ function co(generator) {
 	}();
 }
 
-var a = co(function*() {
+var p = co(function*() {
 	var p1 = yield promise1();
 	var p2 = yield promise2(p1);
 	var p3 = yield promise3(p2);
 	return p3;
 });
 
-a.then(function(res) {
+p.then(function(res) {
 	console.log(res);
 });
