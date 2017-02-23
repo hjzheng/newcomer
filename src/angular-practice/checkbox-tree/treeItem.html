@@ -1,0 +1,14 @@
+<li class="treeItem" ng-class="{'treeLeaf': vm.isLeaf(vm.data)}">
+    <span class="treeItemContent">
+        <i ng-if="!vm.isLeaf(vm.data)" class="fa treeArrow"
+           ng-class="{'fa-caret-right': !vm.showChildren, 'fa-caret-down': vm.showChildren}"></i>
+        <i ng-if="!vm.isLeaf(vm.data)" class="fa fa-folder-o treeIcon" aria-hidden="true"></i>
+        <my-checkbox ng-if="vm.hasCheckbox" ng-model="vm.data.checked" partial="vm.data.partial">
+            <span class="treeLabel" ng-bind="vm.data.label" ng-class="{'selected': vm.selected === true}"></span>
+        </my-checkbox>
+        <span ng-if="!vm.hasCheckbox" class="treeLabel" ng-bind="vm.data.label" ng-class="{'selected': vm.selected === true}"></span>
+    </span>
+    <ul class="treeChildren" ng-if="!vm.isLeaf(vm.data)" ng-show="vm.showChildren">
+        <my-tree-item data="treeItem" parent-id="vm.data.id" ng-repeat="treeItem in vm.data.children track by $index"></my-tree-item>
+    </ul>
+</li>

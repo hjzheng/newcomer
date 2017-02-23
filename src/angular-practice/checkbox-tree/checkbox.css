@@ -1,0 +1,15 @@
+.checkbox {
+
+}
+
+.checkbox[disabled] {
+    color: darkgray;
+}
+
+.checkbox-label {
+
+}
+
+.checkbox[disabled] .checkbox-label {
+    color: darkgray;
+}

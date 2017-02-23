@@ -1,6 +1,6 @@
 var promise1 = function() {
 	return new Promise(resolve => {
-		console.log('p1')
+		console.log('p1');
 		resolve('promise1');
 	});
 };

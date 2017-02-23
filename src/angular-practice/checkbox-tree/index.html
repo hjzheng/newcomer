@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox Tree</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./tree.css">
+    <link rel="stylesheet" href="./checkbox.css">
+</head>
+<body ng-controller="MainController">
+    <h2> 简单 Tree </h2>
+    <my-tree data="tree" on-selected="select(item)"></my-tree>
+    <h2> Checkbox Tree </h2>
+    <my-tree data="tree" on-selected="select(item)" has-checkbox="true"></my-tree>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="./checkbox.js"></script>
+<script src="./tree.js"></script>
+<script>
+    angular.module('app', ['ui-tree']);
+
+    angular.module('app').filter('prettyJSON', function() {
+        function prettyPrintJson(json) {
+            return JSON ? JSON.stringify(json, null, '  ') : 'your browser does not support JSON so cant pretty print';
+        }
+        return prettyPrintJson;
+    });
+
+    angular.module('app').controller('MainController', function($scope) {
+
+        $scope.select = function(item) {
+            console.log(item);
+        };
+
+        $scope.tree = [{
+            id: 1,
+            label: '所有工单类型',
+            children: [
+                {
+                    id: 2,
+                    label: '售前事务',
+                    children: [
+                        {
+                            id: 21,
+                            label: '催付工单'
+                        },
+                        {
+                            id: 22,
+                            label: '发货提醒工单',
+                            children: [
+                                {
+                                    id: 224,
+                                    label: '催付工单'
+                                },
+                                {
+                                    id: 225,
+                                    label: '发货提醒工单'
+                                },
+                                {
+                                    id: 226,
+                                    label: 'Test'
+                                }
+                            ]
+                        },
+                        {
+                            id: 23,
+                            label: 'Test',
+                            children: [
+                                {
+                                    id: 234,
+                                    label: '催付工单'
+                                },
+                                {
+                                    id: 235,
+                                    label: '发货提醒工单'
+                                },
+                                {
+                                    id: 236,
+                                    label: 'Test'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    label: '售中事务',
+                    children: [
+                        {
+                            id: 4,
+                            label: '催付工单'
+                        },
+                        {
+                            id: 5,
+                            label: '发货提醒工单'
+                        },
+                        {
+                            id: 6,
+                            label: 'Test'
+                        }
+                    ]
+                }
+            ]
+        }];
+    });
+</script>
+</html>

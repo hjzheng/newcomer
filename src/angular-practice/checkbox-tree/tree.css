@@ -1,0 +1,46 @@
+.tree {
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.tree .treeItem {
+    margin: 5px 3px 0 10px;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+
+.tree .treeItem > .treeItemContent {
+    padding: 2px;
+    cursor: pointer;
+}
+
+.tree .treeItem > .treeItemContent > .treeArrow {
+    font-size: 8px;
+    height: 8px;
+    width: 10px;
+    text-align: center;
+}
+
+.tree .treeItem > .treeItemContent > .treeIcon {
+    font-size: 12px;
+}
+
+.tree .treeLeaf {
+    margin-left: 38px;
+}
+
+.tree .treeItem .treeLabel {
+    font-size: 12px;
+    line-height: 12px;
+    cursor: pointer;
+}
+
+.tree .treeItem .treeLabel.selected {
+    background: skyblue;
+    color: #fff;
+}
+
+.tree .treeItem > .treeChildren {
+    padding: 0;
+}
