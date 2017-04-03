@@ -28,7 +28,7 @@
         <ul>
             <li ng-repeat="restaurant in vm.restaurants | filter: {'supportOnlinePay':supportOnlinePay, 'supportIceTea':supportIceTea, 'taste': taste} | filter:search
             | orderBy:sort">
-                <a href="#/restaurants/{{restaurant.id}}">
+                <a href="#!/restaurants/{{restaurant.id}}">
                     <my-restaurant-card restaurant="restaurant"></my-restaurant-card>
                 </a>
             </li>
