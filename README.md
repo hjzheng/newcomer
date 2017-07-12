@@ -76,6 +76,17 @@
      - [checkbox&radio](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/form)
    - [飞饭练习](https://github.com/ShuyunXIANFESchool/newcomer/tree/master/src/angular-practice/flymeal)
 
+#### React
+
+**以自学为主, 有问题问导师, 独自完成练习**
+
+1. [React官方指南](https://facebook.github.io/react/docs/hello-world.html)
+2. [think in react](https://facebook.github.io/react/docs/thinking-in-react.html)
+3. [React（第2版）：引领未来的用户界面开发框架](https://book.douban.com/subject/26918475/) 入门经典
+4. [React Design Patterns and Best Practices](https://book.douban.com/subject/26963822/) 进阶神器
+5. 练习
+    - [饿了吗练习](https://github.com/hjzheng/react-practice/blob/master/note/test.md)
+
 #### ES6相关
 
 **实际项目中会用到ES6, 这里提供两个练习环境**
