@@ -17,7 +17,7 @@
     - block, inline 和 inline-block 元素特点 [传送门](http://zhenghaoju700.blog.163.com/blog/static/1358595182014542594926/)
     - 浮动布局 和 清理浮动 [传送门](http://zhenghaoju700.blog.163.com/blog/static/1358595182014583144423/)
     - 定位布局 [传送门](http://zhenghaoju700.blog.163.com/blog/static/13585951820145109128773/)
-    - flex布局(可选) [传送门](https://gist.github.com/hjzheng/eb21c393a320391dcf63)
+    - flex布局 [传送门](https://gist.github.com/hjzheng/eb21c393a320391dcf63)
     - box-sizing
     - 垂直居中 [传送门](http://mossad.iteye.com/blog/2153675)
 8. CSS 样式优先级 和 CSS 选择器 (这个 w3cschool 上有, 取决于新人自学程度) [传送门](http://zhenghaoju700.blog.163.com/blog/static/135859518201342883431872/)
